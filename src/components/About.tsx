@@ -2,49 +2,39 @@ import { GraduationCap, MapPin, Award } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-secondary">
+    <section id="about" className="py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-16 tracking-tight">
             About
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                <GraduationCap className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Education</h3>
-              <p className="text-muted-foreground">EPFL, Lausanne</p>
+          <div className="grid md:grid-cols-3 gap-16 mb-16 text-center">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Education</p>
+              <p className="text-foreground font-light">EPFL, Lausanne</p>
             </div>
             
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                <MapPin className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Location</h3>
-              <p className="text-muted-foreground">Lyon, France</p>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Location</p>
+              <p className="text-foreground font-light">Lyon, France</p>
             </div>
             
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                <Award className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Practice</h3>
-              <p className="text-muted-foreground">Independent Architect</p>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Practice</p>
+              <p className="text-foreground font-light">Independent</p>
             </div>
           </div>
           
-          <div className="prose prose-lg max-w-none">
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <div className="max-w-2xl mx-auto text-center space-y-6">
+            <p className="text-muted-foreground leading-relaxed font-light">
               With a degree from EPFL in Lausanne, I bring Swiss precision and attention to detail to every project. 
               Based in Lyon, I work independently to provide personalized architectural services that truly reflect 
               each client's vision and lifestyle.
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed font-light">
               My approach combines technical expertise with creative problem-solving, ensuring that every space 
-              I design is both functional and beautiful. Whether it's a complete renovation or a new construction 
-              project, I'm committed to delivering exceptional results that exceed expectations.
+              I design is both functional and beautiful.
             </p>
           </div>
         </div>

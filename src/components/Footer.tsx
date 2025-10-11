@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="bg-secondary border-t border-border py-8">
+    <footer className="bg-background border-t border-border py-12">
       <div className="container mx-auto px-6">
         <div className="text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} Independent Architect, Lyon. All rights reserved.</p>
+          <p className="text-xs font-light">© {new Date().getFullYear()} Architecture, Lyon</p>
         </div>
       </div>
     </footer>

@@ -23,83 +23,67 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center">
-            Let's Work Together
+          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-16 tracking-tight">
+            Contact
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 text-center">
-            Ready to transform your space? Get in touch to discuss your project.
-          </p>
           
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+          <div className="grid md:grid-cols-2 gap-16">
+            <div className="space-y-8">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Location</p>
+                <p className="text-foreground font-light">Lyon, France</p>
+              </div>
               
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Location</p>
-                    <p className="text-muted-foreground">Lyon, France</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Email</p>
-                    <p className="text-muted-foreground">contact@example.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Phone</p>
-                    <p className="text-muted-foreground">+33 X XX XX XX XX</p>
-                  </div>
-                </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Email</p>
+                <p className="text-foreground font-light">contact@example.com</p>
+              </div>
+              
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Phone</p>
+                <p className="text-foreground font-light">+33 X XX XX XX XX</p>
               </div>
             </div>
             
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
-                  placeholder="Your Name"
+                  placeholder="Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
+                  className="font-light"
                 />
               </div>
               <div>
                 <Input
                   type="email"
-                  placeholder="Your Email"
+                  placeholder="Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
+                  className="font-light"
                 />
               </div>
               <div>
                 <Textarea
-                  placeholder="Tell me about your project..."
+                  placeholder="Message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   rows={6}
+                  className="font-light resize-none"
                 />
               </div>
-              <Button type="submit" className="w-full" size="lg">
-                Send Message
-              </Button>
+              <button 
+                type="submit" 
+                className="text-sm text-foreground hover:text-accent transition-colors font-light border-b border-foreground pb-1"
+              >
+                Send message
+              </button>
             </form>
           </div>
         </div>

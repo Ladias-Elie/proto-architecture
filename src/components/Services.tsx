@@ -26,31 +26,21 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="services" className="py-32 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-16 tracking-tight">
             Services
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 text-center max-w-2xl mx-auto">
-            Comprehensive architectural services tailored to your needs, from initial concept to final execution.
-          </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-16">
             {services.map((service, index) => (
-              <Card key={index} className="border-border hover:border-accent transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+              <div key={index} className="space-y-4">
+                <h3 className="text-lg font-light text-foreground">{service.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light">
+                  {service.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>

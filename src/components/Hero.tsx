@@ -20,21 +20,19 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-2xl">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Transforming Spaces with Precision & Vision
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight tracking-tight">
+            Transforming spaces with precision and vision
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            EPFL-trained architect based in Lyon, specializing in residential renovations and architectural design that brings your vision to life.
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 font-light leading-relaxed">
+            EPFL-trained architect based in Lyon, specializing in residential renovations and architectural design.
           </p>
-          <Button 
+          <button 
             onClick={scrollToContact}
-            size="lg"
-            className="group"
+            className="text-sm text-foreground hover:text-accent transition-colors font-light border-b border-foreground pb-1"
           >
-            Start Your Project
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+            Start your project
+          </button>
         </div>
       </div>
     </section>

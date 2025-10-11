@@ -8,34 +8,31 @@ const Projects = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <main className="pt-24 pb-24 bg-background">
+      <main className="pt-32 pb-32 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl md:text-4xl font-light text-foreground mb-16 tracking-tight">
               Projects
             </h1>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl">
-              Explore my portfolio of residential renovations, new constructions, and architectural designs across Lyon and surrounding areas.
-            </p>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-16">
               {projects.map((project) => (
                 <Link
                   key={project.id}
                   to={`/projects/${project.id}`}
-                  className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
+                  className="group space-y-4"
                 >
-                  <img
-                    src={project.coverImage}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <p className="text-accent text-sm font-semibold mb-2">{project.category}</p>
-                      <h3 className="text-foreground text-2xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-muted-foreground text-sm">{project.location} • {project.year}</p>
-                    </div>
+                  <div className="relative overflow-hidden aspect-square">
+                    <img
+                      src={project.coverImage}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">{project.category}</p>
+                    <h3 className="text-lg font-light text-foreground mb-1 group-hover:text-accent transition-colors">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground font-light">{project.location}, {project.year}</p>
                   </div>
                 </Link>
               ))}

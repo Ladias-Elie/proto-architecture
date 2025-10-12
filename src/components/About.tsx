@@ -6,7 +6,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-4xl md:text-5xl text-foreground mb-6 elegant-underline">
-                L'Agence
+                Agence
               </h2>
             </div>
             <div className="space-y-6 text-foreground/80">

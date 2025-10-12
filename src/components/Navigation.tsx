@@ -7,12 +7,12 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-8 py-6">
         <div className="flex items-center justify-between">
           <button 
             onClick={() => navigate("/")}
-            className="text-sm tracking-wide text-foreground hover:text-accent transition-colors"
+            className="text-sm tracking-wide text-foreground hover:text-accent transition-colors font-bold"
           >
             prôto.architecture
           </button>

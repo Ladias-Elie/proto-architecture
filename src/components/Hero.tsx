@@ -1,40 +1,30 @@
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
+  const scrollToContent = () => {
+    const element = document.getElementById("about");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center">
+    <section id="hero" className="relative h-screen flex items-center justify-center">
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-foreground/20" />
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-8 leading-tight tracking-tight">
-            Transforming spaces with precision and vision
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 font-light leading-relaxed">
-            EPFL-trained architect based in Lyon, specializing in residential renovations and architectural design.
-          </p>
-          <button 
-            onClick={scrollToContact}
-            className="text-sm text-foreground hover:text-accent transition-colors font-light border-b border-foreground pb-1"
-          >
-            Start your project
-          </button>
-        </div>
-      </div>
+      <button 
+        onClick={scrollToContent}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 text-background hover:text-accent transition-colors animate-bounce"
+        aria-label="Scroll down"
+      >
+        <ChevronDown size={32} strokeWidth={1} />
+      </button>
     </section>
   );
 };

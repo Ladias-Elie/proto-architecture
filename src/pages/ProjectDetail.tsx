@@ -20,9 +20,9 @@ const ProjectDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-          <Link to="/projects">
-            <Button>Back to Projects</Button>
+          <h1 className="text-4xl font-light mb-4">Projet introuvable</h1>
+          <Link to="/projets" className="text-sm text-foreground hover:text-primary transition-colors font-light border-b border-foreground pb-1">
+            Retour aux projets
           </Link>
         </div>
       </div>
@@ -36,9 +36,9 @@ const ProjectDetail = () => {
       <main className="pt-32 pb-32 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <Link to="/projects" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-12 font-light">
+            <Link to="/projets" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-12 font-light">
               <ArrowLeft className="mr-2 h-3 w-3" />
-              Back
+              Retour
             </Link>
             
             <div className="mb-16">
@@ -62,7 +62,7 @@ const ProjectDetail = () => {
             <div className="grid md:grid-cols-2 gap-16">
               {/* Photos Carousel */}
               <div>
-                <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-6 font-light">Photos</h2>
+                <h2 className="text-sm uppercase tracking-widest text-muted-foreground mb-6 font-light">Photographies</h2>
                 {project.images.length > 0 ? (
                   <Carousel className="w-full">
                     <CarouselContent>
@@ -87,7 +87,7 @@ const ProjectDetail = () => {
                   </Carousel>
                 ) : (
                   <div className="aspect-square bg-muted flex items-center justify-center">
-                    <p className="text-muted-foreground text-sm font-light">No photos available</p>
+                    <p className="text-muted-foreground text-sm font-light">Aucune photo disponible</p>
                   </div>
                 )}
               </div>
@@ -119,7 +119,7 @@ const ProjectDetail = () => {
                   </Carousel>
                 ) : (
                   <div className="aspect-square bg-muted flex items-center justify-center">
-                    <p className="text-muted-foreground text-sm font-light italic">Plans can be added here</p>
+                    <p className="text-muted-foreground text-sm font-light italic">Les plans peuvent être ajoutés ici</p>
                   </div>
                 )}
               </div>

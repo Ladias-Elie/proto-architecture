@@ -1,5 +1,3 @@
-import { Mail, Phone, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -16,14 +14,14 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message sent!",
-      description: "Thank you for your interest. I'll get back to you soon.",
+      title: "Message envoyé !",
+      description: "Merci pour votre intérêt. Je vous recontacterai rapidement.",
     });
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section id="contact" className="py-32 bg-background">
+    <section id="contact" className="py-32 bg-background border-t border-border">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-16 tracking-tight">
@@ -33,17 +31,17 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-16">
             <div className="space-y-8">
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Location</p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Localisation</p>
                 <p className="text-foreground font-light">Lyon, France</p>
               </div>
               
               <div>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Email</p>
-                <p className="text-foreground font-light">contact@example.com</p>
+                <p className="text-foreground font-light">mail@proto-architecture.fr</p>
               </div>
               
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Phone</p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Téléphone</p>
                 <p className="text-foreground font-light">+33 X XX XX XX XX</p>
               </div>
             </div>
@@ -51,7 +49,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
-                  placeholder="Name"
+                  placeholder="Nom"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
@@ -80,9 +78,9 @@ const Contact = () => {
               </div>
               <button 
                 type="submit" 
-                className="text-sm text-foreground hover:text-accent transition-colors font-light border-b border-foreground pb-1"
+                className="text-sm text-foreground hover:text-primary transition-colors font-light border-b border-foreground pb-1"
               >
-                Send message
+                Envoyer
               </button>
             </form>
           </div>

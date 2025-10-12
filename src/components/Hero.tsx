@@ -2,44 +2,35 @@ import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
-  const scrollToContent = () => {
-    const element = document.getElementById("about");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-primary/40" />
-        <div className="absolute inset-0" style={{
-          background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(var(--accent) / 0.1) 2px, hsl(var(--accent) / 0.1) 4px)'
-        }} />
-      </div>
+    <section className="min-h-screen relative flex items-end">
+      <img 
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+        alt="Architecture moderne"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
       
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-8">
-        <div className="retro-border bg-primary px-8 py-4 rotate-2 hover:rotate-0 transition-transform">
-          <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground tracking-wider">
-            PROTO
-          </h1>
-        </div>
-        <div className="retro-border-accent bg-accent px-8 py-4 -rotate-3 hover:rotate-0 transition-transform">
-          <p className="text-xl md:text-3xl font-bold text-accent-foreground tracking-widest">
-            ARCHITECTURE
-          </p>
-        </div>
+      <div className="container mx-auto px-8 pb-32 relative z-10">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl text-foreground tracking-tight mb-4">
+          prôto.architecture
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+          Bureau d'architecture à Lyon
+        </p>
       </div>
       
       <button 
-        onClick={scrollToContent}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 bg-secondary text-secondary-foreground px-6 py-3 retro-border hover:translate-y-1 hover:shadow-none transition-all animate-bounce font-bold"
-        aria-label="Découvrir"
+        onClick={scrollToAbout}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 text-foreground/60 hover:text-accent transition-colors group"
+        aria-label="Défiler vers le bas"
       >
-        <ChevronDown size={32} strokeWidth={3} />
+        <ChevronDown className="w-6 h-6 animate-bounce" strokeWidth={1} />
       </button>
     </section>
   );

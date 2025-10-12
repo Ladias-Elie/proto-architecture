@@ -7,27 +7,27 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b-4 border-primary">
-      <div className="container mx-auto px-6 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-8 py-6">
         <div className="flex items-center justify-between">
           <button 
             onClick={() => navigate("/")}
-            className="text-base tracking-widest text-primary hover:text-accent transition-colors font-bold uppercase"
+            className="text-sm tracking-wide text-foreground hover:text-accent transition-colors"
           >
             prôto.architecture
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             <button 
               onClick={() => navigate("/")} 
-              className="text-sm text-foreground hover:text-secondary transition-colors font-bold uppercase tracking-wider px-4 py-2 hover:bg-primary hover:text-primary-foreground"
+              className="text-sm text-foreground hover:text-accent transition-colors tracking-wide"
             >
               Agence
             </button>
             <button 
               onClick={() => navigate("/projets")} 
-              className="text-sm text-foreground hover:text-secondary transition-colors font-bold uppercase tracking-wider px-4 py-2 hover:bg-accent hover:text-accent-foreground"
+              className="text-sm text-foreground hover:text-accent transition-colors tracking-wide"
             >
               Projets
             </button>
@@ -36,24 +36,24 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-primary"
+            className="md:hidden text-foreground"
           >
-            {isOpen ? <X size={28} strokeWidth={3} /> : <Menu size={28} strokeWidth={3} />}
+            {isOpen ? <X size={24} strokeWidth={1} /> : <Menu size={24} strokeWidth={1} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pt-6 pb-2 flex flex-col gap-4">
+          <div className="md:hidden pt-8 pb-4 flex flex-col gap-6">
             <button 
               onClick={() => { navigate("/"); setIsOpen(false); }} 
-              className="text-sm text-foreground hover:text-secondary transition-colors text-left font-bold uppercase tracking-wider px-4 py-2 hover:bg-primary hover:text-primary-foreground"
+              className="text-sm text-foreground hover:text-accent transition-colors text-left tracking-wide"
             >
               Agence
             </button>
             <button 
               onClick={() => { navigate("/projets"); setIsOpen(false); }} 
-              className="text-sm text-foreground hover:text-secondary transition-colors text-left font-bold uppercase tracking-wider px-4 py-2 hover:bg-accent hover:text-accent-foreground"
+              className="text-sm text-foreground hover:text-accent transition-colors text-left tracking-wide"
             >
               Projets
             </button>

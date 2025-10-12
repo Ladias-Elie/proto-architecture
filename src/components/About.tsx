@@ -1,47 +1,48 @@
 const About = () => {
   return (
-    <section id="about" className="py-32 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-16 tracking-tight">
-            L'Agence
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-16 mb-16 text-center">
-            <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Formation</p>
-              <p className="text-foreground font-light">EPFL, Lausanne</p>
-            </div>
-            
-            <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Localisation</p>
-              <p className="text-foreground font-light">Lyon, France</p>
-            </div>
-            
-            <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-light">Structure</p>
-              <p className="text-foreground font-light">Indépendant</p>
+    <section id="about" className="py-24 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: 'repeating-linear-gradient(45deg, hsl(var(--primary)) 0, hsl(var(--primary)) 10px, transparent 10px, transparent 20px), repeating-linear-gradient(-45deg, hsl(var(--accent)) 0, hsl(var(--accent)) 10px, transparent 10px, transparent 20px)'
+      }} />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto space-y-16">
+          <div className="retro-border bg-primary p-2">
+            <div className="bg-background p-8 md:p-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 tracking-wider">
+                L'Agence
+              </h2>
+              <div className="space-y-6 text-foreground leading-relaxed text-lg">
+                <p className="border-l-4 border-accent pl-6">
+                  <strong className="text-secondary">prôto.architecture</strong> est un bureau d'architecture lyonnais fondé sur la conviction que chaque projet mérite une attention particulière et une réponse architecturale sur-mesure.
+                </p>
+                <p>
+                  Diplômé de l'École Polytechnique Fédérale de Lausanne (EPFL), je mets mon expertise au service de vos projets de <strong className="text-accent">rénovation d'appartements et de maisons</strong> dans la <strong className="text-accent">région lyonnaise</strong>.
+                </p>
+                <p className="border-l-4 border-secondary pl-6">
+                  Mon approche privilégie le dialogue constant avec mes clients, permettant de comprendre finement leurs besoins et leurs aspirations. Chaque espace est pensé pour améliorer votre qualité de vie au quotidien, en alliant fonctionnalité et esthétique contemporaine.
+                </p>
+              </div>
             </div>
           </div>
-          
-          <div className="max-w-2xl mx-auto space-y-8">
-            <p className="text-muted-foreground leading-relaxed font-light">
-              Architecte diplômé de l'EPFL, je m'installe à Lyon pour proposer une approche architecturale 
-              sur-mesure, alliant rigueur technique et vision créative. Mon objectif : transformer vos espaces 
-              en lieux de vie uniques, pensés pour vous.
-            </p>
-            <p className="text-muted-foreground leading-relaxed font-light">
-              Spécialisé dans la rénovation résidentielle sur Lyon et sa région, j'accompagne particuliers 
-              et investisseurs dans leurs projets d'appartements, maisons et locaux. Que vous envisagiez 
-              l'acquisition d'un bien à rénover ou la transformation de votre habitat actuel, je conçois 
-              des espaces optimisés qui valorisent votre patrimoine.
-            </p>
-            <p className="text-muted-foreground leading-relaxed font-light">
-              De l'esquisse initiale au suivi de chantier, je vous offre un accompagnement complet : 
-              études de faisabilité, conception architecturale, dépôt de permis de construire, et coordination 
-              avec les artisans. Une attention particulière portée aux détails, aux matériaux et à la lumière 
-              naturelle caractérise chacune de mes réalisations.
-            </p>
+
+          <div className="retro-border-accent bg-accent p-2">
+            <div className="bg-background p-8 md:p-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-accent mb-8 tracking-wider">
+                Méthode
+              </h2>
+              <div className="space-y-6 text-foreground leading-relaxed text-lg">
+                <p className="border-l-4 border-primary pl-6">
+                  Je vous accompagne à chaque étape de votre projet, de la conception initiale jusqu'à la réalisation finale. Cette démarche collaborative garantit que le résultat final correspond exactement à vos attentes.
+                </p>
+                <p>
+                  Que vous souhaitiez <strong className="text-secondary">restructurer un appartement en centre-ville de Lyon</strong>, <strong className="text-secondary">rénover une maison de caractère</strong>, ou <strong className="text-secondary">optimiser l'agencement de votre espace de vie</strong>, je développe des solutions architecturales qui valorisent votre bien.
+                </p>
+                <p className="border-l-4 border-accent pl-6">
+                  Chaque intervention est l'occasion de repenser l'habitat pour qu'il s'adapte parfaitement à votre mode de vie, tout en respectant l'identité du lieu et les contraintes techniques et réglementaires propres à la <strong className="text-secondary">région Auvergne-Rhône-Alpes</strong>.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

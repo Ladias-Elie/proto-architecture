@@ -23,7 +23,7 @@ const Navigation = () => {
               onClick={() => navigate("/a-propos")} 
               className="text-sm text-foreground hover:text-accent transition-colors tracking-wide"
             >
-              Agence
+              À propos
             </button>
             <button 
               onClick={() => navigate("/projets")} 
@@ -49,7 +49,7 @@ const Navigation = () => {
               onClick={() => { navigate("/a-propos"); setIsOpen(false); }} 
               className="text-sm text-foreground hover:text-accent transition-colors text-left tracking-wide"
             >
-              Agence
+              À propos
             </button>
             <button 
               onClick={() => { navigate("/projets"); setIsOpen(false); }} 

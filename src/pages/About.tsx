@@ -6,14 +6,30 @@ const About = () => {
   return (
     <>
       <SEO
-        title="À propos | Architecte Lyon"
-        description="prôto.architecture, bureau d'architecture lyonnais spécialisé dans la rénovation et transformation de maisons et appartements. Diplômé EPFL, inscrit à l'Ordre des Architectes."
+        title="À propos | Architecte Lyon - Rénovation & Transformation"
+        description="prôto.architecture, atelier d'architecture lyonnais dédié à la rénovation écologique et la transformation du bâti existant. Approche durable et responsable par Camille Brachet, architecte EPFL."
         canonical="/a-propos"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "AboutPage",
           "name": "À propos de prôto.architecture",
-          "description": "Bureau d'architecture lyonnais spécialisé dans la rénovation"
+          "description": "Atelier d'architecture lyonnais spécialisé dans la rénovation écologique, reconversion et transformation durable du bâti existant",
+          "mainEntity": {
+            "@type": "ProfessionalService",
+            "name": "prôto.architecture",
+            "description": "Atelier d'architecture dédié à la rénovation écologique et la transformation du bâti existant",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lyon",
+              "addressCountry": "FR"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Camille Brachet",
+              "jobTitle": "Architecte",
+              "alumniOf": "École Polytechnique Fédérale de Lausanne"
+            }
+          }
         }}
       />
       
@@ -23,19 +39,53 @@ const About = () => {
         <main className="pt-32 pb-20">
           <section className="container mx-auto px-8">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl text-foreground mb-8 elegant-underline">
-                À propos
+              <h1 className="text-4xl md:text-6xl text-foreground mb-6 font-light tracking-tight">
+                L'atelier prôto.architecture
               </h1>
               
-              <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
+              <p className="text-xl md:text-2xl text-foreground/70 mb-16 font-light leading-relaxed">
+                Concevoir des espaces généreux, durables et ancrés dans leur contexte.
+              </p>
+
+              {/* Section 1 - Présentation de l'atelier */}
+              <div className="space-y-6 text-foreground/80 text-lg leading-relaxed mb-20">
                 <p>
-                  <strong>prôto.architecture</strong> est un bureau créé par Camille Brachet en 2021. Il a pour ambition de proposer une architecture responsable en favorisant les savoir-faire et les matériaux locaux, en écrivant des histoires singulières et rationnelles avec les futurs habitants des lieux.
+                  <strong>prôto.architecture</strong> est un atelier d'architecture basé à Lyon, dédié à la rénovation, à la reconversion et à la transformation du bâti existant. Notre approche met l'accent sur la réutilisation intelligente des structures existantes, la valorisation des matériaux locaux et la réduction de l'empreinte écologique de chaque projet.
                 </p>
                 <p>
-                  Je suis architecte diplômée de l'École Polytechnique Fédérale de Lausanne depuis 2017. Après quelques années à voyager pour les études, le travail et le plaisir, je reviens poser mes valises dans la région lyonnaise.
+                  Nous croyons que l'architecture doit être à la fois belle, fonctionnelle et responsable — attentive à la lumière, aux usages et aux ressources du territoire. Chaque projet est l'occasion de révéler le potentiel d'un lieu en créant des espaces généreux, confortables et durables, pensés pour celles et ceux qui les habitent au quotidien.
                 </p>
                 <p>
-                  Toujours à la recherche de projets excitants et de nouvelles collaborations, n'hésitez pas à me joindre au <a href="tel:+33782156364" className="text-accent hover:underline">07 82 15 63 64</a> ou à m'écrire à <a href="mailto:mail@proto-architecture.fr" className="text-accent hover:underline">mail@proto-architecture.fr</a>.
+                  Notre travail s'inscrit dans une démarche de sobriété constructive, privilégiant la pérennité, la simplicité et la qualité des matériaux.
+                </p>
+              </div>
+
+              {/* Section 2 - À propos de l'architecte */}
+              <div className="border-t border-border/50 pt-12">
+                <h2 className="text-2xl md:text-3xl text-foreground mb-8 font-light">
+                  Une approche humaine et engagée
+                </h2>
+                
+                <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
+                  <p>
+                    L'atelier est fondé et dirigé par <strong>Camille Brachet</strong>, architecte diplômée de l'École Polytechnique Fédérale de Lausanne (EPFL) en 2017. Après plusieurs expériences en Suisse et à l'étranger, elle s'installe à Lyon en 2021 pour développer une pratique tournée vers la rénovation écologique et l'habitat sur mesure.
+                  </p>
+                  <p>
+                    Son travail explore l'équilibre entre rationalité constructive et poésie de l'espace, avec une attention particulière portée à la lumière naturelle, aux matières brutes et à la cohérence environnementale des projets.
+                  </p>
+                  <p>
+                    Autour d'elle, prôto.architecture s'entoure d'un réseau d'artisans, d'ingénieurs et de partenaires locaux partageant les mêmes valeurs : exigence, respect du bâti, et sens du détail.
+                  </p>
+                  <p>
+                    Chaque projet est avant tout une rencontre — entre un lieu, une histoire et des personnes prêtes à inventer ensemble une manière plus juste d'habiter.
+                  </p>
+                </div>
+              </div>
+
+              {/* Contact CTA */}
+              <div className="mt-16 pt-12 border-t border-border/50">
+                <p className="text-foreground/80 text-lg leading-relaxed">
+                  Toujours à la recherche de projets excitants et de nouvelles collaborations, n'hésitez pas à me contacter au <a href="tel:+33782156364" className="text-accent hover:underline font-medium">07 82 15 63 64</a> ou à m'écrire à <a href="mailto:mail@proto-architecture.fr" className="text-accent hover:underline font-medium">mail@proto-architecture.fr</a>
                 </p>
               </div>
             </div>

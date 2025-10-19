@@ -46,12 +46,35 @@ const Contact = () => {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 className="text-4xl md:text-5xl text-foreground mb-6 elegant-underline">
+              <h2 className="text-4xl md:text-5xl text-foreground mb-8 elegant-underline">
                 Contact
               </h2>
+              
+              <div className="space-y-6 text-lg">
+                <div>
+                  <p className="text-muted-foreground mb-2">Email</p>
+                  <a 
+                    href="mailto:mail@proto-architecture.fr"
+                    className="text-accent hover:text-foreground transition-colors border-b border-accent"
+                  >
+                    mail@proto-architecture.fr
+                  </a>
+                </div>
+                
+                <div>
+                  <p className="text-muted-foreground mb-2">Téléphone</p>
+                  <a 
+                    href="tel:+33612345678"
+                    className="text-accent hover:text-foreground transition-colors border-b border-accent"
+                  >
+                    06 12 34 56 78
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="space-y-8">
-              <p className="text-lg text-foreground/80 leading-relaxed">
+            
+            <div>
+              <p className="text-lg text-foreground/80 leading-relaxed mb-8">
                 Vous avez un projet de rénovation à Lyon ou dans sa région ? 
                 Discutons ensemble de vos ambitions architecturales.
               </p>
@@ -106,15 +129,6 @@ const Contact = () => {
                   </Button>
                 </form>
               </Form>
-              
-              <div className="pt-4 border-t border-border/50">
-                <a 
-                  href="mailto:mail@proto-architecture.fr"
-                  className="inline-block text-accent hover:text-foreground transition-colors text-lg border-b border-accent"
-                >
-                  mail@proto-architecture.fr
-                </a>
-              </div>
             </div>
           </div>
         </div>

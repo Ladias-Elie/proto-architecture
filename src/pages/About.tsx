@@ -83,10 +83,16 @@ const About = () => {
               </div>
 
               {/* Contact CTA */}
-              <div className="mt-16 pt-12 border-t border-border/50">
-                <p className="text-foreground/80 text-lg leading-relaxed">
-                  Toujours à la recherche de projets excitants et de nouvelles collaborations, n'hésitez pas à me contacter au <a href="tel:+33782156364" className="text-accent hover:underline font-medium">07 82 15 63 64</a> ou à m'écrire à <a href="mailto:mail@proto-architecture.fr" className="text-accent hover:underline font-medium">mail@proto-architecture.fr</a>
+              <div className="mt-16 pt-12 border-t border-border/50 text-center">
+                <p className="text-foreground/80 text-lg leading-relaxed mb-8">
+                  Un projet en tête ? Discutons-en ensemble.
                 </p>
+                <a 
+                  href="/#contact" 
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-background bg-foreground hover:bg-foreground/90 transition-colors rounded-sm"
+                >
+                  Prendre contact
+                </a>
               </div>
             </div>
           </section>

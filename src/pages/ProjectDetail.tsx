@@ -93,11 +93,11 @@ const ProjectDetail = () => {
               <div>
                 <h2 className="text-xl text-foreground mb-6">Photographies</h2>
                 {project.images.length > 0 ? (
-                  <Carousel className="w-full">
+                  <Carousel className="w-full group">
                     <CarouselContent>
                       {project.images.map((image, index) => (
                         <CarouselItem key={index}>
-                          <div className="aspect-[4/3] bg-muted overflow-hidden flex items-center justify-center">
+                          <div className="aspect-[4/3] bg-background overflow-hidden flex items-center justify-center">
                             <img
                               src={image}
                               alt={`${project.title} - Photo ${index + 1}`}
@@ -109,13 +109,13 @@ const ProjectDetail = () => {
                     </CarouselContent>
                     {project.images.length > 1 && (
                       <>
-                        <CarouselPrevious className="border border-border bg-background hover:bg-muted" />
-                        <CarouselNext className="border border-border bg-background hover:bg-muted" />
+                        <CarouselPrevious className="left-4 h-8 w-8 border-none bg-background/60 hover:bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <CarouselNext className="right-4 h-8 w-8 border-none bg-background/60 hover:bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </>
                     )}
                   </Carousel>
                 ) : (
-                  <div className="aspect-[4/3] bg-muted flex items-center justify-center">
+                  <div className="aspect-[4/3] bg-background flex items-center justify-center">
                     <p className="text-muted-foreground text-sm">Aucune photo disponible</p>
                   </div>
                 )}
@@ -125,11 +125,11 @@ const ProjectDetail = () => {
               <div>
                 <h2 className="text-xl text-foreground mb-6">Plans</h2>
                 {project.plans.length > 0 ? (
-                  <Carousel className="w-full">
+                  <Carousel className="w-full group">
                     <CarouselContent>
                       {project.plans.map((plan, index) => (
                         <CarouselItem key={index}>
-                          <div className="aspect-[3/2] bg-muted overflow-hidden flex items-center justify-center">
+                          <div className="aspect-[4/3] bg-background overflow-hidden flex items-center justify-center">
                             <img
                               src={plan}
                               alt={`${project.title} - Plan ${index + 1}`}
@@ -141,13 +141,13 @@ const ProjectDetail = () => {
                     </CarouselContent>
                     {project.plans.length > 1 && (
                       <>
-                        <CarouselPrevious className="border border-border bg-background hover:bg-muted" />
-                        <CarouselNext className="border border-border bg-background hover:bg-muted" />
+                        <CarouselPrevious className="left-4 h-8 w-8 border-none bg-background/60 hover:bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <CarouselNext className="right-4 h-8 w-8 border-none bg-background/60 hover:bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </>
                     )}
                   </Carousel>
                 ) : (
-                  <div className="aspect-[4/3] bg-muted flex items-center justify-center">
+                  <div className="aspect-[4/3] bg-background flex items-center justify-center">
                     <p className="text-muted-foreground text-sm">Plans à venir</p>
                   </div>
                 )}

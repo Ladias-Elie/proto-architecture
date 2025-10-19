@@ -1,44 +1,22 @@
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/renovation-maison-village.webp";
-import { Button } from "./ui/button";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
-    <section className="min-h-screen relative flex items-center justify-center">
+    <section className="min-h-screen relative flex items-start justify-start">
       <img 
         src={heroImage}
         alt="Photo d'une maison de village rénové, demontrant une architecture moderne intégrée dans un cadre traditionnel."
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-background/30" />
+      <div className="absolute inset-0 bg-background/20" />
       
-      <div className="relative z-10 container mx-auto px-8 text-center">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          {/* Titre principal */}
-          <h1 className="text-5xl md:text-7xl font-light tracking-tight text-white drop-shadow-lg">
-            Donnez une nouvelle vie<br />à votre maison
-          </h1>
-          
-          {/* Sous-titre */}
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light drop-shadow">
+      <div className="relative z-10 container mx-auto px-8 pt-32">
+        <div className="max-w-2xl animate-fade-in">
+          <h1 className="text-3xl md:text-4xl font-light tracking-tight text-foreground">
             Architecte à Lyon spécialisé dans la rénovation et transformation de l'habitat existant
-          </p>
-          
-          {/* CTA principal */}
-          <div className="pt-4">
-            <Button 
-              size="lg"
-              onClick={scrollToContact}
-              className="text-base px-8"
-            >
-              Parlez-moi de votre projet
-            </Button>
-          </div>
+          </h1>
         </div>
       </div>
         

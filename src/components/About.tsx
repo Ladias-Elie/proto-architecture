@@ -1,29 +1,70 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+
+const scrollToContact = () => {
+  const contactSection = document.getElementById('contact');
+  contactSection?.scrollIntoView({ behavior: 'smooth' });
+};
 
 const missionData = {
   complete: {
     title: "Mission complète",
     brief: "Accompagnement du premier croquis jusqu'à la livraison pour garantir cohérence, sérénité et qualité.",
     details: (
-      <div className="space-y-4">
-        <p>
-          Vous souhaitez être accompagné du premier croquis jusqu'à la livraison ? Je prends en charge l'ensemble du projet, pour vous garantir cohérence, sérénité et qualité de réalisation.
-        </p>
-        <div>
-          <h4 className="font-semibold mb-3">Phases incluses :</h4>
-          <ul className="space-y-2 ml-4">
-            <li>• <strong>Esquisse & avant-projet</strong> – définition des besoins, conception et propositions d'aménagements</li>
-            <li>• <strong>Permis de construire / Déclaration préalable</strong> – constitution du dossier administratif</li>
-            <li>• <strong>Dossier de conception et d'exécution (PRO/DCE)</strong> – plans techniques, choix des matériaux, budget et planning</li>
-            <li>• <strong>Suivi de chantier (DET / OPC)</strong> – coordination des entreprises, vérification de la qualité et du respect des délais</li>
-            <li>• <strong>Réception & livraison</strong> – accompagnement jusqu'à la remise des clés</li>
-          </ul>
+      <div className="space-y-8">
+        <div className="prose prose-sm max-w-none">
+          <p className="text-lg leading-relaxed">
+            Vous souhaitez être accompagné du premier croquis jusqu'à la livraison ? Je prends en charge l'ensemble du projet pour vous garantir cohérence, sérénité et qualité de réalisation.
+          </p>
         </div>
-        <p className="text-muted-foreground">
-          Vous bénéficiez d'un interlocuteur unique, à l'écoute de vos besoins, garant de la qualité architecturale et environnementale de votre projet.
-        </p>
+
+        <div className="bg-muted/30 rounded-lg p-6 space-y-4">
+          <h4 className="text-xl font-medium mb-4">Phases incluses</h4>
+          
+          <div className="space-y-4">
+            <div className="border-l-2 border-accent pl-4">
+              <h5 className="font-semibold mb-1">Esquisse & avant-projet</h5>
+              <p className="text-sm text-muted-foreground">Définition des besoins, conception et propositions d'aménagements</p>
+            </div>
+            
+            <div className="border-l-2 border-accent pl-4">
+              <h5 className="font-semibold mb-1">Permis de construire / Déclaration préalable</h5>
+              <p className="text-sm text-muted-foreground">Constitution du dossier administratif</p>
+            </div>
+            
+            <div className="border-l-2 border-accent pl-4">
+              <h5 className="font-semibold mb-1">Dossier de conception et d'exécution (PRO/DCE)</h5>
+              <p className="text-sm text-muted-foreground">Plans techniques, choix des matériaux, budget et planning</p>
+            </div>
+            
+            <div className="border-l-2 border-accent pl-4">
+              <h5 className="font-semibold mb-1">Suivi de chantier (DET / OPC)</h5>
+              <p className="text-sm text-muted-foreground">Coordination des entreprises, vérification de la qualité et du respect des délais</p>
+            </div>
+            
+            <div className="border-l-2 border-accent pl-4">
+              <h5 className="font-semibold mb-1">Réception & livraison</h5>
+              <p className="text-sm text-muted-foreground">Accompagnement jusqu'à la remise des clés</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
+          <p className="text-base leading-relaxed">
+            Vous bénéficiez d'un <strong>interlocuteur unique</strong>, à l'écoute de vos besoins, garant de la qualité architecturale et environnementale de votre projet.
+          </p>
+        </div>
+
+        <div className="pt-4 border-t">
+          <Button 
+            onClick={scrollToContact}
+            className="w-full"
+            size="lg"
+          >
+            Discutons de votre projet
+          </Button>
+        </div>
       </div>
     )
   },
@@ -31,20 +72,55 @@ const missionData = {
     title: "Mission partielle",
     brief: "Intervention sur une ou plusieurs phases selon vos besoins et votre niveau d'autonomie.",
     details: (
-      <div className="space-y-4">
-        <p>
-          Vous avez déjà une entreprise ou souhaitez gérer une partie du projet ? Je peux intervenir sur une ou plusieurs phases, selon vos besoins :
-        </p>
-        <ul className="space-y-2 ml-4">
-          <li>• Étude de faisabilité ou esquisse</li>
-          <li>• Avant-projet détaillé</li>
-          <li>• Dossier administratif</li>
-          <li>• Consultation des entreprises</li>
-          <li>• Suivi ponctuel du chantier</li>
-        </ul>
-        <p className="text-muted-foreground">
-          Une formule souple, adaptée à votre budget et à votre niveau d'autonomie.
-        </p>
+      <div className="space-y-8">
+        <div className="prose prose-sm max-w-none">
+          <p className="text-lg leading-relaxed">
+            Vous avez déjà une entreprise ou souhaitez gérer une partie du projet ? Je peux intervenir sur une ou plusieurs phases, selon vos besoins.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-muted/30 rounded-lg p-5">
+            <h5 className="font-semibold mb-2">Étude de faisabilité</h5>
+            <p className="text-sm text-muted-foreground">Analyse préalable du projet et esquisse</p>
+          </div>
+          
+          <div className="bg-muted/30 rounded-lg p-5">
+            <h5 className="font-semibold mb-2">Avant-projet détaillé</h5>
+            <p className="text-sm text-muted-foreground">Plans et définition précise du projet</p>
+          </div>
+          
+          <div className="bg-muted/30 rounded-lg p-5">
+            <h5 className="font-semibold mb-2">Dossier administratif</h5>
+            <p className="text-sm text-muted-foreground">Constitution des autorisations nécessaires</p>
+          </div>
+          
+          <div className="bg-muted/30 rounded-lg p-5">
+            <h5 className="font-semibold mb-2">Consultation des entreprises</h5>
+            <p className="text-sm text-muted-foreground">Comparaison des devis et sélection</p>
+          </div>
+          
+          <div className="bg-muted/30 rounded-lg p-5 md:col-span-2">
+            <h5 className="font-semibold mb-2">Suivi ponctuel du chantier</h5>
+            <p className="text-sm text-muted-foreground">Visites et vérifications ciblées</p>
+          </div>
+        </div>
+
+        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
+          <p className="text-base leading-relaxed">
+            Une formule <strong>souple et adaptée</strong> à votre budget et à votre niveau d'autonomie.
+          </p>
+        </div>
+
+        <div className="pt-4 border-t">
+          <Button 
+            onClick={scrollToContact}
+            className="w-full"
+            size="lg"
+          >
+            Discutons de votre projet
+          </Button>
+        </div>
       </div>
     )
   },
@@ -52,18 +128,45 @@ const missionData = {
     title: "Missions complémentaires",
     brief: "Services additionnels pour enrichir votre projet : relevé 3D, conseil matériaux, aménagement intérieur.",
     details: (
-      <div className="space-y-4">
-        <ul className="space-y-3 ml-4">
-          <li>
-            <strong>• Relevé de l'existant</strong> : prise de cotes et modélisation 3D
-          </li>
-          <li>
-            <strong>• Conseil en matériaux naturels</strong> : choix de solutions locales, biosourcées ou à faible impact carbone
-          </li>
-          <li>
-            <strong>• Aménagement intérieur et mobilier</strong> : optimisation des espaces, ambiance, choix des finitions
-          </li>
-        </ul>
+      <div className="space-y-8">
+        <div className="prose prose-sm max-w-none">
+          <p className="text-lg leading-relaxed">
+            Des prestations complémentaires pour affiner et enrichir votre projet de rénovation.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-lg p-6 border border-border/50">
+            <h5 className="text-lg font-semibold mb-3">Relevé de l'existant</h5>
+            <p className="text-muted-foreground leading-relaxed">
+              Prise de cotes précise et modélisation 3D de votre bien pour une base de travail fiable et un rendu visuel de votre futur projet.
+            </p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-lg p-6 border border-border/50">
+            <h5 className="text-lg font-semibold mb-3">Conseil en matériaux naturels</h5>
+            <p className="text-muted-foreground leading-relaxed">
+              Choix de solutions locales, biosourcées ou à faible impact carbone pour une rénovation respectueuse de l'environnement et de votre santé.
+            </p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-lg p-6 border border-border/50">
+            <h5 className="text-lg font-semibold mb-3">Aménagement intérieur et mobilier</h5>
+            <p className="text-muted-foreground leading-relaxed">
+              Optimisation des espaces, création d'ambiance et sélection des finitions pour un intérieur qui vous ressemble.
+            </p>
+          </div>
+        </div>
+
+        <div className="pt-4 border-t">
+          <Button 
+            onClick={scrollToContact}
+            className="w-full"
+            size="lg"
+          >
+            Discutons de votre projet
+          </Button>
+        </div>
       </div>
     )
   }

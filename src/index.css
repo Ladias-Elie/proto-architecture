@@ -110,6 +110,7 @@ All colors MUST be HSL.
   
   strong, b {
     font-weight: 500;
+    color: hsl(var(--accent));
   }
 }
 

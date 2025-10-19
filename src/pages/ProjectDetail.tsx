@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { projects } from "@/data/projects";
 import {
   Carousel,
@@ -34,8 +35,37 @@ const ProjectDetail = () => {
     );
   }
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.title,
+    "description": project.description,
+    "image": project.coverImage,
+    "creator": {
+      "@type": "Organization",
+      "name": "prôto.architecture"
+    },
+    "dateCreated": project.year,
+    "locationCreated": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": project.location,
+        "addressCountry": "FR"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={`${project.title} - ${project.location}`}
+        description={`${project.category} à ${project.location} (${project.year}). ${project.description.substring(0, 140)}...`}
+        canonical={`/projets/${project.id}`}
+        ogImage={project.coverImage}
+        ogType="article"
+        structuredData={structuredData}
+      />
       <Navigation />
       
       <main className="pt-32 pb-24 bg-background">

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const scrollToContact = () => {
   const contactSection = document.getElementById('contact');
@@ -11,40 +12,38 @@ const missionData = {
   complete: {
     title: "Mission complète",
     brief: "Accompagnement du premier croquis jusqu'à la livraison pour garantir cohérence, sérénité et qualité.",
-    details: (
-      <div className="space-y-8">
-        <div className="prose prose-sm max-w-none">
-          <p className="text-lg leading-relaxed">
-            Vous souhaitez être accompagné du premier croquis jusqu'à la livraison ? Je prends en charge l'ensemble du projet pour vous garantir cohérence, sérénité et qualité de réalisation.
-          </p>
-        </div>
+    details: (closeModal: () => void) => (
+      <div className="space-y-6">
+        <p className="text-lg leading-relaxed">
+          Vous souhaitez être accompagné du premier croquis jusqu'à la livraison ? Je prends en charge l'ensemble du projet pour vous garantir cohérence, sérénité et qualité de réalisation.
+        </p>
 
-        <div className="bg-muted/30 rounded-lg p-6 space-y-4">
-          <h4 className="text-xl font-medium mb-4">Phases incluses</h4>
+        <div className="space-y-4">
+          <h4 className="text-xl font-medium text-foreground">Phases incluses</h4>
           
-          <div className="space-y-4">
-            <div className="border-l-2 border-accent pl-4">
-              <h5 className="font-semibold mb-1">Esquisse & avant-projet</h5>
+          <div className="grid gap-4">
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Esquisse & avant-projet</h5>
               <p className="text-sm text-muted-foreground">Définition des besoins, conception et propositions d'aménagements</p>
             </div>
             
-            <div className="border-l-2 border-accent pl-4">
-              <h5 className="font-semibold mb-1">Permis de construire / Déclaration préalable</h5>
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Permis de construire / Déclaration préalable</h5>
               <p className="text-sm text-muted-foreground">Constitution du dossier administratif</p>
             </div>
             
-            <div className="border-l-2 border-accent pl-4">
-              <h5 className="font-semibold mb-1">Dossier de conception et d'exécution (PRO/DCE)</h5>
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Dossier de conception et d'exécution (PRO/DCE)</h5>
               <p className="text-sm text-muted-foreground">Plans techniques, choix des matériaux, budget et planning</p>
             </div>
             
-            <div className="border-l-2 border-accent pl-4">
-              <h5 className="font-semibold mb-1">Suivi de chantier (DET / OPC)</h5>
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Suivi de chantier (DET / OPC)</h5>
               <p className="text-sm text-muted-foreground">Coordination des entreprises, vérification de la qualité et du respect des délais</p>
             </div>
             
-            <div className="border-l-2 border-accent pl-4">
-              <h5 className="font-semibold mb-1">Réception & livraison</h5>
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Réception & livraison</h5>
               <p className="text-sm text-muted-foreground">Accompagnement jusqu'à la remise des clés</p>
             </div>
           </div>
@@ -56,53 +55,56 @@ const missionData = {
           </p>
         </div>
 
-        <div className="pt-4 border-t">
-          <Button 
-            onClick={scrollToContact}
-            className="w-full"
-            size="lg"
-          >
-            Discutons de votre projet
-          </Button>
-        </div>
+        <Button 
+          onClick={() => {
+            closeModal();
+            scrollToContact();
+          }}
+          className="w-full"
+          size="lg"
+        >
+          Discutons de votre projet
+        </Button>
       </div>
     )
   },
   partial: {
     title: "Mission partielle",
     brief: "Intervention sur une ou plusieurs phases selon vos besoins et votre niveau d'autonomie.",
-    details: (
-      <div className="space-y-8">
-        <div className="prose prose-sm max-w-none">
-          <p className="text-lg leading-relaxed">
-            Vous avez déjà une entreprise ou souhaitez gérer une partie du projet ? Je peux intervenir sur une ou plusieurs phases, selon vos besoins.
-          </p>
-        </div>
+    details: (closeModal: () => void) => (
+      <div className="space-y-6">
+        <p className="text-lg leading-relaxed">
+          Vous avez déjà une entreprise ou souhaitez gérer une partie du projet ? Je peux intervenir sur une ou plusieurs phases, selon vos besoins.
+        </p>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-muted/30 rounded-lg p-5">
-            <h5 className="font-semibold mb-2">Étude de faisabilité</h5>
-            <p className="text-sm text-muted-foreground">Analyse préalable du projet et esquisse</p>
-          </div>
+        <div className="space-y-4">
+          <h4 className="text-xl font-medium text-foreground">Interventions possibles</h4>
           
-          <div className="bg-muted/30 rounded-lg p-5">
-            <h5 className="font-semibold mb-2">Avant-projet détaillé</h5>
-            <p className="text-sm text-muted-foreground">Plans et définition précise du projet</p>
-          </div>
-          
-          <div className="bg-muted/30 rounded-lg p-5">
-            <h5 className="font-semibold mb-2">Dossier administratif</h5>
-            <p className="text-sm text-muted-foreground">Constitution des autorisations nécessaires</p>
-          </div>
-          
-          <div className="bg-muted/30 rounded-lg p-5">
-            <h5 className="font-semibold mb-2">Consultation des entreprises</h5>
-            <p className="text-sm text-muted-foreground">Comparaison des devis et sélection</p>
-          </div>
-          
-          <div className="bg-muted/30 rounded-lg p-5 md:col-span-2">
-            <h5 className="font-semibold mb-2">Suivi ponctuel du chantier</h5>
-            <p className="text-sm text-muted-foreground">Visites et vérifications ciblées</p>
+          <div className="grid gap-4">
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Étude de faisabilité</h5>
+              <p className="text-sm text-muted-foreground">Analyse préalable du projet et esquisse</p>
+            </div>
+            
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Avant-projet détaillé</h5>
+              <p className="text-sm text-muted-foreground">Plans et définition précise du projet</p>
+            </div>
+            
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Dossier administratif</h5>
+              <p className="text-sm text-muted-foreground">Constitution des autorisations nécessaires</p>
+            </div>
+            
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Consultation des entreprises</h5>
+              <p className="text-sm text-muted-foreground">Comparaison des devis et sélection</p>
+            </div>
+            
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Suivi ponctuel du chantier</h5>
+              <p className="text-sm text-muted-foreground">Visites et vérifications ciblées</p>
+            </div>
           </div>
         </div>
 
@@ -112,67 +114,86 @@ const missionData = {
           </p>
         </div>
 
-        <div className="pt-4 border-t">
-          <Button 
-            onClick={scrollToContact}
-            className="w-full"
-            size="lg"
-          >
-            Discutons de votre projet
-          </Button>
-        </div>
+        <Button 
+          onClick={() => {
+            closeModal();
+            scrollToContact();
+          }}
+          className="w-full"
+          size="lg"
+        >
+          Discutons de votre projet
+        </Button>
       </div>
     )
   },
   complementary: {
     title: "Missions complémentaires",
     brief: "Services additionnels pour enrichir votre projet : relevé 3D, conseil matériaux, aménagement intérieur.",
-    details: (
-      <div className="space-y-8">
-        <div className="prose prose-sm max-w-none">
-          <p className="text-lg leading-relaxed">
-            Des prestations complémentaires pour affiner et enrichir votre projet de rénovation.
+    details: (closeModal: () => void) => (
+      <div className="space-y-6">
+        <p className="text-lg leading-relaxed">
+          Des prestations complémentaires pour affiner et enrichir votre projet de rénovation.
+        </p>
+
+        <div className="space-y-4">
+          <h4 className="text-xl font-medium text-foreground">Services disponibles</h4>
+          
+          <div className="grid gap-4">
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Relevé de l'existant</h5>
+              <p className="text-sm text-muted-foreground">Prise de cotes précise et modélisation 3D de votre bien pour une base de travail fiable et un rendu visuel de votre futur projet</p>
+            </div>
+            
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Conseil en matériaux naturels</h5>
+              <p className="text-sm text-muted-foreground">Choix de solutions locales, biosourcées ou à faible impact carbone pour une rénovation respectueuse de l'environnement et de votre santé</p>
+            </div>
+            
+            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
+              <h5 className="font-semibold mb-2">Aménagement intérieur et mobilier</h5>
+              <p className="text-sm text-muted-foreground">Optimisation des espaces, création d'ambiance et sélection des finitions pour un intérieur qui vous ressemble</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
+          <p className="text-base leading-relaxed">
+            Des services <strong>personnalisés</strong> pour répondre à vos besoins spécifiques.
           </p>
         </div>
 
-        <div className="space-y-4">
-          <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-lg p-6 border border-border/50">
-            <h5 className="text-lg font-semibold mb-3">Relevé de l'existant</h5>
-            <p className="text-muted-foreground leading-relaxed">
-              Prise de cotes précise et modélisation 3D de votre bien pour une base de travail fiable et un rendu visuel de votre futur projet.
-            </p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-lg p-6 border border-border/50">
-            <h5 className="text-lg font-semibold mb-3">Conseil en matériaux naturels</h5>
-            <p className="text-muted-foreground leading-relaxed">
-              Choix de solutions locales, biosourcées ou à faible impact carbone pour une rénovation respectueuse de l'environnement et de votre santé.
-            </p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-lg p-6 border border-border/50">
-            <h5 className="text-lg font-semibold mb-3">Aménagement intérieur et mobilier</h5>
-            <p className="text-muted-foreground leading-relaxed">
-              Optimisation des espaces, création d'ambiance et sélection des finitions pour un intérieur qui vous ressemble.
-            </p>
-          </div>
-        </div>
-
-        <div className="pt-4 border-t">
-          <Button 
-            onClick={scrollToContact}
-            className="w-full"
-            size="lg"
-          >
-            Discutons de votre projet
-          </Button>
-        </div>
+        <Button 
+          onClick={() => {
+            closeModal();
+            scrollToContact();
+          }}
+          className="w-full"
+          size="lg"
+        >
+          Discutons de votre projet
+        </Button>
       </div>
     )
   }
 };
 
 const About = () => {
+  const [openDialogs, setOpenDialogs] = useState<Record<string, boolean>>({
+    complete: false,
+    partial: false,
+    complementary: false
+  });
+
+  const handleOpenChange = (key: string, open: boolean) => {
+    setOpenDialogs(prev => ({ ...prev, [key]: open }));
+  };
+
+  const handleContactClick = (key: string) => {
+    handleOpenChange(key, false);
+    scrollToContact();
+  };
+
   return (
     <section id="about" className="py-32 bg-background">
       <div className="container mx-auto px-8">
@@ -196,7 +217,11 @@ const About = () => {
           {/* Mission Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {Object.entries(missionData).map(([key, mission]) => (
-              <Dialog key={key}>
+              <Dialog 
+                key={key}
+                open={openDialogs[key as keyof typeof openDialogs]}
+                onOpenChange={(open) => handleOpenChange(key, open)}
+              >
                 <Card className="h-full flex flex-col">
                   <CardHeader className="flex-grow">
                     <CardTitle className="text-xl mb-3">{mission.title}</CardTitle>
@@ -217,7 +242,7 @@ const About = () => {
                     <DialogTitle className="text-2xl mb-2">{mission.title}</DialogTitle>
                   </DialogHeader>
                   <div className="text-foreground/80 text-base leading-relaxed">
-                    {mission.details}
+                    {mission.details(() => handleContactClick(key))}
                   </div>
                 </DialogContent>
               </Dialog>

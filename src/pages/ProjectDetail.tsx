@@ -88,10 +88,49 @@ const ProjectDetail = () => {
               </p>
             </div>
 
+            {/* Project Info Section */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6 mb-16 max-w-4xl">
+              {project.programme && (
+                <div>
+                  <h3 className="text-sm text-muted-foreground mb-2">Programme</h3>
+                  <p className="text-foreground">{project.programme}</p>
+                </div>
+              )}
+              {project.maitriseOuvrage && (
+                <div>
+                  <h3 className="text-sm text-muted-foreground mb-2">Maîtrise d'ouvrage</h3>
+                  <p className="text-foreground">{project.maitriseOuvrage}</p>
+                </div>
+              )}
+              {project.location && (
+                <div>
+                  <h3 className="text-sm text-muted-foreground mb-2">Lieu</h3>
+                  <p className="text-foreground">{project.location}</p>
+                </div>
+              )}
+              {project.coutTravaux && (
+                <div>
+                  <h3 className="text-sm text-muted-foreground mb-2">Coût travaux</h3>
+                  <p className="text-foreground">{project.coutTravaux}</p>
+                </div>
+              )}
+              {project.year && (
+                <div>
+                  <h3 className="text-sm text-muted-foreground mb-2">Année</h3>
+                  <p className="text-foreground">{project.year}</p>
+                </div>
+              )}
+              {project.surfaces && (
+                <div>
+                  <h3 className="text-sm text-muted-foreground mb-2">Surface</h3>
+                  <p className="text-foreground">{project.surfaces}</p>
+                </div>
+              )}
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8 mb-20">
               {/* Photos Carousel */}
               <div>
-                <h2 className="text-xl text-foreground mb-6">Photographies</h2>
                 {project.images.length > 0 ? (
                   <Carousel className="w-full group">
                     <CarouselContent>
@@ -123,7 +162,6 @@ const ProjectDetail = () => {
 
               {/* Plans Carousel */}
               <div>
-                <h2 className="text-xl text-foreground mb-6">Plans</h2>
                 {project.plans.length > 0 ? (
                   <Carousel className="w-full group">
                     <CarouselContent>
@@ -154,11 +192,20 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mb-12">
               <p className="text-foreground/80 leading-relaxed text-lg">
                 {project.description}
               </p>
             </div>
+
+            {/* Photo Credits */}
+            {project.creditsPhotos && (
+              <div className="max-w-3xl pt-8 border-t border-border">
+                <p className="text-sm text-muted-foreground">
+                  Crédits photos : {project.creditsPhotos}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </main>

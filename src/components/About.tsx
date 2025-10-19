@@ -2,13 +2,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const scrollToContact = () => {
-  const contactSection = document.getElementById('contact');
-  contactSection?.scrollIntoView({ behavior: 'smooth' });
-};
+const About = () => {
+  const navigate = useNavigate();
 
-const missionData = {
+  const scrollToContact = () => {
+    navigate("/");
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  };
+
+  const missionData = {
   complete: {
     title: "Mission complète",
     brief: "Accompagnement du premier croquis jusqu'à la livraison pour garantir cohérence, sérénité et qualité.",
@@ -178,7 +185,6 @@ const missionData = {
   }
 };
 
-const About = () => {
   const [openDialogs, setOpenDialogs] = useState<Record<string, boolean>>({
     complete: false,
     partial: false,

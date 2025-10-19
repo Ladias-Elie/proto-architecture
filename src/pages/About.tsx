@@ -1,8 +1,19 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate("/");
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  };
   return (
     <>
       <SEO
@@ -87,12 +98,13 @@ const About = () => {
                 <p className="text-foreground/80 text-lg leading-relaxed mb-8">
                   Un projet en tête ? Discutons-en ensemble.
                 </p>
-                <a 
-                  href="/#contact" 
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-background bg-foreground hover:bg-foreground/90 transition-colors rounded-sm"
+                <Button 
+                  onClick={handleContactClick}
+                  size="lg"
+                  className="px-8 py-6 text-base"
                 >
                   Prendre contact
-                </a>
+                </Button>
               </div>
             </div>
           </section>

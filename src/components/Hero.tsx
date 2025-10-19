@@ -13,13 +13,15 @@ const Hero = () => {
       <div className="absolute inset-0 bg-background/20" />
       
       <div className="relative z-10 container mx-auto px-8 text-center">
-        <div className="max-w-3xl mx-auto animate-fade-in space-y-6">
-          <h1 className="text-4xl md:text-5xl font-light tracking-tight text-foreground drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]">
-            prôto.architecture
-          </h1>
-          <p className="text-lg md:text-xl font-light tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-relaxed">
-            Architecte à Lyon spécialisé dans la rénovation et transformation de l'habitat existant
-          </p>
+        <div className="max-w-3xl mx-auto animate-fade-in">
+          <div className="bg-background/90 backdrop-blur-sm rounded-lg p-8 md:p-12 shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
+              prôto.architecture
+            </h1>
+            <p className="text-lg md:text-xl font-light text-foreground/80 leading-relaxed">
+              Architecte à Lyon spécialisé dans la rénovation et transformation de l'habitat existant
+            </p>
+          </div>
         </div>
       </div>
         

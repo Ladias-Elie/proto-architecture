@@ -73,73 +73,74 @@ const About = () => {
   return (
     <section id="about" className="py-32 bg-background">
       <div className="container mx-auto px-8">
-        <div className="max-w-6xl mx-auto space-y-16">
-          {/* Header Section - Full Width */}
-          <div className="text-center max-w-4xl mx-auto space-y-6">
-            <h2 className="text-4xl md:text-5xl text-foreground elegant-underline inline-block">
-              Mes services d'architecte à Lyon
+        <div className="max-w-4xl mx-auto">
+          {/* Header Section */}
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl text-foreground mb-8 elegant-underline">
+              Services
             </h2>
-            <p className="text-xl md:text-2xl text-foreground/90 font-light">
-              Concevoir, rénover et transformer durablement vos espaces de vie.
-            </p>
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              Basé à Lyon, j'accompagne les particuliers dans la rénovation lourde d'appartements et de maisons, avec une approche éco-responsable. Mon objectif : concevoir des lieux confortables, sains et durables, en valorisant les matériaux naturels, locaux et biosourcés.
-            </p>
+            
+            <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
+              <p className="text-xl md:text-2xl text-foreground/90 font-light">
+                Concevoir, rénover et transformer durablement vos espaces de vie.
+              </p>
+              <p>
+                Basé à Lyon, j'accompagne les particuliers dans la rénovation lourde d'appartements et de maisons, avec une approche éco-responsable. Mon objectif : concevoir des lieux confortables, sains et durables, en valorisant les matériaux naturels, locaux et biosourcés.
+              </p>
+            </div>
           </div>
 
           {/* Mission Cards */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             {Object.entries(missionData).map(([key, mission]) => (
               <Dialog key={key}>
-                <DialogTrigger asChild>
-                  <Card className="cursor-pointer transition-all hover:shadow-lg hover:scale-[1.02] h-full">
-                    <CardHeader>
-                      <CardTitle className="text-xl">{mission.title}</CardTitle>
-                      <CardDescription className="text-base leading-relaxed mt-3">
-                        {mission.brief}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
+                <Card className="h-full flex flex-col">
+                  <CardHeader className="flex-grow">
+                    <CardTitle className="text-xl mb-3">{mission.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      {mission.brief}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <DialogTrigger asChild>
                       <Button variant="outline" className="w-full">
                         En savoir plus
                       </Button>
-                    </CardContent>
-                  </Card>
-                </DialogTrigger>
+                    </DialogTrigger>
+                  </CardContent>
+                </Card>
                 <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl">{mission.title}</DialogTitle>
+                  <DialogHeader className="mb-6">
+                    <DialogTitle className="text-2xl mb-2">{mission.title}</DialogTitle>
                   </DialogHeader>
-                  <DialogDescription asChild>
-                    <div className="text-foreground/80 leading-relaxed">
-                      {mission.details}
-                    </div>
-                  </DialogDescription>
+                  <div className="text-foreground/80 text-base leading-relaxed">
+                    {mission.details}
+                  </div>
                 </DialogContent>
               </Dialog>
             ))}
           </div>
 
           {/* Why Choose Section */}
-          <div className="bg-muted/30 rounded-lg p-8 md:p-12 space-y-6">
-            <h3 className="text-2xl md:text-3xl text-foreground font-light">
+          <div className="bg-muted/30 rounded-lg p-8 md:p-10 space-y-6">
+            <h3 className="text-2xl text-foreground">
               Pourquoi me confier votre projet ?
             </h3>
-            <div className="grid md:grid-cols-2 gap-4 text-foreground/80">
+            <div className="grid md:grid-cols-2 gap-4 text-foreground/80 text-base">
               <div className="flex items-start gap-3">
-                <span className="text-accent mt-1">✓</span>
+                <span className="text-accent mt-1 flex-shrink-0">✓</span>
                 <span>Expertise en rénovation énergétique et architecture durable</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-accent mt-1">✓</span>
+                <span className="text-accent mt-1 flex-shrink-0">✓</span>
                 <span>Connaissance fine du patrimoine lyonnais</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-accent mt-1">✓</span>
+                <span className="text-accent mt-1 flex-shrink-0">✓</span>
                 <span>Collaboration avec des artisans locaux partageant les mêmes valeurs</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-accent mt-1">✓</span>
+                <span className="text-accent mt-1 flex-shrink-0">✓</span>
                 <span>Démarche sur mesure, à taille humaine</span>
               </div>
             </div>

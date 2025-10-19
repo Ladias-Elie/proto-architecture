@@ -90,10 +90,10 @@ const ProjectDetail = () => {
 
             {/* Project Info Section */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6 mb-16 max-w-4xl">
-              {project.programme && (
+              {project.category && (
                 <div>
                   <h3 className="text-sm text-muted-foreground mb-2">Programme</h3>
-                  <p className="text-foreground">{project.programme}</p>
+                  <p className="text-foreground">{project.category}</p>
                 </div>
               )}
               {project.maitriseOuvrage && (
@@ -200,7 +200,7 @@ const ProjectDetail = () => {
 
             {/* Photo Credits */}
             {project.creditsPhotos && (
-              <div className="max-w-3xl pt-8 border-t border-border">
+              <div className="max-w-3xl">
                 <p className="text-sm text-muted-foreground">
                   Crédits photos : {project.creditsPhotos}
                 </p>

@@ -20,7 +20,6 @@ export interface Project {
   coverImage: string;
   images: string[];
   plans: string[];
-  programme?: string;
   maitriseOuvrage?: string;
   coutTravaux?: string;
   surfaces?: string;

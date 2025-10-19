@@ -200,6 +200,10 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header Section */}
           <div className="mb-12">
+            <p className="text-2xl md:text-3xl text-foreground/60 font-light mb-12 text-center">
+              Architecte à Lyon spécialisé dans la rénovation et transformation de l'habitat existant
+            </p>
+            
             <h2 className="text-4xl md:text-5xl text-foreground mb-8 elegant-underline">
               Services
             </h2>

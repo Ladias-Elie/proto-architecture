@@ -83,7 +83,7 @@ const About = () => {
               </div>
 
               {/* Contact CTA */}
-              <div className="mt-16 pt-12 border-t border-border/50 text-center">
+              <div className="mt-16 text-center">
                 <p className="text-foreground/80 text-lg leading-relaxed mb-8">
                   Un projet en tête ? Discutons-en ensemble.
                 </p>

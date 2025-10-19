@@ -12,7 +12,7 @@ const Index = () => {
     "@type": "ProfessionalService",
     "name": "prôto.architecture",
     "image": "https://lovable.dev/opengraph-image-p98pqg.png",
-    "description": "Architecte diplômé EPFL à Lyon. Spécialisé en rénovation d'appartements et maisons dans la région lyonnaise.",
+    "description": "Architecte à Lyon spécialisé dans la rénovation et transformation de maisons et appartements. Accompagnement sur-mesure du premier rendez-vous jusqu'à la réalisation.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lyon",
@@ -27,14 +27,15 @@ const Index = () => {
         "latitude": "45.764043",
         "longitude": "4.835659"
       }
-    }
+    },
+    "knowsAbout": ["Rénovation de maisons", "Extension d'habitation", "Surélévation", "Rénovation d'appartements", "Architecture contemporaine"]
   };
 
   return (
     <div className="min-h-screen">
       <SEO 
-        title="prôto.architecture - Architecte Lyon | Rénovation & Construction"
-        description="Architecte diplômé EPFL à Lyon. Spécialisé en rénovation d'appartements et maisons dans la région lyonnaise. Conception architecturale sur-mesure et accompagnement complet."
+        title="prôto.architecture — Architecte rénovation et transformation à Lyon"
+        description="Architecte à Lyon spécialisé dans la rénovation et transformation de maisons et appartements. Accompagnement sur-mesure, clair et humain, du premier croquis jusqu'à la réalisation."
         canonical="/"
         structuredData={structuredData}
       />

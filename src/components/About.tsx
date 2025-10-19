@@ -11,13 +11,13 @@ const About = () => {
             </div>
             <div className="space-y-6 text-foreground/80">
               <p>
-                <span className="text-accent">prôto.architecture</span> est un bureau d'architecture lyonnais fondé sur la conviction que chaque projet mérite une attention particulière et une réponse architecturale sur-mesure.
+                <span className="text-accent">prôto.architecture</span> est un bureau d'architecture lyonnais spécialisé dans la rénovation et la transformation de maisons et appartements.
               </p>
               <p>
-                Diplômé de l'École Polytechnique Fédérale de Lausanne (EPFL), je mets mon expertise au service de vos projets de rénovation d'appartements et de maisons dans la région lyonnaise.
+                Diplômé de l'École Polytechnique Fédérale de Lausanne (EPFL) et inscrit à l'Ordre des Architectes, j'accompagne les particuliers qui souhaitent repenser leur habitat existant — que ce soit pour une rénovation complète, une extension, ou une restructuration intérieure.
               </p>
               <p>
-                Mon approche privilégie le dialogue constant avec mes clients, permettant de comprendre finement leurs besoins et leurs aspirations. Chaque espace est pensé pour améliorer votre qualité de vie au quotidien, en alliant fonctionnalité et esthétique contemporaine.
+                Mon approche repose sur un accompagnement humain et clair, du premier rendez-vous jusqu'à la réalisation. Un interlocuteur unique, des conseils personnalisés adaptés à votre budget, et une démarche transparente pour transformer votre maison en un lieu qui vous ressemble.
               </p>
             </div>
           </div>
@@ -30,13 +30,13 @@ const About = () => {
             </div>
             <div className="space-y-6 text-foreground/80">
               <p>
-                Je vous accompagne à chaque étape de votre projet, de la conception initiale jusqu'à la réalisation finale. Cette démarche collaborative garantit que le résultat final correspond exactement à vos attentes.
+                Je vous accompagne à chaque étape : conception des plans, dépôt des autorisations, sélection des entreprises, suivi de chantier. Cette présence constante garantit que votre projet avance sereinement et que le résultat correspond exactement à vos attentes.
               </p>
               <p>
-                Que vous souhaitiez restructurer un appartement en centre-ville de Lyon, rénover une maison de caractère, ou optimiser l'agencement de votre espace de vie, je développe des solutions architecturales qui valorisent votre bien.
+                Que vous souhaitiez agrandir une maison dans le Beaujolais, rénover un appartement lyonnais, ou transformer un bien ancien en un espace contemporain et lumineux, je développe des solutions sur-mesure qui valorisent votre patrimoine tout en l'adaptant à votre mode de vie actuel.
               </p>
               <p>
-                Chaque intervention est l'occasion de repenser l'habitat pour qu'il s'adapte parfaitement à votre mode de vie, tout en respectant l'identité du lieu et les contraintes techniques et réglementaires propres à la région Auvergne-Rhône-Alpes.
+                Chaque projet est l'occasion de créer un équilibre entre respect du contexte, confort d'usage, et esthétique épurée — avec une attention particulière portée à la lumière naturelle, aux matériaux durables, et à l'intégration harmonieuse dans l'environnement.
               </p>
             </div>
           </div>

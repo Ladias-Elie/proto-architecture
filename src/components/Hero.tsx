@@ -21,8 +21,13 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
           {/* Titre principal */}
           <h1 className="text-5xl md:text-7xl font-light tracking-tight text-white drop-shadow-lg">
-            Architecture contemporaine<br />ancrée dans le patrimoine
+            Donnez une nouvelle vie<br />à votre maison
           </h1>
+          
+          {/* Sous-titre */}
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light drop-shadow">
+            Architecte à Lyon spécialisé dans la rénovation et transformation de l'habitat existant
+          </p>
           
           {/* CTA principal */}
           <div className="pt-4">
@@ -31,7 +36,7 @@ const Hero = () => {
               onClick={scrollToContact}
               className="text-base px-8"
             >
-              Démarrer un projet
+              Parlez-moi de votre projet
             </Button>
           </div>
         </div>

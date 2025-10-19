@@ -12,20 +12,20 @@ const Services = () => {
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
             {[
               {
-                title: "Rénovation d'appartements",
-                description: "Transformation complète ou partielle de votre appartement lyonnais. Optimisation des espaces, redistribution des volumes, et création d'ambiances contemporaines adaptées à la vie urbaine."
+                title: "Rénovation complète",
+                description: "Transformation totale de votre maison ou appartement à Lyon et sa région. Redistribution des espaces, mise aux normes, création d'ambiances lumineuses et contemporaines adaptées à votre vie quotidienne."
               },
               {
-                title: "Rénovation de maisons",
-                description: "Réhabilitation de maisons individuelles dans la région lyonnaise. Mise en valeur du patrimoine existant, extension si nécessaire, et modernisation selon vos besoins actuels."
+                title: "Extension et surélévation",
+                description: "Agrandissement de votre habitat existant par extension latérale ou surélévation. Solutions architecturales discrètes et harmonieuses qui s'intègrent au bâti existant tout en apportant volume et lumière."
               },
               {
-                title: "Conception sur-mesure",
-                description: "Développement de solutions architecturales personnalisées, depuis les études préliminaires jusqu'aux plans d'exécution. Chaque projet est pensé dans ses moindres détails."
+                title: "Rénovation partielle",
+                description: "Restructuration ciblée d'une partie de votre logement : cuisine, salle de bains, ouverture de cloisons, création de verrières. Intervention précise pour améliorer votre confort sans tout bouleverser."
               },
               {
-                title: "Accompagnement complet",
-                description: "Suivi de projet de A à Z : conception, dépôt de permis de construire ou déclaration préalable, consultation des entreprises, et suivi de chantier pour garantir la qualité d'exécution."
+                title: "Accompagnement de A à Z",
+                description: "Suivi complet du projet : études, plans, dépôt de permis de construire, consultation des entreprises, suivi de chantier. Un interlocuteur unique pour garantir qualité et sérénité à chaque étape."
               }
             ].map((service, index) => (
               <div key={index} className="space-y-4">

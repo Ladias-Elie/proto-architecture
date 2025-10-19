@@ -97,11 +97,11 @@ const ProjectDetail = () => {
                     <CarouselContent>
                       {project.images.map((image, index) => (
                         <CarouselItem key={index}>
-                          <div className="aspect-[4/3] bg-muted overflow-hidden">
+                          <div className="aspect-[4/3] bg-muted overflow-hidden flex items-center justify-center">
                             <img
                               src={image}
                               alt={`${project.title} - Photo ${index + 1}`}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-contain"
                             />
                           </div>
                         </CarouselItem>
@@ -129,7 +129,7 @@ const ProjectDetail = () => {
                     <CarouselContent>
                       {project.plans.map((plan, index) => (
                         <CarouselItem key={index}>
-                          <div className="aspect-[4/3] bg-muted overflow-hidden">
+                          <div className="aspect-[3/2] bg-muted overflow-hidden flex items-center justify-center">
                             <img
                               src={plan}
                               alt={`${project.title} - Plan ${index + 1}`}

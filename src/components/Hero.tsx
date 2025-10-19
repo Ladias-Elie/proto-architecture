@@ -14,7 +14,7 @@ const Hero = () => {
       
       <div className="relative z-10 container mx-auto px-8 text-center">
         <div className="max-w-3xl mx-auto animate-fade-in space-y-6">
-          <h1 className="text-4xl md:text-5xl font-light tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <h1 className="text-4xl md:text-5xl font-light tracking-tight text-foreground drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]">
             prôto.architecture
           </h1>
           <p className="text-lg md:text-xl font-light tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-relaxed">

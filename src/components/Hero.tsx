@@ -14,9 +14,11 @@ const Hero = () => {
       
       <div className="relative z-10 container mx-auto px-8 pt-32">
         <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-3xl md:text-4xl font-light tracking-tight text-foreground">
-            Architecte à Lyon spécialisé dans la rénovation et transformation de l'habitat existant
-          </h1>
+          <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-lg">
+            <h1 className="text-3xl md:text-4xl font-light tracking-tight text-foreground leading-relaxed">
+              Architecte à Lyon spécialisé dans la rénovation et transformation de l'habitat existant
+            </h1>
+          </div>
         </div>
       </div>
         

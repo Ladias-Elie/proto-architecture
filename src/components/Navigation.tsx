@@ -20,7 +20,7 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-12">
             <button 
-              onClick={() => navigate("/")} 
+              onClick={() => navigate("/a-propos")} 
               className="text-sm text-foreground hover:text-accent transition-colors tracking-wide"
             >
               Agence
@@ -46,7 +46,7 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden pt-8 pb-4 flex flex-col gap-6">
             <button 
-              onClick={() => { navigate("/"); setIsOpen(false); }} 
+              onClick={() => { navigate("/a-propos"); setIsOpen(false); }} 
               className="text-sm text-foreground hover:text-accent transition-colors text-left tracking-wide"
             >
               Agence

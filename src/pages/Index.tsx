@@ -12,30 +12,48 @@ const Index = () => {
     "@type": "ProfessionalService",
     "name": "prôto.architecture",
     "image": "https://lovable.dev/opengraph-image-p98pqg.png",
-    "description": "Architecte à Lyon spécialisé dans la rénovation et transformation de maisons et appartements. Accompagnement sur-mesure du premier rendez-vous jusqu'à la réalisation.",
+    "description": "Architecte rénovation Lyon spécialisé en rénovation lourde, énergétique et écologique d'appartements et maisons anciennes. Matériaux biosourcés et approche durable.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lyon",
+      "addressRegion": "Rhône",
       "addressCountry": "FR"
     },
     "url": window.location.origin,
     "priceRange": "€€€",
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "45.764043",
-        "longitude": "4.835659"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Lyon"
+      },
+      {
+        "@type": "State",
+        "name": "Rhône"
       }
-    },
-    "knowsAbout": ["Rénovation de maisons", "Extension d'habitation", "Surélévation", "Rénovation d'appartements", "Architecture contemporaine"]
+    ],
+    "knowsAbout": [
+      "Rénovation lourde appartement ancien Lyon",
+      "Rénovation énergétique Lyon",
+      "Rénovation écologique Lyon",
+      "Matériaux biosourcés",
+      "Rénovation maison ancienne",
+      "Architecture durable",
+      "Rénovation patrimoine lyonnais"
+    ],
+    "serviceType": [
+      "Rénovation complète",
+      "Rénovation énergétique",
+      "Rénovation écologique",
+      "Extension de maison",
+      "Surélévation"
+    ]
   };
 
   return (
     <div className="min-h-screen">
       <SEO 
-        title="prôto.architecture — Architecte rénovation et transformation à Lyon"
-        description="Architecte à Lyon spécialisé dans la rénovation et transformation de maisons et appartements. Accompagnement sur-mesure, clair et humain, du premier croquis jusqu'à la réalisation."
+        title="Architecte Rénovation Lyon | Rénovation Écologique & Énergétique"
+        description="Architecte rénovation Lyon spécialisé en rénovation lourde d'appartements et maisons anciennes. Rénovation énergétique, écologique et durable avec matériaux biosourcés. Expert rénovation patrimoine lyonnais."
         canonical="/"
         structuredData={structuredData}
       />

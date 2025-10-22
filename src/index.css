@@ -8,49 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Editorial Magazine - Luxury palette */
+    /* Swiss Design - Minimal color palette */
     --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    --foreground: 0 0% 10%;
 
-    --card: 30 15% 98%;
-    --card-foreground: 0 0% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 0 0% 8%;
+    --primary: 0 0% 10%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 15% 95%;
-    --secondary-foreground: 0 0% 8%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 30 10% 94%;
+    --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 25 75% 47%;
+    --accent: 0 85% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 12% 90%;
-    --input: 30 12% 90%;
-    --ring: 0 0% 8%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 10%;
 
     --radius: 0rem;
 
     --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 25 75% 47%;
+    --sidebar-foreground: 0 0% 94%;
+    --sidebar-primary: 0 85% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 25 75% 47%;
+    --sidebar-accent: 0 85% 50%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 25 75% 47%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 85% 50%;
   }
 
   .dark {
-    --background: 0 0% 8%;
+    --background: 0 0% 10%;
     --foreground: 0 0% 95%;
 
     --card: 0 0% 12%;
@@ -60,18 +60,18 @@ All colors MUST be HSL.
     --popover-foreground: 0 0% 95%;
 
     --primary: 0 0% 95%;
-    --primary-foreground: 0 0% 8%;
+    --primary-foreground: 0 0% 10%;
 
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 95%;
 
     --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 25 75% 47%;
+    --accent: 0 85% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 20%;
@@ -79,13 +79,13 @@ All colors MUST be HSL.
     --ring: 0 0% 95%;
     
     --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 25 75% 47%;
+    --sidebar-foreground: 0 0% 94%;
+    --sidebar-primary: 0 85% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 25 75% 47%;
+    --sidebar-accent: 0 85% 50%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 25 75% 47%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 85% 50%;
   }
 }
 
@@ -96,19 +96,19 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: 'Lora', Georgia, serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1.7;
+    letter-spacing: -0.01em;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
   
   strong, b {
@@ -118,43 +118,17 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .editorial-shadow {
-    box-shadow: 0 10px 40px -10px hsl(var(--foreground) / 0.15);
+  .swiss-border {
+    border: 2px solid hsl(var(--foreground));
   }
   
-  .editorial-shadow-lg {
-    box-shadow: 0 20px 60px -15px hsl(var(--foreground) / 0.25);
+  .swiss-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
   }
   
   .text-balance {
     text-wrap: balance;
-  }
-  
-  .grain-texture {
-    position: relative;
-  }
-  
-  .grain-texture::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    pointer-events: none;
-  }
-  
-  .fade-in-editorial {
-    animation: fadeInEditorial 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  @keyframes fadeInEditorial {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 }

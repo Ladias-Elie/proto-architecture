@@ -20,23 +20,22 @@ const About = () => {
       title: "Mission complète",
       brief: "De l'esquisse à la livraison, un accompagnement total.",
       icon: Building2,
-      number: "I",
       description: `Nous prenons en charge votre projet de A à Z, du premier croquis jusqu'à la livraison des clés. Cette mission complète garantit cohérence, sérénité et qualité tout au long du processus.`,
       phases: [
         {
-          title: "Esquisse & Avant-projet",
+          title: "01 — Esquisse & Avant-projet",
           content: "Définition des objectifs, analyse du site, premières esquisses et avant-projet sommaire puis détaillé."
         },
         {
-          title: "Permis & Autorisations",
+          title: "02 — Permis & Autorisations",
           content: "Constitution et dépôt du dossier de permis de construire ou déclaration préalable."
         },
         {
-          title: "Projet d'exécution",
+          title: "03 — Projet d'exécution",
           content: "Plans techniques détaillés pour l'entreprise, consultation des artisans, devis comparatifs."
         },
         {
-          title: "Suivi de chantier",
+          title: "04 — Suivi de chantier",
           content: "Coordination des entreprises, visites régulières, réception des travaux et livraison."
         }
       ],
@@ -51,7 +50,6 @@ const About = () => {
       title: "Mission partielle",
       brief: "Esquisse, plans, permis : à la carte selon vos besoins.",
       icon: Leaf,
-      number: "II",
       description: `Pour les projets plus modestes ou si vous souhaitez gérer une partie des travaux vous-même, nous proposons des missions partielles adaptées à vos besoins.`,
       phases: [
         {
@@ -77,7 +75,6 @@ const About = () => {
       title: "Consultation",
       brief: "Conseils experts pour vos questions ponctuelles.",
       icon: Users,
-      number: "III",
       description: `Vous avez besoin d'un regard extérieur, d'un conseil technique ou d'une orientation avant de vous lancer ? Nous proposons des consultations sur mesure.`,
       phases: [
         {
@@ -112,83 +109,65 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-32 bg-muted/30 grain-texture">
-      <div className="container mx-auto px-8 md:px-24">
-        {/* Header - Editorial Style */}
-        <div className="max-w-4xl mb-24">
-          <div className="flex items-center gap-6 mb-8">
-            <span className="text-xs tracking-[0.3em] uppercase text-accent" style={{ fontFamily: 'Inter' }}>
-              Nos Services
-            </span>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-          
-          <h2 className="text-5xl md:text-7xl leading-tight mb-8">
-            Un accompagnement<br />
-            <span className="italic">sur mesure</span>
+    <section id="about" className="py-24 bg-background">
+      <div className="container mx-auto px-8">
+        {/* Header */}
+        <div className="max-w-4xl mb-20">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-6 block">
+            Nos missions
+          </span>
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8 text-balance">
+            Un accompagnement<br />sur mesure
           </h2>
-          
-          <p className="text-xl leading-relaxed text-muted-foreground italic max-w-2xl">
-            De la simple consultation à la mission complète, nous adaptons notre intervention à la singularité de chaque projet.
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            De la simple consultation à la mission complète, nous adaptons notre intervention à vos besoins et à votre budget.
           </p>
         </div>
 
-        {/* Mission Cards - Magazine Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
+        {/* Mission Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {Object.entries(missionData).map(([key, mission]) => (
             <Dialog key={key} open={openDialogs[key]} onOpenChange={(open) => !open && closeDialog(key)}>
               <DialogTrigger asChild>
                 <button
                   onClick={() => openDialog(key)}
-                  className="group text-left bg-card editorial-shadow hover:editorial-shadow-lg transition-all duration-500 h-full flex flex-col overflow-hidden"
+                  className="group text-left p-8 border-2 border-border hover:border-foreground transition-all bg-background h-full flex flex-col"
                 >
-                  {/* Card Header */}
-                  <div className="p-10 border-b border-border">
-                    <div className="flex items-start justify-between mb-6">
-                      <mission.icon className="w-10 h-10 text-accent" strokeWidth={1.5} />
-                      <span className="text-4xl opacity-20" style={{ fontFamily: "'Playfair Display'" }}>
-                        {mission.number}
-                      </span>
-                    </div>
-                    <h3 className="text-3xl mb-4">
-                      {mission.title}
-                    </h3>
-                  </div>
-                  
-                  {/* Card Body */}
-                  <div className="p-10 flex-grow flex flex-col">
-                    <p className="text-muted-foreground leading-relaxed mb-8 flex-grow">
-                      {mission.brief}
-                    </p>
-                    <div className="inline-flex items-center gap-2 text-sm text-accent group-hover:gap-3 transition-all" style={{ fontFamily: 'Inter' }}>
-                      Lire la suite
-                      <span>→</span>
-                    </div>
+                  <mission.icon className="w-10 h-10 mb-6 text-accent" strokeWidth={1.5} />
+                  <h3 className="text-2xl font-bold mb-3 tracking-tight">
+                    {mission.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 flex-grow">
+                    {mission.brief}
+                  </p>
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-accent">
+                    En savoir plus
+                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                   </div>
                 </button>
               </DialogTrigger>
 
               <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="text-4xl flex items-center gap-4 mb-4">
+                  <DialogTitle className="text-3xl font-bold tracking-tight flex items-center gap-4">
                     <mission.icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
                     {mission.title}
                   </DialogTitle>
                 </DialogHeader>
 
-                <div className="space-y-10 pt-6">
-                  <p className="text-lg leading-relaxed text-muted-foreground italic">
+                <div className="space-y-8 pt-6">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     {mission.description}
                   </p>
 
                   <div>
-                    <h4 className="text-sm tracking-[0.2em] uppercase mb-6 text-accent" style={{ fontFamily: 'Inter' }}>
+                    <h4 className="text-xs uppercase tracking-widest font-semibold mb-4 text-muted-foreground">
                       Phases
                     </h4>
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                       {mission.phases.map((phase, idx) => (
-                        <div key={idx} className="border-l-2 border-accent/30 pl-6 py-2">
-                          <h5 className="text-lg mb-2">{phase.title}</h5>
+                        <div key={idx} className="border-l-2 border-accent pl-6 py-2">
+                          <h5 className="font-semibold mb-2 tracking-tight">{phase.title}</h5>
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             {phase.content}
                           </p>
@@ -198,21 +177,21 @@ const About = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-sm tracking-[0.2em] uppercase mb-6 text-accent" style={{ fontFamily: 'Inter' }}>
+                    <h4 className="text-xs uppercase tracking-widest font-semibold mb-4 text-muted-foreground">
                       Avantages
                     </h4>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2">
                       {mission.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-start gap-4">
-                          <span className="text-accent text-xl">•</span>
-                          <span className="leading-relaxed">{benefit}</span>
+                        <li key={idx} className="flex items-start gap-3">
+                          <span className="text-accent font-bold mt-1">—</span>
+                          <span className="text-sm leading-relaxed">{benefit}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="pt-8 border-t border-border">
-                    <Button onClick={scrollToContact} size="lg" className="w-full">
+                  <div className="pt-6 border-t-2 border-border">
+                    <Button onClick={scrollToContact} size="lg" className="w-full font-semibold uppercase tracking-wider">
                       Discuter de votre projet
                     </Button>
                   </div>
@@ -222,28 +201,26 @@ const About = () => {
           ))}
         </div>
 
-        {/* Philosophy Section - Two Column Editorial */}
-        <div className="max-w-5xl mx-auto pt-24 border-t border-border">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+        {/* Philosophy Section */}
+        <div className="max-w-4xl mx-auto mt-32 pt-20 border-t-2 border-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
-              <span className="text-xs tracking-[0.3em] uppercase text-accent mb-6 block" style={{ fontFamily: 'Inter' }}>
-                Notre Philosophie
-              </span>
-              <h4 className="text-3xl mb-6 leading-tight">
-                Architecture durable<br />
-                <span className="italic">et responsable</span>
+              <h3 className="text-xs uppercase tracking-widest font-semibold mb-6 text-accent">
+                Notre approche
+              </h3>
+              <h4 className="text-3xl font-bold tracking-tight mb-6 leading-tight">
+                Architecture durable et responsable
               </h4>
               <p className="text-muted-foreground leading-relaxed">
                 Nous croyons en une architecture qui préserve l'existant, utilise des matériaux biosourcés et minimise son empreinte écologique. Chaque projet est pensé pour durer.
               </p>
             </div>
             <div>
-              <span className="text-xs tracking-[0.3em] uppercase text-accent mb-6 block" style={{ fontFamily: 'Inter' }}>
+              <h3 className="text-xs uppercase tracking-widest font-semibold mb-6 text-accent">
                 Basé à Lyon
-              </span>
-              <h4 className="text-3xl mb-6 leading-tight">
-                Expertise<br />
-                <span className="italic">locale</span>
+              </h3>
+              <h4 className="text-3xl font-bold tracking-tight mb-6 leading-tight">
+                Expertise locale
               </h4>
               <p className="text-muted-foreground leading-relaxed">
                 Notre connaissance du territoire lyonnais, de ses réglementations et de son patrimoine bâti nous permet d'offrir un accompagnement précis et adapté à votre contexte.

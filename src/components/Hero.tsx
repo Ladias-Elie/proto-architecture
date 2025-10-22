@@ -1,3 +1,4 @@
+import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/renovation-maison-village.webp";
 import { Button } from "@/components/ui/button";
 
@@ -8,86 +9,99 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen relative flex items-center bg-background grain-texture">
-      <div className="container mx-auto px-8 md:px-24 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          {/* Left: Editorial Typography */}
-          <div className="lg:col-span-5 space-y-10 fade-in-editorial">
-            {/* Issue/Date Label */}
-            <div className="flex items-center gap-4">
-              <div className="h-px w-12 bg-foreground" />
-              <span className="text-xs tracking-[0.3em] uppercase font-medium" style={{ fontFamily: 'Inter' }}>
-                Lyon 2024
-              </span>
-            </div>
-
-            {/* Main Headline */}
+    <section className="min-h-screen relative flex items-center justify-center overflow-hidden bg-background">
+      {/* Grid overlay for Swiss aesthetic */}
+      <div className="absolute inset-0 opacity-[0.02]" 
+           style={{
+             backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
+             backgroundSize: '24px 24px'
+           }} 
+      />
+      
+      <div className="container mx-auto px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left: Typography */}
+          <div className="lg:col-span-7 space-y-8">
             <div className="space-y-6">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight">
+              <div className="inline-block">
+                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground border-l-2 border-accent pl-4">
+                  Architecture Lyon
+                </span>
+              </div>
+              
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none text-balance">
                 prôto.<br/>
-                <span className="italic">architecture</span>
+                architecture
               </h1>
               
-              <p className="text-lg md:text-xl leading-relaxed max-w-md italic text-foreground/80">
-                « Réinventer l'habitat existant avec élégance et conscience »
+              <div className="h-px w-24 bg-accent" />
+              
+              <p className="text-xl md:text-2xl font-light leading-relaxed max-w-xl text-balance">
+                Rénovation et transformation de l'habitat existant
               </p>
             </div>
 
-            {/* Subtitle */}
-            <div className="border-l-2 border-accent pl-6 max-w-md">
-              <p className="text-base leading-relaxed text-muted-foreground">
-                Atelier d'architecture spécialisé dans la rénovation lourde, la transformation et la reconversion du patrimoine bâti lyonnais.
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className="flex items-center gap-6 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 size="lg" 
-                className="text-base"
+                className="text-base font-semibold tracking-wide"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   contactSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Commencer un projet
+                Démarrer un projet
               </Button>
-              <button 
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-base font-semibold tracking-wide border-2"
                 onClick={scrollToAbout}
-                className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors group flex items-center gap-2"
-                style={{ fontFamily: 'Inter' }}
               >
-                Découvrir
-                <span className="transform group-hover:translate-y-1 transition-transform">↓</span>
-              </button>
+                En savoir plus
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 pt-12 border-t-2 border-border max-w-xl">
+              <div>
+                <div className="text-3xl font-bold mb-1">10+</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">Projets</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">100%</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">Lyon & Région</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">Eco</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">Durable</div>
+              </div>
             </div>
           </div>
 
-          {/* Right: Hero Image */}
-          <div className="lg:col-span-7">
-            <div className="relative">
-              {/* Main Image */}
-              <div className="aspect-[4/5] overflow-hidden editorial-shadow-lg">
-                <img 
-                  src={heroImage}
-                  alt="Architecture rénovation Lyon - Transformation patrimoine"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Image Caption */}
-              <div className="mt-6 flex items-start justify-between gap-8">
-                <p className="text-xs leading-relaxed text-muted-foreground italic max-w-md">
-                  Rénovation complète d'une maison de village en pierre, alliant respect du patrimoine et confort contemporain.
-                </p>
-                <span className="text-xs tracking-widest text-muted-foreground" style={{ fontFamily: 'Inter' }}>
-                  01
-                </span>
-              </div>
+          {/* Right: Image */}
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[3/4] overflow-hidden">
+              <img 
+                src={heroImage}
+                alt="Rénovation architecturale Lyon - transformation maison village"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Frame effect */}
+              <div className="absolute inset-0 border-4 border-background pointer-events-none" />
             </div>
           </div>
         </div>
       </div>
+        
+      <button 
+        onClick={scrollToAbout}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+        aria-label="Défiler vers le bas"
+      >
+        <span className="text-xs uppercase tracking-widest font-semibold">Scroll</span>
+        <ArrowDown className="w-4 h-4 animate-bounce" strokeWidth={2} />
+      </button>
     </section>
   );
 };

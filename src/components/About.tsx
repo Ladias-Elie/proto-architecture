@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Building2, Leaf, Users } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -16,267 +16,215 @@ const About = () => {
   };
 
   const missionData = {
-  complete: {
-    title: "Mission complète",
-    brief: "Accompagnement du premier croquis jusqu'à la livraison pour garantir cohérence, sérénité et qualité.",
-    details: (closeModal: () => void) => (
-      <div className="space-y-6">
-        <p className="text-lg leading-relaxed">
-          Vous souhaitez être accompagné du premier croquis jusqu'à la livraison ? Je prends en charge l'ensemble du projet pour vous garantir cohérence, sérénité et qualité de réalisation.
-        </p>
-
-        <div className="space-y-4">
-          <h4 className="text-xl font-medium text-foreground">Phases incluses</h4>
-          
-          <div className="grid gap-4">
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Esquisse & avant-projet</h5>
-              <p className="text-sm text-muted-foreground">Définition des besoins, conception et propositions d'aménagements</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Permis de construire / Déclaration préalable</h5>
-              <p className="text-sm text-muted-foreground">Constitution du dossier administratif</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Dossier de conception et d'exécution (PRO/DCE)</h5>
-              <p className="text-sm text-muted-foreground">Plans techniques, choix des matériaux, budget et planning</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Suivi de chantier (DET / OPC)</h5>
-              <p className="text-sm text-muted-foreground">Coordination des entreprises, vérification de la qualité et du respect des délais</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Réception & livraison</h5>
-              <p className="text-sm text-muted-foreground">Accompagnement jusqu'à la remise des clés</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
-          <p className="text-base leading-relaxed">
-            Vous bénéficiez d'un <strong>interlocuteur unique</strong>, à l'écoute de vos besoins, garant de la qualité architecturale et environnementale de votre projet.
-          </p>
-        </div>
-
-        <Button 
-          onClick={() => {
-            closeModal();
-            scrollToContact();
-          }}
-          className="w-full"
-          size="lg"
-        >
-          Discutons de votre projet
-        </Button>
-      </div>
-    )
-  },
-  partial: {
-    title: "Mission partielle",
-    brief: "Intervention sur une ou plusieurs phases selon vos besoins et votre niveau d'autonomie.",
-    details: (closeModal: () => void) => (
-      <div className="space-y-6">
-        <p className="text-lg leading-relaxed">
-          Vous avez déjà une entreprise ou souhaitez gérer une partie du projet ? Je peux intervenir sur une ou plusieurs phases, selon vos besoins.
-        </p>
-
-        <div className="space-y-4">
-          <h4 className="text-xl font-medium text-foreground">Interventions possibles</h4>
-          
-          <div className="grid gap-4">
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Étude de faisabilité</h5>
-              <p className="text-sm text-muted-foreground">Analyse préalable du projet et esquisse</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Avant-projet détaillé</h5>
-              <p className="text-sm text-muted-foreground">Plans et définition précise du projet</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Dossier administratif</h5>
-              <p className="text-sm text-muted-foreground">Constitution des autorisations nécessaires</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Consultation des entreprises</h5>
-              <p className="text-sm text-muted-foreground">Comparaison des devis et sélection</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Suivi ponctuel du chantier</h5>
-              <p className="text-sm text-muted-foreground">Visites et vérifications ciblées</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
-          <p className="text-base leading-relaxed">
-            Une formule <strong>souple et adaptée</strong> à votre budget et à votre niveau d'autonomie.
-          </p>
-        </div>
-
-        <Button 
-          onClick={() => {
-            closeModal();
-            scrollToContact();
-          }}
-          className="w-full"
-          size="lg"
-        >
-          Discutons de votre projet
-        </Button>
-      </div>
-    )
-  },
-  complementary: {
-    title: "Missions complémentaires",
-    brief: "Services additionnels pour enrichir votre projet : relevé 3D, conseil matériaux, aménagement intérieur.",
-    details: (closeModal: () => void) => (
-      <div className="space-y-6">
-        <p className="text-lg leading-relaxed">
-          Des prestations complémentaires pour affiner et enrichir votre projet de rénovation.
-        </p>
-
-        <div className="space-y-4">
-          <h4 className="text-xl font-medium text-foreground">Services disponibles</h4>
-          
-          <div className="grid gap-4">
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Relevé de l'existant</h5>
-              <p className="text-sm text-muted-foreground">Prise de cotes précise et modélisation 3D de votre bien pour une base de travail fiable et un rendu visuel de votre futur projet</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Conseil en matériaux naturels</h5>
-              <p className="text-sm text-muted-foreground">Choix de solutions locales, biosourcées ou à faible impact carbone pour une rénovation respectueuse de l'environnement et de votre santé</p>
-            </div>
-            
-            <div className="bg-muted/30 rounded-lg p-5 border-l-4 border-accent">
-              <h5 className="font-semibold mb-2">Aménagement intérieur et mobilier</h5>
-              <p className="text-sm text-muted-foreground">Optimisation des espaces, création d'ambiance et sélection des finitions pour un intérieur qui vous ressemble</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
-          <p className="text-base leading-relaxed">
-            Des services <strong>personnalisés</strong> pour répondre à vos besoins spécifiques.
-          </p>
-        </div>
-
-        <Button 
-          onClick={() => {
-            closeModal();
-            scrollToContact();
-          }}
-          className="w-full"
-          size="lg"
-        >
-          Discutons de votre projet
-        </Button>
-      </div>
-    )
-  }
-};
+    complete: {
+      title: "Mission complète",
+      brief: "De l'esquisse à la livraison, un accompagnement total.",
+      icon: Building2,
+      description: `Nous prenons en charge votre projet de A à Z, du premier croquis jusqu'à la livraison des clés. Cette mission complète garantit cohérence, sérénité et qualité tout au long du processus.`,
+      phases: [
+        {
+          title: "01 — Esquisse & Avant-projet",
+          content: "Définition des objectifs, analyse du site, premières esquisses et avant-projet sommaire puis détaillé."
+        },
+        {
+          title: "02 — Permis & Autorisations",
+          content: "Constitution et dépôt du dossier de permis de construire ou déclaration préalable."
+        },
+        {
+          title: "03 — Projet d'exécution",
+          content: "Plans techniques détaillés pour l'entreprise, consultation des artisans, devis comparatifs."
+        },
+        {
+          title: "04 — Suivi de chantier",
+          content: "Coordination des entreprises, visites régulières, réception des travaux et livraison."
+        }
+      ],
+      benefits: [
+        "Vision globale et cohérente du projet",
+        "Interlocuteur unique tout au long du processus",
+        "Maîtrise des coûts et des délais",
+        "Garantie de la qualité d'exécution"
+      ]
+    },
+    partial: {
+      title: "Mission partielle",
+      brief: "Esquisse, plans, permis : à la carte selon vos besoins.",
+      icon: Leaf,
+      description: `Pour les projets plus modestes ou si vous souhaitez gérer une partie des travaux vous-même, nous proposons des missions partielles adaptées à vos besoins.`,
+      phases: [
+        {
+          title: "Esquisse uniquement",
+          content: "Étude de faisabilité, premières esquisses, planches d'ambiance pour visualiser le potentiel."
+        },
+        {
+          title: "Avant-projet & Permis",
+          content: "Plans d'avant-projet détaillés et constitution du dossier administratif."
+        },
+        {
+          title: "Plans d'exécution",
+          content: "Dossier technique complet pour vos artisans, sans suivi de chantier."
+        }
+      ],
+      benefits: [
+        "Flexibilité et adaptation à votre budget",
+        "Autonomie dans la gestion du projet",
+        "Conseil architectural professionnel aux étapes clés"
+      ]
+    },
+    consultation: {
+      title: "Consultation",
+      brief: "Conseils experts pour vos questions ponctuelles.",
+      icon: Users,
+      description: `Vous avez besoin d'un regard extérieur, d'un conseil technique ou d'une orientation avant de vous lancer ? Nous proposons des consultations sur mesure.`,
+      phases: [
+        {
+          title: "Rendez-vous conseil",
+          content: "Échange sur site ou au cabinet pour évaluer la faisabilité et les premières orientations."
+        },
+        {
+          title: "Étude de faisabilité",
+          content: "Analyse du potentiel du lieu, réglementation applicable, premières pistes d'aménagement."
+        }
+      ],
+      benefits: [
+        "Format court et accessible",
+        "Réponse rapide à vos interrogations",
+        "Aide à la décision avant engagement"
+      ]
+    }
+  };
 
   const [openDialogs, setOpenDialogs] = useState<Record<string, boolean>>({
     complete: false,
     partial: false,
-    complementary: false
+    consultation: false,
   });
 
-  const handleOpenChange = (key: string, open: boolean) => {
-    setOpenDialogs(prev => ({ ...prev, [key]: open }));
+  const openDialog = (key: string) => {
+    setOpenDialogs({ ...openDialogs, [key]: true });
   };
 
-  const handleContactClick = (key: string) => {
-    handleOpenChange(key, false);
-    scrollToContact();
+  const closeDialog = (key: string) => {
+    setOpenDialogs({ ...openDialogs, [key]: false });
   };
 
   return (
-    <section id="about" className="py-32 bg-background">
+    <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Header Section */}
-          <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl text-foreground mb-8 elegant-underline">
-              Services
-            </h2>
-            
-            <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
-              <p className="text-xl md:text-2xl text-foreground/90 font-light">
-                Concevoir, rénover et transformer durablement vos espaces de vie.
-              </p>
-              <p>
-                Basé à Lyon, j'accompagne les particuliers dans la rénovation lourde d'appartements et de maisons, avec une approche éco-responsable. Mon objectif : concevoir des lieux confortables, sains et durables, en valorisant les matériaux naturels, locaux et biosourcés.
+        {/* Header */}
+        <div className="max-w-4xl mb-20">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-6 block">
+            Nos missions
+          </span>
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8 text-balance">
+            Un accompagnement<br />sur mesure
+          </h2>
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            De la simple consultation à la mission complète, nous adaptons notre intervention à vos besoins et à votre budget.
+          </p>
+        </div>
+
+        {/* Mission Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {Object.entries(missionData).map(([key, mission]) => (
+            <Dialog key={key} open={openDialogs[key]} onOpenChange={(open) => !open && closeDialog(key)}>
+              <DialogTrigger asChild>
+                <button
+                  onClick={() => openDialog(key)}
+                  className="group text-left p-8 border-2 border-border hover:border-foreground transition-all bg-background h-full flex flex-col"
+                >
+                  <mission.icon className="w-10 h-10 mb-6 text-accent" strokeWidth={1.5} />
+                  <h3 className="text-2xl font-bold mb-3 tracking-tight">
+                    {mission.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 flex-grow">
+                    {mission.brief}
+                  </p>
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-accent">
+                    En savoir plus
+                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </button>
+              </DialogTrigger>
+
+              <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-3xl font-bold tracking-tight flex items-center gap-4">
+                    <mission.icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
+                    {mission.title}
+                  </DialogTitle>
+                </DialogHeader>
+
+                <div className="space-y-8 pt-6">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    {mission.description}
+                  </p>
+
+                  <div>
+                    <h4 className="text-xs uppercase tracking-widest font-semibold mb-4 text-muted-foreground">
+                      Phases
+                    </h4>
+                    <div className="space-y-4">
+                      {mission.phases.map((phase, idx) => (
+                        <div key={idx} className="border-l-2 border-accent pl-6 py-2">
+                          <h5 className="font-semibold mb-2 tracking-tight">{phase.title}</h5>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {phase.content}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs uppercase tracking-widest font-semibold mb-4 text-muted-foreground">
+                      Avantages
+                    </h4>
+                    <ul className="space-y-2">
+                      {mission.benefits.map((benefit, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <span className="text-accent font-bold mt-1">—</span>
+                          <span className="text-sm leading-relaxed">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-6 border-t-2 border-border">
+                    <Button onClick={scrollToContact} size="lg" className="w-full font-semibold uppercase tracking-wider">
+                      Discuter de votre projet
+                    </Button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+          ))}
+        </div>
+
+        {/* Philosophy Section */}
+        <div className="max-w-4xl mx-auto mt-32 pt-20 border-t-2 border-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+              <h3 className="text-xs uppercase tracking-widest font-semibold mb-6 text-accent">
+                Notre approche
+              </h3>
+              <h4 className="text-3xl font-bold tracking-tight mb-6 leading-tight">
+                Architecture durable et responsable
+              </h4>
+              <p className="text-muted-foreground leading-relaxed">
+                Nous croyons en une architecture qui préserve l'existant, utilise des matériaux biosourcés et minimise son empreinte écologique. Chaque projet est pensé pour durer.
               </p>
             </div>
-          </div>
-
-          {/* Mission Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {Object.entries(missionData).map(([key, mission]) => (
-              <Dialog 
-                key={key}
-                open={openDialogs[key as keyof typeof openDialogs]}
-                onOpenChange={(open) => handleOpenChange(key, open)}
-              >
-                <Card className="h-full flex flex-col">
-                  <CardHeader className="flex-grow">
-                    <CardTitle className="text-xl mb-3">{mission.title}</CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
-                      {mission.brief}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <DialogTrigger asChild>
-                      <Button variant="outline" className="w-full">
-                        En savoir plus
-                      </Button>
-                    </DialogTrigger>
-                  </CardContent>
-                </Card>
-                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                  <DialogHeader className="mb-6">
-                    <DialogTitle className="text-2xl mb-2">{mission.title}</DialogTitle>
-                  </DialogHeader>
-                  <div className="text-foreground/80 text-base leading-relaxed">
-                    {mission.details(() => handleContactClick(key))}
-                  </div>
-                </DialogContent>
-              </Dialog>
-            ))}
-          </div>
-
-          {/* Why Choose Section */}
-          <div className="bg-muted/30 rounded-lg p-8 md:p-10 space-y-6">
-            <h3 className="text-2xl text-foreground">
-              Pourquoi me confier votre projet ?
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4 text-foreground/80 text-base">
-              <div className="flex items-start gap-3">
-                <span className="text-accent mt-1 flex-shrink-0">✓</span>
-                <span>Expertise en rénovation énergétique et architecture durable</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-accent mt-1 flex-shrink-0">✓</span>
-                <span>Connaissance fine du patrimoine lyonnais</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-accent mt-1 flex-shrink-0">✓</span>
-                <span>Collaboration avec des artisans locaux partageant les mêmes valeurs</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-accent mt-1 flex-shrink-0">✓</span>
-                <span>Démarche sur mesure, à taille humaine</span>
-              </div>
+            <div>
+              <h3 className="text-xs uppercase tracking-widest font-semibold mb-6 text-accent">
+                Basé à Lyon
+              </h3>
+              <h4 className="text-3xl font-bold tracking-tight mb-6 leading-tight">
+                Expertise locale
+              </h4>
+              <p className="text-muted-foreground leading-relaxed">
+                Notre connaissance du territoire lyonnais, de ses réglementations et de son patrimoine bâti nous permet d'offrir un accompagnement précis et adapté à votre contexte.
+              </p>
             </div>
           </div>
         </div>

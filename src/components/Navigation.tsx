@@ -1,62 +1,111 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    setIsOpen(false);
+  };
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-8 py-6">
-        <div className="flex items-center justify-between">
-          <button 
-            onClick={() => navigate("/")}
-            className="text-sm tracking-wide text-foreground hover:text-accent transition-colors font-bold"
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b-2 border-border">
+      <div className="container mx-auto px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <button
+            onClick={() => handleNavigation("/")}
+            className="text-2xl font-bold tracking-tighter hover:opacity-70 transition-opacity"
           >
-            prôto.architecture
+            prôto.
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-12">
-            <button 
-              onClick={() => navigate("/a-propos")} 
-              className="text-sm text-foreground hover:text-accent transition-colors tracking-wide"
+          <div className="hidden md:flex items-center gap-8">
+            <button
+              onClick={() => handleNavigation("/a-propos")}
+              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${
+                isActive("/a-propos") 
+                  ? "text-foreground border-b-2 border-accent pb-1" 
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               À propos
             </button>
-            <button 
-              onClick={() => navigate("/projets")} 
-              className="text-sm text-foreground hover:text-accent transition-colors tracking-wide"
+            <button
+              onClick={() => handleNavigation("/projets")}
+              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${
+                isActive("/projets") 
+                  ? "text-foreground border-b-2 border-accent pb-1" 
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               Projets
             </button>
+            <Button 
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+              }}
+              size="sm"
+              className="font-semibold uppercase tracking-wider"
+            >
+              Contact
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground"
+            className="md:hidden p-2 hover:bg-muted transition-colors"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} strokeWidth={1} /> : <Menu size={24} strokeWidth={1} />}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pt-8 pb-4 flex flex-col gap-6">
-            <button 
-              onClick={() => { navigate("/a-propos"); setIsOpen(false); }} 
-              className="text-sm text-foreground hover:text-accent transition-colors text-left tracking-wide"
+          <div className="md:hidden py-6 space-y-4 border-t-2 border-border">
+            <button
+              onClick={() => handleNavigation("/a-propos")}
+              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${
+                isActive("/a-propos") ? "text-foreground" : "text-muted-foreground"
+              }`}
             >
               À propos
             </button>
-            <button 
-              onClick={() => { navigate("/projets"); setIsOpen(false); }} 
-              className="text-sm text-foreground hover:text-accent transition-colors text-left tracking-wide"
+            <button
+              onClick={() => handleNavigation("/projets")}
+              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${
+                isActive("/projets") ? "text-foreground" : "text-muted-foreground"
+              }`}
             >
               Projets
             </button>
+            <Button 
+              onClick={() => {
+                navigate("/");
+                setIsOpen(false);
+                setTimeout(() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+              }}
+              className="w-full font-semibold uppercase tracking-wider"
+            >
+              Contact
+            </Button>
           </div>
         )}
       </div>

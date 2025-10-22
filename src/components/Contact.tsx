@@ -34,76 +34,74 @@ const Contact = () => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     toast({
-      title: "Message envoyé !",
+      title: "Message envoyé",
       description: "Merci pour votre intérêt. Je vous recontacterai rapidement.",
     });
     form.reset();
   };
 
   return (
-    <section id="contact" className="py-32 bg-background">
-      <div className="container mx-auto px-8">
-        <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-32 bg-muted/30">
+      <div className="container mx-auto px-8 md:px-16">
+        <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="mb-20">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-6 block">
-              Contact
-            </span>
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8 text-balance">
+          <div className="mb-24">
+            <div className="h-px w-16 bg-accent mb-8" />
+            <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8 text-balance">
               Démarrons<br />votre projet
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-5 gap-16">
             {/* Left: Information */}
-            <div className="space-y-12">
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Que vous ayez une question, un projet en tête ou simplement envie d'échanger sur vos besoins en rénovation, n'hésitez pas à nous contacter.
+            <div className="md:col-span-2 space-y-12">
+              <p className="text-base text-muted-foreground font-light leading-relaxed">
+                Que vous ayez une question, un projet en tête ou simplement envie d'échanger, n'hésitez pas à nous contacter.
               </p>
               
               <div className="space-y-8">
-                <div className="border-l-2 border-accent pl-6">
-                  <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Email</h3>
+                <div>
+                  <h3 className="text-sm font-light mb-3 text-muted-foreground">Email</h3>
                   <a 
                     href="mailto:camille.brachet@proto-architecture.com" 
-                    className="text-lg hover:text-accent transition-colors block"
+                    className="text-base hover:text-accent transition-colors duration-300 block font-light"
                   >
-                    camille.brachet@proto-architecture.com
+                    camille.brachet@<br/>proto-architecture.com
                   </a>
                 </div>
                 
-                <div className="border-l-2 border-accent pl-6">
-                  <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Téléphone</h3>
+                <div>
+                  <h3 className="text-sm font-light mb-3 text-muted-foreground">Téléphone</h3>
                   <a 
                     href="tel:+33622603916" 
-                    className="text-lg hover:text-accent transition-colors block"
+                    className="text-base hover:text-accent transition-colors duration-300 block font-light"
                   >
                     06 22 60 39 16
                   </a>
                 </div>
 
-                <div className="border-l-2 border-accent pl-6">
-                  <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Localisation</h3>
-                  <p className="text-lg">Lyon & région<br/>Auvergne-Rhône-Alpes</p>
+                <div>
+                  <h3 className="text-sm font-light mb-3 text-muted-foreground">Localisation</h3>
+                  <p className="text-base font-light">Lyon & région<br/>Auvergne-Rhône-Alpes</p>
                 </div>
               </div>
             </div>
 
             {/* Right: Form */}
-            <div className="border-2 border-border p-8 bg-muted/20">
+            <div className="md:col-span-3 bg-card p-10 zen-shadow">
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                   <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest font-semibold">Nom</FormLabel>
+                        <FormLabel className="text-sm font-light text-muted-foreground">Nom</FormLabel>
                         <FormControl>
                           <Input 
                             placeholder="Votre nom" 
                             {...field} 
-                            className="border-2 border-border focus:border-foreground transition-colors bg-background"
+                            className="border-border focus:border-accent transition-colors duration-300 bg-background font-light"
                           />
                         </FormControl>
                         <FormMessage />
@@ -116,13 +114,13 @@ const Contact = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest font-semibold">Email</FormLabel>
+                        <FormLabel className="text-sm font-light text-muted-foreground">Email</FormLabel>
                         <FormControl>
                           <Input 
                             type="email" 
                             placeholder="votre@email.com" 
                             {...field}
-                            className="border-2 border-border focus:border-foreground transition-colors bg-background"
+                            className="border-border focus:border-accent transition-colors duration-300 bg-background font-light"
                           />
                         </FormControl>
                         <FormMessage />
@@ -135,11 +133,11 @@ const Contact = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest font-semibold">Message</FormLabel>
+                        <FormLabel className="text-sm font-light text-muted-foreground">Message</FormLabel>
                         <FormControl>
                           <Textarea 
                             placeholder="Parlez-nous de votre projet..." 
-                            className="min-h-[150px] resize-none border-2 border-border focus:border-foreground transition-colors bg-background"
+                            className="min-h-[180px] resize-none border-border focus:border-accent transition-colors duration-300 bg-background font-light"
                             {...field}
                           />
                         </FormControl>
@@ -151,7 +149,7 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full font-semibold uppercase tracking-wider"
+                    className="w-full font-light"
                   >
                     Envoyer le message
                   </Button>

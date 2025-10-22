@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { projects } from "@/data/projects";
 
 const Projects = () => {
-  const [hoveredProject, setHoveredProject] = useState(projects[0]);
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -17,7 +14,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       <SEO 
         title="Projets - Portfolio Architecture Lyon"
         description="Découvrez nos projets de rénovation et construction à Lyon. Appartements, maisons et rénovations d'intérieur réalisés par prôto.architecture."
@@ -26,39 +23,39 @@ const Projects = () => {
       />
       <Navigation />
       
-      <main className="flex-1 pt-24 bg-background">
-        <div className="h-[calc(100vh-6rem)] flex">
-          {/* Left sidebar with project list */}
-          <div className="w-full md:w-2/5 lg:w-1/3 overflow-y-auto border-r border-border px-8 py-12">
-            <h1 className="text-4xl md:text-5xl text-foreground mb-12 font-light tracking-tight">
-              Projets
-            </h1>
+      <main className="pt-32 pb-24 bg-background">
+        <div className="container mx-auto px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-20">
+              <h1 className="text-5xl md:text-6xl text-foreground mb-6 elegant-underline">
+                Projets
+              </h1>
+            </div>
             
-            <nav className="space-y-1">
+            <div className="grid md:grid-cols-2 gap-12">
               {projects.map((project) => (
                 <Link
                   key={project.id}
                   to={`/projets/${project.id}`}
-                  onMouseEnter={() => setHoveredProject(project)}
-                  className="block py-3 text-foreground/70 hover:text-foreground transition-colors duration-300 text-lg tracking-wide"
+                  className="group block space-y-4"
                 >
-                  <span className="inline-block border-b border-transparent hover:border-current transition-all duration-300">
-                    {project.title}
-                  </span>
+                  <div className="aspect-[4/3] overflow-hidden bg-muted">
+                    <img
+                      src={project.coverImage}
+                      alt={`${project.title} - Projet d'architecture ${project.category} à ${project.location}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-2xl text-foreground group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {project.location}
+                    </p>
+                  </div>
                 </Link>
               ))}
-            </nav>
-          </div>
-
-          {/* Right side with large image preview */}
-          <div className="hidden md:flex flex-1 items-center justify-center bg-muted p-12">
-            <div className="w-full h-full flex items-center justify-center">
-              <img
-                key={hoveredProject.id}
-                src={hoveredProject.coverImage}
-                alt={`${hoveredProject.title} - Projet d'architecture ${hoveredProject.category} à ${hoveredProject.location}`}
-                className="max-w-full max-h-full object-contain animate-in fade-in duration-500"
-              />
             </div>
           </div>
         </div>

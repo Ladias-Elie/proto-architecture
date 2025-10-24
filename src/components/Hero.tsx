@@ -28,48 +28,9 @@ const Hero = () => {
                 architecture
               </h1>
               
-              <div className="h-px w-24 bg-accent" />
-              
               <p className="text-xl md:text-2xl font-light leading-relaxed max-w-xl text-balance">
                 Rénovation et transformation de l'habitat existant
               </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button 
-                size="lg" 
-                className="text-base font-semibold tracking-wide"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Démarrer un projet
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-base font-semibold tracking-wide border-2"
-                onClick={scrollToAbout}
-              >
-                En savoir plus
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-12 border-t-2 border-border max-w-xl">
-              <div>
-                <div className="text-3xl font-bold mb-1">10+</div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Projets</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-1">100%</div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Lyon & Région</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-1">Eco</div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Durable</div>
-              </div>
             </div>
           </div>
 

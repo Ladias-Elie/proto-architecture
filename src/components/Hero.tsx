@@ -23,12 +23,6 @@ const Hero = () => {
           {/* Left: Typography */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-6">
-              <div className="inline-block">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground border-l-2 border-accent pl-4">
-                  Architecture Lyon
-                </span>
-              </div>
-              
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none text-balance">
                 prôto.<br/>
                 architecture

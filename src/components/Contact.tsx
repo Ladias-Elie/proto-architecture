@@ -84,7 +84,13 @@ const Contact = () => {
 
                 <div className="border-l-2 border-accent pl-6">
                   <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Localisation</h3>
-                  <p className="text-lg">Lyon & région<br/>Auvergne-Rhône-Alpes</p>
+                  <p className="text-lg">
+                    Lyon & région, et ses alentours (ou environs ?)<br/>
+                    Auvergne-Rhône-Alpes
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    et ... Plus loin pour des missions de conception
+                  </p>
                 </div>
               </div>
             </div>

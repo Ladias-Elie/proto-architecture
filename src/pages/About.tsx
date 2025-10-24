@@ -61,10 +61,10 @@ const About = () => {
               {/* Section 1 - Présentation de l'atelier */}
               <div className="space-y-6 text-foreground/80 text-lg leading-relaxed mb-20">
                 <p>
-                  <strong>prôto.architecture</strong> est un atelier d'architecture basé à Lyon, dédié à la rénovation, à la reconversion et à la transformation du bâti existant. Notre approche met l'accent sur la réutilisation intelligente des structures existantes, la valorisation des matériaux locaux et la réduction de l'empreinte écologique de chaque projet.
+                  <strong>prôto.architecture</strong> est un atelier d'architecture basé à Lyon, dédié à la rénovation, à la réhabilitation et à la transformation du bâti existant. Notre approche met l'accent sur la réutilisation intelligente des structures existantes, la valorisation du « déjà là » par le respect du lieu et de son contexte, le choix de matériaux locaux et le travail de la matière première, et la conception de scénarios élaborés avec des habitants, adaptés aux usages.
                 </p>
                 <p>
-                  Nous croyons que l'architecture doit être à la fois belle, fonctionnelle et responsable — attentive à la lumière, aux usages et aux ressources du territoire. Chaque projet est l'occasion de révéler le potentiel d'un lieu en créant des espaces généreux, confortables et durables, pensés pour celles et ceux qui les habitent au quotidien.
+                  Nous croyons que l'architecture doit être à la fois poétique, fonctionnelle et responsable — attentive à la lumière, aux usages et aux ressources du territoire. Chaque projet est l'occasion de révéler le potentiel d'un lieu en créant des espaces généreux, confortables et durables, pensés pour celles et ceux qui les habitent au quotidien.
                 </p>
                 <p>
                   Notre travail s'inscrit dans une démarche de sobriété constructive, privilégiant la pérennité, la simplicité et la qualité des matériaux.
@@ -77,18 +77,26 @@ const About = () => {
                   Une approche humaine et engagée
                 </h2>
                 
-                <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
-                  <p>
-                    L'atelier est fondé et dirigé par <strong>Camille Brachet</strong>, architecte diplômée de l'École Polytechnique Fédérale de Lausanne (EPFL) en 2017. Après plusieurs expériences en Suisse et à l'étranger, elle s'installe à Lyon en 2021 pour développer une pratique tournée vers la rénovation écologique et l'habitat sur mesure.
+                <div className="space-y-6 text-foreground/80 text-lg leading-relaxed relative">
+                  {/* Grid overlay */}
+                  <div className="absolute inset-0 opacity-[0.02]" 
+                       style={{
+                         backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
+                         backgroundSize: '24px 24px'
+                       }} 
+                  />
+                  
+                  <p className="relative">
+                    L'atelier est fondé et dirigé par <strong>Camille Brachet</strong>, architecte diplômée de l'École Polytechnique Fédérale de Lausanne (EPFL) en 2017. Après plusieurs expériences en France, en Suisse et à l'étranger, elle s'installe à Lyon en 2021 pour développer une pratique tournée vers la rénovation écologique et l'habitat sur mesure.
                   </p>
-                  <p>
+                  <p className="relative">
                     Son travail explore l'équilibre entre rationalité constructive et poésie de l'espace, avec une attention particulière portée à la lumière naturelle, aux matières brutes et à la cohérence environnementale des projets.
                   </p>
-                  <p>
-                    Autour d'elle, prôto.architecture s'entoure d'un réseau d'artisans, d'ingénieurs et de partenaires locaux partageant les mêmes valeurs : exigence, respect du bâti, et sens du détail.
+                  <p className="relative">
+                    Autour d'elle, prôto.architecture s'entoure d'un réseau d'artisans et de partenaires locaux partageant les mêmes valeurs : exigence, respect du bâti, et sens du détail.
                   </p>
-                  <p>
-                    Chaque projet est avant tout une rencontre — entre un lieu, une histoire et des personnes prêtes à inventer ensemble une manière plus juste d'habiter.
+                  <p className="relative">
+                    Chaque projet est avant tout une rencontre — entre un lieu, une histoire et des personnes prêtes à inventer ensemble une manière plus durable d'habiter.
                   </p>
                 </div>
               </div>

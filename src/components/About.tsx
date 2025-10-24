@@ -109,7 +109,14 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-background relative">
+      {/* Grid overlay for Swiss aesthetic */}
+      <div className="absolute inset-0 opacity-[0.02]" 
+           style={{
+             backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
+             backgroundSize: '24px 24px'
+           }} 
+      />
       <div className="container mx-auto px-8">
         {/* Header */}
         <div className="max-w-4xl mb-20">
@@ -201,33 +208,6 @@ const About = () => {
           ))}
         </div>
 
-        {/* Philosophy Section */}
-        <div className="max-w-4xl mx-auto mt-32 pt-20 border-t-2 border-border">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div>
-              <h3 className="text-xs uppercase tracking-widest font-semibold mb-6 text-accent">
-                Notre approche
-              </h3>
-              <h4 className="text-3xl font-bold tracking-tight mb-6 leading-tight">
-                Architecture durable et responsable
-              </h4>
-              <p className="text-muted-foreground leading-relaxed">
-                Nous croyons en une architecture qui préserve l'existant, utilise des matériaux biosourcés et minimise son empreinte écologique. Chaque projet est pensé pour durer.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xs uppercase tracking-widest font-semibold mb-6 text-accent">
-                Basé à Lyon
-              </h3>
-              <h4 className="text-3xl font-bold tracking-tight mb-6 leading-tight">
-                Expertise locale
-              </h4>
-              <p className="text-muted-foreground leading-relaxed">
-                Notre connaissance du territoire lyonnais, de ses réglementations et de son patrimoine bâti nous permet d'offrir un accompagnement précis et adapté à votre contexte.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

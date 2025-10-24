@@ -21,7 +21,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button
-            onClick={() => handleNavigation("/")}
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }, 100);
+            }}
             className="text-2xl font-bold tracking-tighter hover:opacity-70 transition-opacity"
           >
             prôto.
@@ -30,7 +35,12 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <button
-              onClick={() => handleNavigation("/a-propos")}
+              onClick={() => {
+                navigate("/a-propos");
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
               className={`text-sm font-semibold uppercase tracking-wider transition-colors ${
                 isActive("/a-propos") 
                   ? "text-foreground border-b-2 border-accent pb-1" 
@@ -40,7 +50,12 @@ const Navigation = () => {
               À propos
             </button>
             <button
-              onClick={() => handleNavigation("/projets")}
+              onClick={() => {
+                navigate("/projets");
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
               className={`text-sm font-semibold uppercase tracking-wider transition-colors ${
                 isActive("/projets") 
                   ? "text-foreground border-b-2 border-accent pb-1" 
@@ -78,7 +93,13 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-6 space-y-4 border-t-2 border-border">
             <button
-              onClick={() => handleNavigation("/a-propos")}
+              onClick={() => {
+                navigate("/a-propos");
+                setIsOpen(false);
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
               className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${
                 isActive("/a-propos") ? "text-foreground" : "text-muted-foreground"
               }`}
@@ -86,7 +107,13 @@ const Navigation = () => {
               À propos
             </button>
             <button
-              onClick={() => handleNavigation("/projets")}
+              onClick={() => {
+                navigate("/projets");
+                setIsOpen(false);
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
               className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${
                 isActive("/projets") ? "text-foreground" : "text-muted-foreground"
               }`}

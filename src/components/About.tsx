@@ -111,7 +111,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-background relative">
       {/* Grid overlay for Swiss aesthetic */}
-      <div className="absolute inset-0 opacity-[0.02]" 
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{
              backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
              backgroundSize: '24px 24px'

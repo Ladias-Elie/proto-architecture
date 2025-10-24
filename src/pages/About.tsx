@@ -79,7 +79,7 @@ const About = () => {
                 
                 <div className="space-y-6 text-foreground/80 text-lg leading-relaxed relative">
                   {/* Grid overlay */}
-                  <div className="absolute inset-0 opacity-[0.02]" 
+                  <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
                        style={{
                          backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
                          backgroundSize: '24px 24px'

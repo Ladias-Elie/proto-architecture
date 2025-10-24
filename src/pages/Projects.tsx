@@ -32,7 +32,7 @@ const Projects = () => {
               </h1>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-3 gap-12">
               {projects.map((project) => (
                 <Link
                   key={project.id}

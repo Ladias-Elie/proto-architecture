@@ -1,4 +1,4 @@
-import { Building2, Leaf, Users } from "lucide-react";
+ 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -19,24 +19,31 @@ const About = () => {
     complete: {
       title: "Mission complète",
       brief: "De l'esquisse à la livraison, un accompagnement total.",
-      icon: Building2,
       description: `Nous prenons en charge votre projet de A à Z, du premier croquis jusqu'à la livraison des clés. Cette mission complète garantit cohérence, sérénité et qualité tout au long du processus.`,
       phases: [
         {
-          title: "01 — Esquisse & Avant-projet",
-          content: "Définition des objectifs, analyse du site, premières esquisses et avant-projet sommaire puis détaillé."
+          title: "Esquisse",
+          content: "Définition des objectifs, analyse et réglementation, proposition des premières pistes architecturales."
         },
         {
-          title: "02 — Permis & Autorisations",
-          content: "Constitution et dépôt du dossier de permis de construire ou déclaration préalable."
+          title: "Avant projet",
+          content: "Mise au point des usages, organisations des espaces, matérialités et façade ."
         },
         {
-          title: "03 — Projet d'exécution",
-          content: "Plans techniques détaillés pour l'entreprise, consultation des artisans, devis comparatifs."
+          title: "Permis et autorisations",
+          content: "Permis de construire ou déclaration préalable, rédaction des pièces graphiques et de la notice architecturale Définition des objectifs, analyse du site, premières esquisses et avant-projet sommaire puis détaillé."
         },
         {
-          title: "04 — Suivi de chantier",
-          content: "Coordination des entreprises, visites régulières, réception des travaux et livraison."
+          title: "Projet de conception generale & detaillee",
+          content: "Finalisation du projet architectural, rédaction des descriptifs et des quantitatifs."
+        },
+        {
+          title: "Dossier de consultation des entreprises",
+          content: "Echanges avec les entreprises, demande et analyse des devis."
+        },
+        {
+          title: "Direction des travaux et reception",
+          content: "Coordination des entreprise, visite et compte rendu de chantier, réception des travaux Plans techniques détaillés pour l'entreprise, consultation des artisans, devis comparatifs."
         }
       ],
       benefits: [
@@ -49,7 +56,6 @@ const About = () => {
     partial: {
       title: "Mission partielle",
       brief: "Esquisse, plans, permis : à la carte selon vos besoins.",
-      icon: Leaf,
       description: `Pour les projets plus modestes ou si vous souhaitez gérer une partie des travaux vous-même, nous proposons des missions partielles adaptées à vos besoins.`,
       phases: [
         {
@@ -74,7 +80,6 @@ const About = () => {
     consultation: {
       title: "Missions complémentaires",
       brief: "Accompagnement sur mesure pour demandes particulières.",
-      icon: Users,
       description: `Vous avez besoin d'un regard extérieur, d'un conseil technique ou d'une orientation avant de vous lancer ? Nous proposons des consultations sur mesure.`,
       phases: [
         {
@@ -140,7 +145,7 @@ const About = () => {
                   onClick={() => openDialog(key)}
                   className="group text-left p-8 border-2 border-border hover:border-foreground transition-all bg-background h-full flex flex-col"
                 >
-                  <mission.icon className="w-10 h-10 mb-6 text-accent" strokeWidth={1.5} />
+                  {/* icon removed */}
                   <h3 className="text-2xl font-bold mb-3 tracking-tight">
                     {mission.title}
                   </h3>
@@ -156,8 +161,7 @@ const About = () => {
 
               <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="text-3xl font-bold tracking-tight flex items-center gap-4">
-                    <mission.icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
+                  <DialogTitle className="text-3xl font-bold tracking-tight">
                     {mission.title}
                   </DialogTitle>
                 </DialogHeader>
@@ -171,9 +175,9 @@ const About = () => {
                     <h4 className="text-xs uppercase tracking-widest font-semibold mb-4 text-muted-foreground">
                       Phases
                     </h4>
-                    <div className="space-y-4">
+                    <div className="mt-2 space-y-4">
                       {mission.phases.map((phase, idx) => (
-                        <div key={idx} className="border-l-2 border-accent pl-6 py-2">
+                        <div key={idx} className="py-2">
                           <h5 className="font-semibold mb-2 tracking-tight">{phase.title}</h5>
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             {phase.content}
@@ -189,9 +193,12 @@ const About = () => {
                     </h4>
                     <ul className="space-y-2">
                       {mission.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <span className="text-accent font-bold mt-1">—</span>
-                          <span className="text-sm leading-relaxed">{benefit}</span>
+                        <li key={idx} className="flex items-center gap-3">
+                          {/* Arrow: fixed width so text aligns consistently; vertically centered */}
+                          <span className="flex-shrink-0 text-accent text-base" aria-hidden>
+                            →
+                          </span>
+                          <div className="text-sm leading-relaxed">{benefit}</div>
                         </li>
                       ))}
                     </ul>

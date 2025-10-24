@@ -43,18 +43,17 @@ const Contact = () => {
   return (
     <section id="contact" className="py-32 bg-background">
       <div className="container mx-auto px-8">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="mb-20">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-6 block">
-              Contact
-            </span>
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8 text-balance">
-              Démarrons<br />votre projet
-            </h2>
-          </div>
+        {/* Header */}
+        <div className="max-w-4xl mb-20">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-6 block">
+            Contact
+          </span>
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8 text-balance">
+            Démarrons<br />votre projet
+          </h2>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-16">
             {/* Left: Information */}
             <div className="space-y-12">
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -62,7 +61,7 @@ const Contact = () => {
               </p>
               
               <div className="space-y-8">
-                <div className="border-l-2 border-accent pl-6">
+                  <div>
                   <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Email</h3>
                   <a 
                     href="mailto:camille.brachet@proto-architecture.com" 
@@ -72,7 +71,7 @@ const Contact = () => {
                   </a>
                 </div>
                 
-                <div className="border-l-2 border-accent pl-6">
+                  <div>
                   <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Téléphone</h3>
                   <a 
                     href="tel:+33622603916" 
@@ -82,14 +81,11 @@ const Contact = () => {
                   </a>
                 </div>
 
-                <div className="border-l-2 border-accent pl-6">
+                  <div>
                   <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Localisation</h3>
                   <p className="text-lg">
-                    Lyon & région, et ses alentours (ou environs ?)<br/>
-                    Auvergne-Rhône-Alpes
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    et ... Plus loin pour des missions de conception
+                    Lyon & région, et ses alentours <br/>
+                    Auvergne-Rhône-Alpes. <br/>
                   </p>
                 </div>
               </div>
@@ -166,7 +162,6 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

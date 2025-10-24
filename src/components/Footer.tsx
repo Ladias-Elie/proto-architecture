@@ -2,15 +2,24 @@ import { Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-background text-foreground py-12 border-t-2 border-border">
+    <footer className="bg-background text-foreground py-12">
       <div className="container mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Brand */}
           <div className="md:col-span-4">
             <h3 className="text-3xl font-bold tracking-tighter mb-4">prôto.</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-6">
               Atelier d'architecture lyonnais dédié à la rénovation écologique et durable.
             </p>
+            <a 
+              href="https://www.instagram.com/proto.architecture/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm hover:text-accent transition-colors"
+            >
+              <Instagram className="w-4 h-4" strokeWidth={2} />
+              @proto.architecture
+            </a>
           </div>
 
           {/* Links */}
@@ -37,7 +46,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact & Social */}
+          {/* Contact & Logos */}
           <div className="md:col-span-4">
             <div className="mb-8">
               <p className="text-sm mb-4">
@@ -46,20 +55,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <h4 className="text-xs uppercase tracking-widest font-semibold mb-4 text-muted-foreground">
-              Suivez-nous
-            </h4>
-            <a 
-              href="https://www.instagram.com/proto.architecture/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm hover:text-accent transition-colors mb-6"
-            >
-              <Instagram className="w-4 h-4" strokeWidth={2} />
-              @proto.architecture
-            </a>
-
-            <div className="flex items-center gap-6 mt-6 pt-6 border-t border-border">
+            <div className="flex items-center gap-6">
               <a 
                 href="https://www.epfl.ch/" 
                 target="_blank" 
@@ -87,16 +83,6 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t-2 border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider">
-            © 2024 prôto.architecture — Lyon, France
-          </p>
-          <p className="text-xs text-muted-foreground">
-            Camille Brachet, Architecte EPFL
-          </p>
         </div>
       </div>
     </footer>

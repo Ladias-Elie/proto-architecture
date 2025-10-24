@@ -26,12 +26,6 @@ const Projects = () => {
       <main className="pt-32 pb-24 bg-background">
         <div className="container mx-auto px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-20">
-              <h1 className="text-5xl md:text-6xl text-foreground mb-6 elegant-underline">
-                Projets
-              </h1>
-            </div>
-            
             <div className="grid md:grid-cols-3 gap-12">
               {projects.map((project) => (
                 <Link

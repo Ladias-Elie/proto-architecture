@@ -16,15 +16,15 @@ const Footer = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-              aria-label="Instagram prôto.architecture"
             >
               <Instagram className="w-4 h-4" strokeWidth={2} />
+              @proto.architecture
             </a>
           </div>
 
           {/* Navigation */}
           <div className="md:col-span-4 space-y-4">
-            <h3 className="text-3xl font-bold tracking-tighter">Navigation</h3>
+            <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Navigation</h4>
             <ul className="space-y-3">
               <li>
                 <a href="/a-propos" className="text-sm text-muted-foreground hover:text-accent transition-colors">
@@ -46,7 +46,7 @@ const Footer = () => {
 
           {/* Camille Brachet */}
           <div className="md:col-span-4 space-y-4">
-            <h3 className="text-3xl font-bold tracking-tighter">Camille Brachet</h3>
+            <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Camille Brachet</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Architecte EPFL inscrite à l'ordre des architectes Auvergne-Rhône-Alpes
             </p>

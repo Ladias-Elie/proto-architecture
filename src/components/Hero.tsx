@@ -54,7 +54,6 @@ const Hero = () => {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
         aria-label="Défiler vers le bas"
       >
-        <span className="text-xs uppercase tracking-widest font-semibold">Scroll</span>
         <ArrowDown className="w-4 h-4 animate-bounce" strokeWidth={2} />
       </button>
     </section>

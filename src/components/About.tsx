@@ -72,8 +72,8 @@ const About = () => {
       ]
     },
     consultation: {
-      title: "Consultation",
-      brief: "Conseils experts pour vos questions ponctuelles.",
+      title: "Missions complémentaires",
+      brief: "Accompagnement sur mesure pour demandes particulières.",
       icon: Users,
       description: `Vous avez besoin d'un regard extérieur, d'un conseil technique ou d'une orientation avant de vous lancer ? Nous proposons des consultations sur mesure.`,
       phases: [

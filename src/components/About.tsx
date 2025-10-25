@@ -178,8 +178,13 @@ const About = () => {
                     <div className="mt-2 space-y-4">
                       {mission.phases.map((phase, idx) => (
                         <div key={idx} className="py-2">
-                          <h5 className="font-semibold mb-2 tracking-tight">{phase.title}</h5>
-                          <p className="text-sm text-muted-foreground leading-relaxed">
+                          <h5 className="font-semibold mb-2 tracking-tight flex items-center gap-3">
+                            <span className="flex-shrink-0 text-accent text-base" aria-hidden>
+                              →
+                            </span>
+                            {phase.title}
+                          </h5>
+                          <p className="text-sm text-muted-foreground leading-relaxed ml-7">
                             {phase.content}
                           </p>
                         </div>

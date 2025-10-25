@@ -8,6 +8,13 @@ const About = () => {
   const navigate = useNavigate();
 
   const scrollToContact = () => {
+    // Close all dialogs
+    setOpenDialogs({
+      complete: false,
+      partial: false,
+      consultation: false,
+    });
+    
     navigate("/");
     setTimeout(() => {
       const contactSection = document.getElementById('contact');

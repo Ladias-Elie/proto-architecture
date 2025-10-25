@@ -156,8 +156,8 @@ const ProjectDetail = () => {
                     </CarouselContent>
                     {project.images.length > 1 && (
                       <>
-                <CarouselPrevious className="left-4 h-10 w-10 bg-background hover:bg-muted transition-colors" />
-                <CarouselNext className="right-4 h-10 w-10 bg-background hover:bg-muted transition-colors" />
+                <CarouselPrevious variant="ghost" className="left-4 h-10 w-10 hover:bg-background/50 transition-colors" />
+                <CarouselNext variant="ghost" className="right-4 h-10 w-10 hover:bg-background/50 transition-colors" />
                       </>
                     )}
                   </Carousel>
@@ -187,8 +187,8 @@ const ProjectDetail = () => {
                     </CarouselContent>
                     {project.plans.length > 1 && (
                       <>
-                <CarouselPrevious className="left-4 h-10 w-10 bg-background hover:bg-muted transition-colors" />
-                <CarouselNext className="right-4 h-10 w-10 bg-background hover:bg-muted transition-colors" />
+                <CarouselPrevious variant="ghost" className="left-4 h-10 w-10 hover:bg-background/50 transition-colors" />
+                <CarouselNext variant="ghost" className="right-4 h-10 w-10 hover:bg-background/50 transition-colors" />
                       </>
                     )}
                   </Carousel>

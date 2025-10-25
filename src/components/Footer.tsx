@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Brand - Left */}
           <div className="space-y-2 flex flex-col justify-start">
             <h3 className="text-2xl font-bold tracking-tighter">prôto.</h3>
-            <p className="text-xs text-muted-foreground leading-tight max-w-[200px]">
+            <p className="text-xs text-muted-foreground leading-tight max-w-[320px]">
               Atelier d'architecture lyonnais dédié à la rénovation écologique et durable.
             </p>
             <a 
@@ -28,7 +28,7 @@ const Footer = () => {
           {/* Camille Brachet - Right */}
           <div className="space-y-2 flex flex-col justify-start items-end text-right">
             <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Camille Brachet</h4>
-            <p className="text-xs text-muted-foreground leading-tight max-w-[200px]">
+            <p className="text-xs text-muted-foreground leading-tight max-w-[320px]">
               Architecte EPFL inscrite à l'ordre des architectes Auvergne-Rhône-Alpes
             </p>
 

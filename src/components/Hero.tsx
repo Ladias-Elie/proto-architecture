@@ -10,13 +10,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen relative flex items-center justify-center overflow-hidden bg-background">
-      {/* Grid overlay for Swiss aesthetic */}
-      <div className="absolute inset-0 opacity-[0.02]" 
-           style={{
-             backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
-             backgroundSize: '24px 24px'
-           }} 
-      />
+      {/* Grid overlay moved to global `GridOverlay` component in App.tsx */}
       
       <div className="container mx-auto px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

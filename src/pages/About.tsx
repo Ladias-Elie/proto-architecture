@@ -78,13 +78,7 @@ const About = () => {
                 </h2>
                 
                 <div className="space-y-6 text-foreground/80 text-lg leading-relaxed relative">
-                  {/* Grid overlay */}
-                  <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
-                       style={{
-                         backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
-                         backgroundSize: '24px 24px'
-                       }} 
-                  />
+                  {/* Grid overlay moved to global `GridOverlay` component in App.tsx */}
                   
                   <p className="relative">
                     L'atelier est fondé et dirigé par <strong>Camille Brachet</strong>, architecte diplômée de l'École Polytechnique Fédérale de Lausanne (EPFL) en 2017. Après plusieurs expériences en France, en Suisse et à l'étranger, elle s'installe à Lyon en 2021 pour développer une pratique tournée vers la rénovation écologique et l'habitat sur mesure.

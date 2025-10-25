@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import GridOverlay from "@/components/GridOverlay";
 
 const queryClient = new QueryClient();
 
@@ -18,16 +19,19 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/projets" element={<Projects />} />
-            <Route path="/projets/:id" element={<ProjectDetail />} />
-            <Route path="/a-propos" element={<About />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <div className="relative">
+          <GridOverlay />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/projets" element={<Projects />} />
+              <Route path="/projets/:id" element={<ProjectDetail />} />
+              <Route path="/a-propos" element={<About />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>

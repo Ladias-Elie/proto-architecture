@@ -51,17 +51,17 @@ const About = () => {
           <section className="container mx-auto px-8">
             <div className="max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl text-foreground mb-6 font-light tracking-tight">
-                L'atelier prôto.architecture
+                prôto.architecture
               </h1>
               
               <p className="text-xl md:text-2xl text-foreground/70 mb-16 font-light leading-relaxed">
-                Concevoir des espaces généreux, durables et ancrés dans leur contexte.
+                Concevoir des espaces généreux, durables et ancrés dans leur territoire.
               </p>
 
               {/* Section 1 - Présentation de l'atelier */}
               <div className="space-y-6 text-foreground/80 text-lg leading-relaxed mb-20">
                 <p>
-                  <strong>prôto.architecture</strong> est un atelier d'architecture basé à Lyon, dédié à la rénovation, à la réhabilitation et à la transformation du bâti existant. Notre approche met l'accent sur la réutilisation intelligente des structures existantes, la valorisation du « déjà là » par le respect du lieu et de son contexte, le choix de matériaux locaux et le travail de la matière première, et la conception de scénarios élaborés avec des habitants, adaptés aux usages.
+                  <strong>prôto.architecture</strong> est un atelier d'architecture basé à Lyon, dédié rénovation, à la réhabilitation et à la transformation du bâti existant. Notre approche architecturale met l'accent sur la valorisation du "déjà-là" par le respect du lieu et de son contexte, le choix de matériaux locaux et le travail de la matière première, et la conception de scénarios élaborés avec les habitants, adaptés aux usages.
                 </p>
                 <p>
                   Nous croyons que l'architecture doit être à la fois poétique, fonctionnelle et responsable — attentive à la lumière, aux usages et aux ressources du territoire. Chaque projet est l'occasion de révéler le potentiel d'un lieu en créant des espaces généreux, confortables et durables, pensés pour celles et ceux qui les habitent au quotidien.
@@ -81,13 +81,10 @@ const About = () => {
                   {/* Grid overlay moved to global `GridOverlay` component in App.tsx */}
                   
                   <p className="relative">
-                    L'atelier est fondé et dirigé par <strong>Camille Brachet</strong>, architecte diplômée de l'École Polytechnique Fédérale de Lausanne (EPFL) en 2017. Après plusieurs expériences en France, en Suisse et à l'étranger, elle s'installe à Lyon en 2021 pour développer une pratique tournée vers la rénovation écologique et l'habitat sur mesure.
+                    L'atelier est fondé et dirigé par <strong>Camille Brachet</strong>, architecte - ingénieure, diplômée de l'École Polytechnique Fédérale de Lausanne (EPFL) en 2017. Après plusieurs expériences en France et à l'étranger, elle s'installe à Lyon en 2021 pour développer une pratique tournée vers la rénovation écologique et l'habitat sur mesure.
                   </p>
                   <p className="relative">
                     Son travail explore l'équilibre entre rationalité constructive et poésie de l'espace, avec une attention particulière portée à la lumière naturelle, aux matières brutes et à la cohérence environnementale des projets.
-                  </p>
-                  <p className="relative">
-                    Autour d'elle, prôto.architecture s'entoure d'un réseau d'artisans et de partenaires locaux partageant les mêmes valeurs : exigence, respect du bâti, et sens du détail.
                   </p>
                   <p className="relative">
                     Chaque projet est avant tout une rencontre — entre un lieu, une histoire et des personnes prêtes à inventer ensemble une manière plus durable d'habiter.

@@ -60,7 +60,7 @@ const About = () => {
       phases: [
         {
           title: "Esquisse uniquement",
-          content: "Étude de faisabilité, premières esquisses, planches d'ambiance pour visualiser le potentiel."
+          content: "Étude de faisabilité, premières esquisses, volumétries pour visualiser le projet."
         },
         {
           title: "Avant-projet & Permis",
@@ -87,14 +87,16 @@ const About = () => {
           content: "Échange sur site ou au cabinet pour évaluer la faisabilité et les premières orientations."
         },
         {
-          title: "Étude de faisabilité",
-          content: "Analyse du potentiel du lieu, réglementation applicable, premières pistes d'aménagement."
+          title: "Relevé des lieux",
+          content: "Travail d'observation et de diagnostic de l'existant, relevé métrique."
+        },
+        {
+          title: "Assistance au choix du mobilier et éclairage.",
+          content: "Principe d'agencement du mobilier, sélection de références."
         }
       ],
       benefits: [
-        "Format court et accessible",
-        "Réponse rapide à vos interrogations",
-        "Aide à la décision avant engagement"
+        "Conseils personnalisés adaptés à vos besoins spécifiques", 
       ]
     }
   };
@@ -203,7 +205,7 @@ const About = () => {
                     </ul>
                   </div>
 
-                  <div className="pt-6 border-t-2 border-border">
+                  <div className="pt-6">
                     <Button onClick={scrollToContact} size="lg" className="w-full font-semibold uppercase tracking-wider">
                       Discuter de votre projet
                     </Button>

@@ -64,28 +64,28 @@ const Contact = () => {
                   <div>
                   <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Email</h3>
                   <a 
-                    href="mailto:camille.brachet@proto-architecture.com" 
+                    href="mail@proto-architecture.fr" 
                     className="text-lg hover:text-accent transition-colors block"
                   >
-                    camille.brachet@proto-architecture.com
+                    mail@proto-architecture.fr
                   </a>
                 </div>
                 
                   <div>
                   <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Téléphone</h3>
                   <a 
-                    href="tel:+33622603916" 
+                    href="tel:+33782156364" 
                     className="text-lg hover:text-accent transition-colors block"
                   >
-                    06 22 60 39 16
+                    07 82 15 63 64
                   </a>
                 </div>
 
                   <div>
                   <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Localisation</h3>
                   <p className="text-lg">
-                    Lyon & région, et ses alentours <br/>
-                    Auvergne-Rhône-Alpes. <br/>
+                    Lyon & Auvergne-Rhône-Alpes <br /> 
+                    ouvert à des missions partout en France.
                   </p>
                 </div>
               </div>

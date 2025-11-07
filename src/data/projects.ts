@@ -88,6 +88,10 @@ export const projects: Project[] = [
     images: [project1],
     plans: [],
     type: "Mission complète",
+    projectManagement: "Privée",
+    cost: "-- k€ HT",
+    surfaces: "80 m²",
+    imgCredit: "prôto.architecture",
   },
   {
     id: "contemporary-house",

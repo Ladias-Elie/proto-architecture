@@ -79,7 +79,7 @@ export const projects: Project[] = [
   {
     id: "123",
     title: "123",
-    category: "Residential Renovation",
+    category: "Mobilier sur mesure",
     location: "Lyon 7",
     year: "2021",
     description:
@@ -89,8 +89,8 @@ export const projects: Project[] = [
     plans: [],
     type: "Mission complète",
     projectManagement: "Privée",
-    cost: "-- k€ HT",
-    surfaces: "80 m²",
+    cost: "-- € HT",
+    surfaces: "-- m²",
     imgCredit: "prôto.architecture",
   },
   {

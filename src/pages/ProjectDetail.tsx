@@ -207,11 +207,44 @@ const ProjectDetail = () => {
               </p>
             </div>
 
+            {/* Collaboration */}
+            {project.collaboration && (
+              <div className="max-w-4xl mb-6">
+                <p className="text-sm text-muted-foreground">
+                  En collaboration avec :{" "}
+                  {project.collaborationUrl ? (
+                    <a 
+                      href={project.collaborationUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-foreground hover:text-accent transition-colors underline"
+                    >
+                      {project.collaboration}
+                    </a>
+                  ) : (
+                    project.collaboration
+                  )}
+                </p>
+              </div>
+            )}
+
             {/* Photo Credits */}
             {project.imgCredit && (
               <div className="max-w-4xl">
                 <p className="text-sm text-muted-foreground">
-                  Crédits photos : {project.imgCredit}
+                  Crédits photos :{" "}
+                  {project.imgCreditUrl ? (
+                    <a 
+                      href={project.imgCreditUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-foreground hover:text-accent transition-colors underline"
+                    >
+                      {project.imgCredit}
+                    </a>
+                  ) : (
+                    project.imgCredit
+                  )}
                 </p>
               </div>
             )}

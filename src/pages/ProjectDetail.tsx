@@ -71,14 +71,6 @@ const ProjectDetail = () => {
       <main className="pt-32 pb-24 bg-background">
         <div className="container mx-auto px-8">
           <div className="max-w-6xl mx-auto">
-            <Link 
-              to="/projets"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors mb-16"
-            >
-              <ArrowLeft className="w-4 h-4" strokeWidth={1} />
-              Retour aux projets
-            </Link>
-
             {/* Title */}
             <div className="mb-12">
               <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">

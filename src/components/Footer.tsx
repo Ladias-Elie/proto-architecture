@@ -55,7 +55,7 @@ const Footer = () => {
                 className="opacity-60 hover:opacity-100 transition-opacity"
               >
                 <img 
-                  src="/logo-ordre-architectes.png" 
+                  src={`${import.meta.env.BASE_URL}logo-ordre-architectes.png`} 
                   alt="Ordre des Architectes" 
                   className="h-5"
                 />

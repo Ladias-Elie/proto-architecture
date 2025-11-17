@@ -90,9 +90,9 @@ export const projects: Project[] = [
     cost: "275 k€ HT",
     surfaces: "110 m² + 50 m²",
     collaboration: "Anna Le Fur (architecte)",
-    collaborationUrl: "https://www.annalefur.com",
+    collaborationUrl: "https://alfarchitecte.com/",
     imgCredit: "Simon Genillier Roelsgaard et prôto.architecture",
-    imgCreditUrl: "https://www.instagram.com/proto.architecture",
+    imgCreditUrl: "https://www.instagram.com/simongenillieroelsgaard/",
   },
   {
     id: "123",

@@ -42,9 +42,8 @@ const Contact = () => {
         },
         body: JSON.stringify({
           ...values,
-          _subject: `Nouveau message de ${values.name} (Site Web)`, // Sujet de l'email
-          _template: "table", // Format de l'email (table ou box)
-          // _autoresponse: "Merci pour votre message, nous vous répondrons bientôt." // Optionnel
+          _subject: `Nouveau message de ${values.name} (Site Web)`,
+          _template: "table",
         })
       });
 

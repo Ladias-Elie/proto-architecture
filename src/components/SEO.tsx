@@ -9,13 +9,13 @@ interface SEOProps {
   structuredData?: object;
 }
 
-const SEO = ({ 
-  title, 
-  description, 
-  canonical, 
-  ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
+const SEO = ({
+  title,
+  description,
+  canonical,
+  ogImage,
   ogType = "website",
-  structuredData 
+  structuredData
 }: SEOProps) => {
   const fullTitle = title.includes("prôto.architecture") ? title : `${title} | prôto.architecture`;
   const siteUrl = window.location.origin;
@@ -26,20 +26,20 @@ const SEO = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={fullCanonical} />
-      
+
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullCanonical} />
-      <meta property="og:image" content={ogImage} />
-      
+      {ogImage && <meta property="og:image" content={ogImage} />}
+
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
+
       {/* Structured Data */}
       {structuredData && (
         <script type="application/ld+json">

@@ -43,17 +43,17 @@ const About = () => {
           }
         }}
       />
-      
+
       <div className="min-h-screen bg-background">
         <Navigation />
-        
+
         <main className="pt-32 pb-20">
           <section className="container mx-auto px-8">
             <div className="max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl text-foreground mb-6 font-light tracking-tight">
                 prôto.architecture
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-foreground/70 mb-16 font-light leading-relaxed">
                 Concevoir des espaces généreux, durables et ancrés dans leur territoire.
               </p>
@@ -61,10 +61,10 @@ const About = () => {
               {/* Section 1 - Présentation de l'atelier */}
               <div className="space-y-6 text-foreground/80 text-lg leading-relaxed mb-20">
                 <p>
-                  <strong>prôto.architecture</strong> est un atelier d'architecture basé à Lyon, dédié rénovation, à la réhabilitation et à la transformation du bâti existant. Notre approche architecturale met l'accent sur la valorisation du "déjà-là" par le respect du lieu et de son contexte, le choix de matériaux locaux et le travail de la matière première, et la conception de scénarios élaborés avec les habitants, adaptés aux usages.
+                  <strong>prôto.architecture</strong> est un atelier d'architecture basé à Lyon, dédié à la réhabilitation et à la transformation du bâti existant. Notre approche architecturale met l'accent sur la valorisation du "déjà-là" par le respect du lieu et de son contexte, le choix de matériaux locaux et le travail de la matière première, et la conception de scénarios élaborés avec les habitants, adaptés aux usages.
                 </p>
                 <p>
-                  Nous croyons que l'architecture doit être à la fois poétique, fonctionnelle et responsable — attentive à la lumière, aux usages et aux ressources du territoire. Chaque projet est l'occasion de révéler le potentiel d'un lieu en créant des espaces généreux, confortables et durables, pensés pour celles et ceux qui les habitent au quotidien.
+                  Nous croyons que l'architecture doit être à la fois poétique, fonctionnelle et responsable, attentive à la lumière, aux usages et aux ressources du territoire. Chaque projet est l'occasion de révéler le potentiel d'un lieu en créant des espaces généreux, confortables et durables, pensés pour celles et ceux qui les habitent au quotidien.
                 </p>
                 <p>
                   Notre travail s'inscrit dans une démarche de sobriété constructive, privilégiant la pérennité, la simplicité et la qualité des matériaux.
@@ -76,10 +76,10 @@ const About = () => {
                 <h2 className="text-2xl md:text-3xl text-foreground mb-8 font-light">
                   Une approche humaine et engagée
                 </h2>
-                
+
                 <div className="space-y-6 text-foreground/80 text-lg leading-relaxed relative">
                   {/* Grid overlay moved to global `GridOverlay` component in App.tsx */}
-                  
+
                   <p className="relative">
                     L'atelier est fondé et dirigé par <strong>Camille Brachet</strong>, architecte - ingénieure, diplômée de l'École Polytechnique Fédérale de Lausanne (EPFL) en 2017. Après plusieurs expériences en France et à l'étranger, elle s'installe à Lyon en 2021 pour développer une pratique tournée vers la rénovation écologique et l'habitat sur mesure.
                   </p>
@@ -97,7 +97,7 @@ const About = () => {
                 <p className="text-foreground/80 text-lg leading-relaxed mb-8">
                   Un projet en tête ? Discutons-en ensemble.
                 </p>
-                <Button 
+                <Button
                   onClick={handleContactClick}
                   size="lg"
                   className="px-8 py-6 text-base"
@@ -108,7 +108,7 @@ const About = () => {
             </div>
           </section>
         </main>
-        
+
         <Footer />
       </div>
     </>

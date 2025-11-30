@@ -13,6 +13,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import emailjs from "@emailjs/browser";
 
 const formSchema = z.object({
   name: z.string().trim().min(2, { message: "Le nom doit contenir au moins 2 caractères" }).max(100),
@@ -34,36 +35,34 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const response = await fetch("https://formsubmit.co/ajax/mail@proto-architecture.fr", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          ...values,
-          _subject: `Nouveau message de ${values.name} (Site Web)`,
-          _template: "table",
-        })
-      });
+      // REMPLACEZ CES VALEURS PAR CELLES DE VOTRE COMPTE EMAILJS
+      const SERVICE_ID = "service_af8lfrq";
+      const TEMPLATE_ID = "template_etivnz8";
+      const PUBLIC_KEY = "fiW-E1g_xGIAu6iAv";
 
-      if (response.ok) {
-        toast({
-          title: "Message envoyé !",
-          description: "Merci pour votre intérêt. Je vous recontacterai rapidement.",
-        });
-        form.reset();
-      } else {
-        toast({
-          title: "Erreur",
-          description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",
-          variant: "destructive",
-        });
-      }
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: values.name,
+          from_email: values.email,
+          message: values.message,
+          to_name: "Proto Architecture", // Optionnel, dépend de votre template
+        },
+        PUBLIC_KEY
+      );
+
+      toast({
+        title: "Message envoyé !",
+        description: "Merci pour votre intérêt. Je vous recontacterai rapidement.",
+      });
+      form.reset();
+
     } catch (error) {
+      console.error("Erreur d'envoi", error);
       toast({
         title: "Erreur",
-        description: "Impossible de contacter le serveur. Veuillez vérifier votre connexion.",
+        description: "Une erreur est survenue. Veuillez réessayer ou envoyer un email direct.",
         variant: "destructive",
       });
     }

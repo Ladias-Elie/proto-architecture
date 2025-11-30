@@ -1,4 +1,4 @@
- 
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -14,7 +14,7 @@ const About = () => {
       partial: false,
       consultation: false,
     });
-    
+
     navigate("/");
     setTimeout(() => {
       const contactSection = document.getElementById('contact');
@@ -103,7 +103,7 @@ const About = () => {
         }
       ],
       benefits: [
-        "Conseils personnalisés adaptés à vos besoins spécifiques", 
+        "Conseils personnalisés adaptés à vos besoins spécifiques",
       ]
     }
   };
@@ -123,7 +123,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24 bg-background relative">
+    <section id="about" className="pt-24 pb-12 bg-background relative">
       {/* Grid overlay moved to global `GridOverlay` component in App.tsx */}
       <div className="container mx-auto px-8">
         {/* Header */}
@@ -140,7 +140,7 @@ const About = () => {
         </div>
 
         {/* Mission Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {Object.entries(missionData).map(([key, mission]) => (
             <Dialog key={key} open={openDialogs[key]} onOpenChange={(open) => !open && closeDialog(key)}>
               <DialogTrigger asChild>

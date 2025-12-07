@@ -35,7 +35,6 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      // REMPLACEZ CES VALEURS PAR CELLES DE VOTRE COMPTE EMAILJS
       const SERVICE_ID = "service_af8lfrq";
       const TEMPLATE_ID = "template_etivnz8";
       const PUBLIC_KEY = "fiW-E1g_xGIAu6iAv";
@@ -47,7 +46,7 @@ const Contact = () => {
           from_name: values.name,
           from_email: values.email,
           message: values.message,
-          to_name: "Proto Architecture", // Optionnel, dépend de votre template
+          to_name: "Proto Architecture",
         },
         PUBLIC_KEY
       );

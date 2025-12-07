@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,11 +42,10 @@ const Navigation = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
               }}
-              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${
-                isActive("/a-propos") 
-                  ? "text-foreground border-b-2 border-accent pb-1" 
+              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${isActive("/a-propos")
+                  ? "text-foreground border-b-2 border-accent pb-1"
                   : "text-muted-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               À propos
             </button>
@@ -56,18 +56,22 @@ const Navigation = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
               }}
-              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${
-                isActive("/projets") 
-                  ? "text-foreground border-b-2 border-accent pb-1" 
+              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${isActive("/projets")
+                  ? "text-foreground border-b-2 border-accent pb-1"
                   : "text-muted-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               Projets
             </button>
-            <Button 
+            <Button
               onClick={() => {
                 navigate("/");
                 setTimeout(() => {
+                  trackEvent({
+                    category: "CTA",
+                    action: "Click",
+                    label: "Header Contact Button",
+                  });
                   const contactSection = document.getElementById('contact');
                   contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
@@ -100,9 +104,8 @@ const Navigation = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
               }}
-              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${
-                isActive("/a-propos") ? "text-foreground" : "text-muted-foreground"
-              }`}
+              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${isActive("/a-propos") ? "text-foreground" : "text-muted-foreground"
+                }`}
             >
               À propos
             </button>
@@ -114,17 +117,21 @@ const Navigation = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
               }}
-              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${
-                isActive("/projets") ? "text-foreground" : "text-muted-foreground"
-              }`}
+              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${isActive("/projets") ? "text-foreground" : "text-muted-foreground"
+                }`}
             >
               Projets
             </button>
-            <Button 
+            <Button
               onClick={() => {
                 navigate("/");
                 setIsOpen(false);
                 setTimeout(() => {
+                  trackEvent({
+                    category: "CTA",
+                    action: "Click",
+                    label: "Mobile Menu Contact Button",
+                  });
                   const contactSection = document.getElementById('contact');
                   contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);

@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import emailjs from "@emailjs/browser";
+import { trackEvent } from "@/lib/analytics";
 
 const formSchema = z.object({
   name: z.string().trim().min(2, { message: "Le nom doit contenir au moins 2 caractères" }).max(100),
@@ -50,6 +51,12 @@ const Contact = () => {
         },
         PUBLIC_KEY
       );
+
+      trackEvent({
+        category: "Form",
+        action: "Submit Contact Form",
+        label: "Contact Page",
+      });
 
       toast({
         title: "Message envoyé !",
@@ -91,8 +98,9 @@ const Contact = () => {
               <div>
                 <h3 className="text-xs uppercase tracking-widest font-semibold mb-3 text-muted-foreground">Email</h3>
                 <a
-                  href="mail@proto-architecture.fr"
+                  href="mailto:mail@proto-architecture.fr"
                   className="text-lg hover:text-accent transition-colors block"
+                  onClick={() => trackEvent({ category: "Contact", action: "Click Email", label: "Contact Section Email" })}
                 >
                   mail@proto-architecture.fr
                 </a>
@@ -103,6 +111,7 @@ const Contact = () => {
                 <a
                   href="tel:+33782156364"
                   className="text-lg hover:text-accent transition-colors block"
+                  onClick={() => trackEvent({ category: "Contact", action: "Click Phone", label: "Contact Section Phone" })}
                 >
                   07 82 15 63 64
                 </a>

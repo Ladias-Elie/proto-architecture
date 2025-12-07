@@ -10,31 +10,41 @@ import ProjectDetail from "./pages/ProjectDetail";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import GridOverlay from "@/components/GridOverlay";
+import { useEffect } from "react";
+import { initAnalytics } from "@/lib/analytics";
+import GA4PageView from "@/components/GA4PageView";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <div className="relative">
-          <GridOverlay />
-          <BrowserRouter basename={import.meta.env.BASE_URL}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/projets" element={<Projects />} />
-              <Route path="/projets/:id" element={<ProjectDetail />} />
-              <Route path="/a-propos" element={<About />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </div>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
-);
+const App = () => {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  return (
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <div className="relative">
+            <GridOverlay />
+            <BrowserRouter basename={import.meta.env.BASE_URL}>
+              <GA4PageView />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/projets" element={<Projects />} />
+                <Route path="/projets/:id" element={<ProjectDetail />} />
+                <Route path="/a-propos" element={<About />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
+  );
+};
 
 export default App;

@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
@@ -10,6 +11,11 @@ const About = () => {
   const handleContactClick = () => {
     navigate("/");
     setTimeout(() => {
+      trackEvent({
+        category: "CTA",
+        action: "Click",
+        label: "About Page Contact Button",
+      });
       const contactSection = document.getElementById('contact');
       contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 100);

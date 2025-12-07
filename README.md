@@ -71,3 +71,32 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Analytics (Google Analytics 4)
+
+This project uses `react-ga4` for Google Analytics tracking.
+
+### Configuration
+
+The GA4 Measurement ID is configured in `src/lib/analytics.ts`.
+You can override it by setting the `VITE_GA_MEASUREMENT_ID` environment variable.
+
+### Tracking Features
+
+- **Page Views**: Automatically tracked on route changes.
+- **Events**:
+  - **CTA Clicks**: Tracks clicks on "Contact" buttons (Header, Mobile Menu, About Page).
+  - **Contact Links**: Tracks clicks on Email and Phone links in the Contact section.
+  - **Form Submission**: Tracks successful contact form submissions.
+
+### Event Structure
+
+| Category | Action | Label |
+|----------|--------|-------|
+| CTA | Click | Header Contact Button |
+| CTA | Click | Mobile Menu Contact Button |
+| CTA | Click | About Page Contact Button |
+| Contact | Click Email | Contact Section Email |
+| Contact | Click Phone | Contact Section Phone |
+| Form | Submit Contact Form | Contact Page |
+

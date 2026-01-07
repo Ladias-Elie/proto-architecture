@@ -38,6 +38,32 @@ import project123_plan_2 from "@/assets/123/plan/proto architecture_renovation a
 import project123_plan_3 from "@/assets/123/plan/proto architecture_renovation appartement_Lyon 7_cuisine elevation 3.webp";
 import project123_plan_4 from "@/assets/123/plan/proto architecture_renovation appartement_Lyon 7_cuisine.webp";
 
+// CHV Images
+import chv_img_1 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_01-facade.webp";
+import chv_img_2 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_02-interieur.webp";
+import chv_img_3  from "@/assets/CHV/images/proto architecture_renovation maison_bugey_03-interieur.webp";
+import chv_img_4 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_04-interieur.webp";
+import chv_img_5 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_05-interieur.webp";
+import chv_img_6 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_06-interieur.webp";
+import chv_img_7 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_07-interieur.webp";
+import chv_img_8 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_08-facade.webp";  
+import chv_img_9 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_09-facade.webp";
+import chv_img_10 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_10-facade.webp";
+import chv_img_11 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_11-existant.webp";
+import chv_img_12 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_12-existant.webp";
+import chv_img_13 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_13-travaux.webp";
+import chv_img_14 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_14-travaux.webp";
+import chv_img_15 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_15-travaux.webp";
+import chv_img_16 from "@/assets/CHV/images/proto architecture_renovation maison_bugey_16-travaux.webp";
+
+// CHV Plans
+import chv_plan_1 from "@/assets/CHV/plan/proto architecture_renovation maison_Valromey_01-coupe.webp";
+import chv_plan_2 from "@/assets/CHV/plan/proto architecture_renovation maison_Valromey_02-plan RDC.webp";
+import chv_plan_3 from "@/assets/CHV/plan/proto architecture_renovation maison_Valromey_03-facade Sud.webp";
+import chv_plan_4 from "@/assets/CHV/plan/proto architecture_renovation maison_Valromey_04-facade Est.webp";
+import chv_plan_5 from "@/assets/CHV/plan/proto architecture_renovation maison_Valromey_05-facade Nord.webp";
+import chv_plan_6 from "@/assets/CHV/plan/proto architecture_renovation maison_Valromey_06-detail cuisine.webp";
+
 export interface Project {
   id: string;
   title: string;
@@ -110,5 +136,40 @@ export const projects: Project[] = [
     cost: "-- € HT",
     surfaces: "-- m²",
     imgCredit: "prôto.architecture",
-  }
+  },
+  {
+    id: "chv",
+    title: "Ossy",
+    category: "Transformation d'un ancienn atelier dans une ferme de l'Ain",
+    location: "Champagne-en-Valromey, Auvergne-Rhône-Alpes",
+    year: "2025",
+    description:
+      "Située dans une ancienne longère bugiste, l’ex-atelier devient un logement autonome, discret dans prolongement de la ferme. Le projet accompagne la métamorphose de ce bâti rural en une habitation lumineuse, chaleureuse et sobre en énergie, attentive à l’héritage familial qui l’habite.\nLes larges ouvertures au sud sont préservées pour capter pleinement de l’ensoleillement. Une nouvelle baie s’ouvre à l’est sur le pré, tandis qu’une ouverture au nord est agrandie pour diffuser une lumière douce dans la chambre.\nLa qualité environnementale guide l’ensemble des choix afin de créer un espace peu énergivore et confortable : isolation intérieure en laine de bois, menuiseries extérieures en aluminium, chauffage au bois et ventilation naturelle.\nLe projet révèle enfin l’existant : portes en bois sablées et réemployées, pierre apparente mise en valeur dans les murs et les seuils, laissant dialoguer mémoire du lieu et usage contemporain.",
+    coverImage: chv_img_1,
+    images: [
+      chv_img_1,
+      chv_img_2,
+      chv_img_3,
+      chv_img_4,
+      chv_img_5,
+      chv_img_6,
+      chv_img_7,
+      chv_img_8,
+      chv_img_9,
+      chv_img_10,
+      chv_img_11,
+      chv_img_12,
+      chv_img_13,
+      chv_img_14,
+      chv_img_15,
+      chv_img_16,
+    ],
+    plans: [chv_plan_1, chv_plan_2, chv_plan_3, chv_plan_4, chv_plan_5],
+    type: "Mission complète",
+    projectManagement: "Privée",
+    cost: "100 k€ HT",
+    surfaces: "60 m²",
+    imgCredit: "Simon Genillier Roelsgaard et prôto.architecture",
+    imgCreditUrl: "https://www.instagram.com/simongenillieroelsgaard/",
+  },
 ];

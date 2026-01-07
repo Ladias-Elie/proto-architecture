@@ -145,7 +145,7 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "Située dans une ancienne longère bugiste, l’ex-atelier devient un logement autonome, discret dans prolongement de la ferme. Le projet accompagne la métamorphose de ce bâti rural en une habitation lumineuse, chaleureuse et sobre en énergie, attentive à l’héritage familial qui l’habite.\nLes larges ouvertures au sud sont préservées pour capter pleinement de l’ensoleillement. Une nouvelle baie s’ouvre à l’est sur le pré, tandis qu’une ouverture au nord est agrandie pour diffuser une lumière douce dans la chambre.\nLa qualité environnementale guide l’ensemble des choix afin de créer un espace peu énergivore et confortable : isolation intérieure en laine de bois, menuiseries extérieures en aluminium, chauffage au bois et ventilation naturelle.\nLe projet révèle enfin l’existant : portes en bois sablées et réemployées, pierre apparente mise en valeur dans les murs et les seuils, laissant dialoguer mémoire du lieu et usage contemporain.",
-    coverImage: chv_img_1,
+    coverImage: chv_img_3,
     images: [
       chv_img_1,
       chv_img_2,

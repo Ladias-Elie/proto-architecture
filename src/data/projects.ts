@@ -64,6 +64,38 @@ import chv_plan_4 from "@/assets/CHV/plan/proto architecture_renovation maison_V
 import chv_plan_5 from "@/assets/CHV/plan/proto architecture_renovation maison_Valromey_05-facade Nord.webp";
 import chv_plan_6 from "@/assets/CHV/plan/proto architecture_renovation maison_Valromey_06-detail cuisine.webp";
 
+// SSA plan
+import ssa_plan_1 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_01-plan RDC.webp";
+import ssa_plan_2 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_02-plan R+1.webp";
+import ssa_plan_3 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_03-facade Sud.webp";
+import ssa_plan_4 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_04-facade Est.webp";
+import ssa_plan_5 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_05-facade Ouest.webp";
+import ssa_plan_6 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_06-facade Nord.webp";
+import ssa_plan_7 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_07-coupe transversale.webp";
+import ssa_plan_8 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_08-coupe longitudinale.webp";
+// SSA images
+import ssa_img_1 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_01-facade.webp";
+import ssa_img_2 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_02-détail.webp";
+import ssa_img_3 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_03-interieur.webp";
+import ssa_img_4 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_04-interieur.webp";
+import ssa_img_5 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_05-interieur.webp";
+import ssa_img_6 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_06-interieur.webp";
+import ssa_img_7 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_07-facade.webp";
+import ssa_img_8 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_08-facade.webp";
+import ssa_img_9 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_09-extension.webp";
+import ssa_img_10 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_10-extension.webp";
+import ssa_img_11 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_11-interieur.webp";
+import ssa_img_12 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_12-facade.webp";
+import ssa_img_13 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_13-existant.webp";
+import ssa_img_14 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_14-existant.webp";
+import ssa_img_15 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_15-existant.webp";
+import ssa_img_16 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_16-travaux.webp";
+import ssa_img_17 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_17-travaux.webp";
+import ssa_img_18 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_18-existant.webp";
+import ssa_img_19 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_19-existant.webp";
+import ssa_img_20 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_20-travaux.webp";
+import ssa_img_21 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_21-travaux.webp";
+
 export interface Project {
   id: string;
   title: string;
@@ -172,4 +204,24 @@ export const projects: Project[] = [
     imgCredit: "Simon Genillier Roelsgaard et prôto.architecture",
     imgCreditUrl: "https://www.instagram.com/simongenillieroelsgaard/",
   },
+  {
+  id: "ssa",
+  title: "Saint-Sorlin-d’Arves",
+  category: "Rénovation (y.compris énergétique) et extension d’un chalet",
+  location: "Saint-Sorlin-d’Arves, Auvergne-Rhône-Alpes",
+  year: "2024",
+  description:
+    "Situé à Saint-Sorlin-d’Arves, au cœur du domaine des Sybelles, ce chalet de montagne a fait l’objet d’un projet de rénovation et d’extension visant à accompagner l’évolution des usages familiaux. Longtemps contraint par des surfaces devenues insuffisantes, le bâti existant ne permettait plus d’accueillir sereinement les séjours réunissant enfants et adultes. L’intervention a ainsi permis de repenser en profondeur l’organisation des espaces, afin d’offrir davantage de fluidité, de convivialité et de souplesse d’usage, tout en conservant le nombre de couchages existant.\nLe projet s’est attaché à libérer l’espace de séjour et à clarifier les circulations intérieures. Un espace distinct a été créé, permettant aux différents membres de la famille de se retrouver, jouer ou se détendre sans perturber les temps de repas, mettant fin aux usages contraints et aux aménagements provisoires. La cuisine, auparavant exiguë et peu fonctionnelle, a été agrandie et entièrement repensée : un lieu lumineux, généreux et adapté à une occupation familiale intensive. L’extension accueille également un véritable espace d’entrée, qui redéfinit clairement l’accès au chalet et organise les flux intérieurs, un enjeu essentiel dans le contexte montagnard et les usages hivernaux.\nL’écriture de l’extension s’inscrit dans un dialogue attentif avec le bâti existant et le paysage alpin environnant. Sans pastiche, elle prolonge l’esprit du chalet tout en affirmant une contemporanéité discrète, lisible et respectueuse de l’identité du lieu. Le projet a par ailleurs été l’occasion de rafraîchir la salle de bain à l’étage et d’améliorer sensiblement les performances énergétiques de la maison, dans une démarche de confort durable et de sobriété :\n→ Isolation thermique par l’extérieur en fibre de bois et ravalement complet des façades\n→ Isolation des combles perdus en ouate de cellulose\n→ Remplacement de la chaudière à gaz par une pompe à chaleur air/eau\n→ Installation d’un poêle à bois\nL’ensemble de l’intervention vise ainsi à transformer cette maison familiale en un lieu plus généreux, fonctionnel et confortable, capable d’accueillir durablement les usages contemporains tout en valorisant son implantation et son identité alpine.",
+  coverImage: ssa_img_3,
+  images: [ssa_img_1, ssa_img_2, ssa_img_3, ssa_img_4, ssa_img_5, ssa_img_6, ssa_img_7, ssa_img_8, ssa_img_9, ssa_img_10, ssa_img_11, ssa_img_12, ssa_img_13, ssa_img_14, ssa_img_15, ssa_img_16, ssa_img_17, ssa_img_18, ssa_img_19, ssa_img_20, ssa_img_21],
+  plans: [ssa_plan_1, ssa_plan_2, ssa_plan_3, ssa_plan_4, ssa_plan_5, ssa_plan_6, ssa_plan_7, ssa_plan_8],
+  type: "Mission de conception et suivi architectural",
+  projectManagement: "Privée",
+  cost: "350 k€ HT",
+  surfaces: "180 m² + 22 m²",
+  imgCredit: "Simon Genillier Roelsgaard et prôto.architecture",
+  imgCreditUrl: "https://www.instagram.com/simongenillieroelsgaard/",
+  collaboration: "Valet - Maître-d’oeuvre",
+  collaborationUrl: "https://valet-maitredoeuvre.fr/",
+},
 ];

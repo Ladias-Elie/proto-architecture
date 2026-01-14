@@ -75,7 +75,7 @@ import ssa_plan_7 from "@/assets/SSA/plan/proto architecture_renovation maison_M
 import ssa_plan_8 from "@/assets/SSA/plan/proto architecture_renovation maison_Maurienne_08-coupe longitudinale.webp";
 // SSA images
 import ssa_img_1 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_01-facade.webp";
-import ssa_img_2 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_02-détail.webp";
+import ssa_img_2 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_02-detail.webp";
 import ssa_img_3 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_03-interieur.webp";
 import ssa_img_4 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_04-interieur.webp";
 import ssa_img_5 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_05-interieur.webp";

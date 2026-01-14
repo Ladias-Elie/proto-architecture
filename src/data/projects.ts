@@ -206,7 +206,7 @@ export const projects: Project[] = [
   },
   {
   id: "ssa",
-  title: "Saint-Sorlin-d’Arves",
+  title: "Roche",
   category: "Rénovation (y.compris énergétique) et extension d’un chalet",
   location: "Saint-Sorlin-d’Arves, Auvergne-Rhône-Alpes",
   year: "2024",

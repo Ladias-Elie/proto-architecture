@@ -1,11 +1,12 @@
+'use client'
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 const About = () => {
-  const navigate = useNavigate();
+  const router = useRouter()
 
   const scrollToContact = () => {
     // Close all dialogs
@@ -13,14 +14,14 @@ const About = () => {
       complete: false,
       partial: false,
       consultation: false,
-    });
+    })
 
-    navigate("/");
+    router.push("/")
     setTimeout(() => {
-      const contactSection = document.getElementById('contact');
-      contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100);
-  };
+      const contactSection = document.getElementById('contact')
+      contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }, 100)
+  }
 
   const missionData = {
     complete: {

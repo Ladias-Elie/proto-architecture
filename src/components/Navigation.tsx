@@ -1,80 +1,80 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { trackEvent } from "@/lib/analytics";
+'use client'
+
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import { useRouter, usePathname } from "next/navigation"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { trackEvent } from "@/lib/analytics"
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
-  const handleNavigation = (path: string) => {
-    navigate(path);
-    setIsOpen(false);
-  };
-
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button
+          <Link
+            href="/"
             onClick={() => {
-              navigate("/");
               setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }, 100);
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }, 100)
             }}
             className="text-2xl font-bold tracking-tighter hover:opacity-70 transition-opacity"
           >
             prôto.
-          </button>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <button
+            <Link
+              href="/a-propos"
               onClick={() => {
-                navigate("/a-propos");
                 setTimeout(() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }, 100)
               }}
-              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${isActive("/a-propos")
+              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${
+                isActive("/a-propos")
                   ? "text-foreground border-b-2 border-accent pb-1"
                   : "text-muted-foreground hover:text-foreground"
-                }`}
+              }`}
             >
               À propos
-            </button>
-            <button
+            </Link>
+            <Link
+              href="/projets"
               onClick={() => {
-                navigate("/projets");
                 setTimeout(() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }, 100)
               }}
-              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${isActive("/projets")
+              className={`text-sm font-semibold uppercase tracking-wider transition-colors ${
+                isActive("/projets")
                   ? "text-foreground border-b-2 border-accent pb-1"
                   : "text-muted-foreground hover:text-foreground"
-                }`}
+              }`}
             >
               Projets
-            </button>
+            </Link>
             <Button
               onClick={() => {
-                navigate("/");
+                router.push("/")
                 setTimeout(() => {
                   trackEvent({
                     category: "CTA",
                     action: "Click",
                     label: "Header Contact Button",
-                  });
-                  const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
+                  })
+                  const contactSection = document.getElementById('contact')
+                  contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                }, 100)
               }}
               size="sm"
               className="font-semibold uppercase tracking-wider"
@@ -96,45 +96,47 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden py-6 space-y-4 border-t-2 border-border">
-            <button
+            <Link
+              href="/a-propos"
               onClick={() => {
-                navigate("/a-propos");
-                setIsOpen(false);
+                setIsOpen(false)
                 setTimeout(() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }, 100)
               }}
-              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${isActive("/a-propos") ? "text-foreground" : "text-muted-foreground"
-                }`}
+              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${
+                isActive("/a-propos") ? "text-foreground" : "text-muted-foreground"
+              }`}
             >
               À propos
-            </button>
-            <button
+            </Link>
+            <Link
+              href="/projets"
               onClick={() => {
-                navigate("/projets");
-                setIsOpen(false);
+                setIsOpen(false)
                 setTimeout(() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }, 100)
               }}
-              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${isActive("/projets") ? "text-foreground" : "text-muted-foreground"
-                }`}
+              className={`block w-full text-left py-2 text-sm font-semibold uppercase tracking-wider ${
+                isActive("/projets") ? "text-foreground" : "text-muted-foreground"
+              }`}
             >
               Projets
-            </button>
+            </Link>
             <Button
               onClick={() => {
-                navigate("/");
-                setIsOpen(false);
+                router.push("/")
+                setIsOpen(false)
                 setTimeout(() => {
                   trackEvent({
                     category: "CTA",
                     action: "Click",
                     label: "Mobile Menu Contact Button",
-                  });
-                  const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
+                  })
+                  const contactSection = document.getElementById('contact')
+                  contactSection?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                }, 100)
               }}
               className="w-full font-semibold uppercase tracking-wider"
             >
@@ -144,7 +146,7 @@ const Navigation = () => {
         )}
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

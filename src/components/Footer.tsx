@@ -54,9 +54,9 @@ const Footer = () => {
                 aria-label="Ordre des Architectes"
                 className="opacity-60 hover:opacity-100 transition-opacity"
               >
-                <img 
-                  src={`${import.meta.env.BASE_URL}logo-ordre-architectes.png`} 
-                  alt="Ordre des Architectes" 
+                <img
+                  src="/logo-ordre-architectes.png"
+                  alt="Ordre des Architectes"
                   className="h-5"
                 />
               </a>

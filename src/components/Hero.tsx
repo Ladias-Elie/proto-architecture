@@ -1,3 +1,5 @@
+'use client'
+
 import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/renovation-maison-village.webp";
 import { Button } from "@/components/ui/button";
@@ -31,8 +33,8 @@ const Hero = () => {
           {/* Right: Image */}
           <div className="lg:col-span-5">
             <div className="relative aspect-[3/4] overflow-hidden">
-              <img 
-                src={heroImage}
+              <img
+                src={heroImage.src}
                 alt="Rénovation architecturale Lyon - transformation maison village"
                 className="absolute inset-0 w-full h-full object-cover"
               />

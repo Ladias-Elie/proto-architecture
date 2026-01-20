@@ -96,6 +96,8 @@ import ssa_img_19 from "@/assets/SSA/images/proto architecture_renovation chalet
 import ssa_img_20 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_20-travaux.webp";
 import ssa_img_21 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_21-travaux.webp";
 
+import type { StaticImageData } from 'next/image'
+
 export interface Project {
   id: string;
   title: string;
@@ -103,9 +105,9 @@ export interface Project {
   location: string;
   year: string;
   description: string;
-  coverImage: string;
-  images: string[];
-  plans: string[];
+  coverImage: string | StaticImageData;
+  images: (string | StaticImageData)[];
+  plans: (string | StaticImageData)[];
   type: string;
   projectManagement?: string;
   cost?: string;

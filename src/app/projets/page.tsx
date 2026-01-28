@@ -42,19 +42,19 @@ export default function ProjectsPage() {
               {projects.map((project) => (
                 <Link
                   key={project.id}
-                  href={`/projets/${project.id}`}
+                  href={`/projets/${project.slug}`}
                   className="group block space-y-4"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-muted">
                     <img
                       src={typeof project.coverImage === 'string' ? project.coverImage : project.coverImage.src}
-                      alt={`${project.title} - Projet d'architecture ${project.category} à ${project.location}`}
+                      alt={`${project.id} - Projet d'architecture ${project.category} à ${project.location}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-2xl text-foreground group-hover:text-accent transition-colors">
-                      {project.title}
+                      {project.id}
                     </h3>
                     <p className="text-muted-foreground">
                       {project.location}

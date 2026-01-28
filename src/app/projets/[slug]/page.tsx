@@ -1,26 +1,38 @@
 import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
+import { notFound, redirect } from 'next/navigation'
+import ReactMarkdown from 'react-markdown'
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 import { projects } from "@/data/projects"
 import { ProjectCarousel } from "@/components/ProjectCarousel"
+import { legacyRedirects, legacyIds } from "@/data/redirects"
 
 // Generate static paths for all projects at build time
+// Inclut les nouveaux slugs ET les anciens IDs pour les redirections
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    id: project.id,
-  }))
+  const paths: { slug: string }[] = []
+
+  // Nouveaux slugs
+  projects.forEach((project) => {
+    paths.push({ slug: project.slug })
+  })
+
+  // Anciens IDs (pour redirection)
+  legacyIds.forEach((oldId) => {
+    paths.push({ slug: oldId })
+  })
+
+  return paths
 }
 
 // Generate metadata for each project page
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ id: string }>
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const { id } = await params
-  const project = projects.find((p) => p.id === id)
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
 
   if (!project) {
     return {
@@ -28,14 +40,17 @@ export async function generateMetadata({
     }
   }
 
+  const baseUrl = 'https://proto-architecture.fr'
   const description = `${project.category} à ${project.location} (${project.year}). ${project.description.substring(0, 140)}...`
-  const coverImageUrl = typeof project.coverImage === 'string' ? project.coverImage : project.coverImage.src
+  const imagePath = typeof project.coverImage === 'string' ? project.coverImage : project.coverImage.src
+  // URL absolue pour les images OpenGraph/Twitter
+  const coverImageUrl = imagePath.startsWith('http') ? imagePath : `${baseUrl}${imagePath}`
 
   return {
     title: `${project.title} - ${project.location}`,
     description,
     alternates: {
-      canonical: `/projets/${project.id}`,
+      canonical: `/projets/${project.slug}`,
     },
     openGraph: {
       title: `${project.title} - ${project.location}`,
@@ -43,11 +58,14 @@ export async function generateMetadata({
       images: [
         {
           url: coverImageUrl,
+          width: 1200,
+          height: 630,
           alt: `${project.title} - ${project.category}`,
         },
       ],
       type: 'article',
-      url: `https://proto-architecture.fr/projets/${project.id}`,
+      url: `${baseUrl}/projets/${project.slug}`,
+      siteName: 'prôto.architecture',
     },
     twitter: {
       card: 'summary_large_image',
@@ -62,10 +80,16 @@ export async function generateMetadata({
 export default async function ProjectDetailPage({
   params
 }: {
-  params: Promise<{ id: string }>
+  params: Promise<{ slug: string }>
 }) {
-  const { id } = await params
-  const project = projects.find((p) => p.id === id)
+  const { slug } = await params
+
+  // Vérifier si c'est un ancien ID qui doit être redirigé
+  if (legacyRedirects[slug]) {
+    redirect(`/projets/${legacyRedirects[slug]}`)
+  }
+
+  const project = projects.find((p) => p.slug === slug)
 
   if (!project) {
     notFound()
@@ -109,7 +133,7 @@ export default async function ProjectDetailPage({
             {/* Title */}
             <div className="mb-12">
               <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
-                {project.title}
+                {project.id} - {project.title}
               </h1>
             </div>
 
@@ -166,10 +190,10 @@ export default async function ProjectDetailPage({
             </div>
 
             {/* Description */}
-            <div className="max-w-4xl mb-12">
-              <p className="text-foreground/80 leading-relaxed text-lg whitespace-pre-line">
+            <div className="max-w-4xl mb-12 prose prose-lg prose-neutral dark:prose-invert">
+              <ReactMarkdown>
                 {project.description}
-              </p>
+              </ReactMarkdown>
             </div>
 
             {/* Collaboration */}

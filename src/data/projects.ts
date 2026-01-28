@@ -98,7 +98,25 @@ import ssa_img_21 from "@/assets/SSA/images/proto architecture_renovation chalet
 
 import type { StaticImageData } from 'next/image'
 
-export interface Project {
+// Fonction pour créer un slug URL-friendly
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Supprime les accents
+    .replace(/[^a-z0-9]+/g, '-')     // Remplace les caractères spéciaux par des tirets
+    .replace(/^-+|-+$/g, '')         // Supprime les tirets au début et à la fin
+    .replace(/-+/g, '-');            // Remplace les tirets multiples par un seul
+}
+
+// Génère le slug à partir de l'id et de la location
+export function generateSlug(id: string, location: string): string {
+  // Prend uniquement la première partie de la location (avant la virgule)
+  const shortLocation = location.split(',')[0].trim();
+  return `${id}-${slugify(shortLocation)}`;
+}
+
+interface ProjectData {
   id: string;
   title: string;
   category: string;
@@ -118,15 +136,60 @@ export interface Project {
   collaborationUrl?: string;
 }
 
-export const projects: Project[] = [
+export interface Project extends ProjectData {
+  slug: string;
+}
+
+const projectsData: ProjectData[] = [
   {
     id: "bag",
-    title: "Maison Bigourdane",
+    title: "Rénovation d'une maison Bigourdane",
     category: "Rénovation (y.c énergétique) d'une ancienne conciergerie et de son annexe",
-    location: "Bagnère-de-Bigorre",
+    location: "Bagnère-de-Bigorre, Hautes-Pyrénées, Occitanie",
     year: "2024",
-    description:
-      "Située dans le parc arboré d’une villa bourgeoise, cette ancienne conciergerie fait l’objet d’un projet de rénovation intégrale. L’intervention vise à transformer ce petit bâti au charme patrimonial en une habitation contemporaine, fonctionnelle et performante sur le plan énergétique, tout en préservant ses proportions harmonieuses et son identité architecturale.\n\nIl s'agit d'une grange bigourdane typique de la région : toiture en ardoises, encadrements en bois autour des ouvertures et une galerie filante au premier étage qui servait à sécher le foin. Le bâtiment, abandonné depuis une dizaine d’années, avait subi quelques aménagements sommaires réalisés à la hâte. Un curage complet a donc été nécessaire avant de commencer les travaux.\n\nL'objectif principal du projet a été de \"réparer\" le bâtiment pour mettre en valeur les éléments architecturaux qui lui confèrent son caractère unique.\n\nPar exemple, le balcon extérieur a été renforcé plutôt que remplacé. Les volets ont été soit réparés, soit remplacés à l’identique, respectant ainsi l’esthétique originelle.\n\nLe projet a consisté à rénover de fond en comble le bâtiment pour en faire une maison agréable à vivre, ouverte sur l’extérieur et le parc. La distribution des pièces est totalement repensée et un gros effort est fait sur les qualités environnementales de la maison :\n→ Isolation intérieure en fibre de bois et ouate de cellulose\n→ Remplacement des menuiseries bois et création d’ouvertures en aluminium\n→ Eau chaude sanitaire par panneaux solaires et chaudière à bois pour le chauffage\n→ Récupération des eaux de pluie pour des usages domestiques\n→ Ventilation naturelle\n\nLa luminosité intérieure a été optimisée grâce à l'ajout d’ouverture en toiture et de grandes baies vitrées, qui offrent des vues imprenables sur le jardin et le paysage verdoyant environnant.\n\nUn soin particulier a été apporté à la conception de mobilier sur-mesure et au choix des matériaux, afin d’apporter caractère à l’ensemble de la maison, en adéquation avec la personnalité de la maîtrise d’ouvrage.",
+    description: `Située dans le parc arboré d'une villa bourgeoise à Bagnère-de-Bigorre, cette ancienne conciergerie fait l'objet d'un projet de rénovation écologique intégrale. L'intervention vise à transformer ce petit bâti au charme patrimonial en une habitation contemporaine, fonctionnelle et performante sur le plan énergétique, tout en préservant ses proportions harmonieuses et son identité architecturale.
+
+## Une grange bigourdane authentique à réhabiliter
+
+Il s'agit d'une grange bigourdane typique des Hautes-Pyrénées : toiture en ardoises, encadrements en bois massif autour des ouvertures et une galerie filante au premier étage qui servait autrefois à sécher le foin. Le bâtiment de 160 m², abandonné depuis une dizaine d'années, avait subi quelques aménagements sommaires réalisés à la hâte. Un curage complet a donc été nécessaire pour révéler les qualités architecturales du lieu et assainir la structure avant d'entamer les travaux de rénovation.
+
+## Réparer plutôt que remplacer : une approche respectueuse du patrimoine
+
+L'objectif principal de ce projet de rénovation a été de "réparer" le bâtiment pour mettre en valeur les éléments architecturaux qui lui confèrent son caractère unique. Cette démarche s'inscrit dans une logique de sobriété constructive et de valorisation de l'existant, évitant les démolitions inutiles et la surconsommation de matériaux neufs.
+
+Le balcon extérieur en bois a été renforcé et restauré plutôt que remplacé, conservant ainsi son authenticité et son histoire. Les volets ont été soit réparés avec soin lorsque leur état le permettait, soit remplacés à l'identique lorsque nécessaire, respectant ainsi l'esthétique originelle de la grange bigourdane et l'harmonie de la façade.
+
+## Rénovation énergétique performante avec matériaux biosourcés
+
+Le projet a consisté à rénover de fond en comble le bâtiment pour en faire une maison familiale agréable à vivre, ouverte sur l'extérieur et le parc environnant. La distribution des pièces est totalement repensée pour optimiser les espaces, la circulation de la lumière naturelle et les usages du quotidien.
+
+Un effort important a été porté sur la performance énergétique et environnementale de cette rénovation :
+
+- **Isolation thermique performante** en fibre de bois et ouate de cellulose (matériaux biosourcés régulant naturellement l'humidité et offrant un excellent confort été comme hiver)
+
+- **Menuiseries bois** remplacées pour améliorer l'étanchéité à l'air et l'isolation, complétées par de nouvelles ouvertures en aluminium pour les grandes baies vitrées
+
+- **Eau chaude sanitaire** produite par panneaux solaires thermiques installés en toiture
+
+- **Chauffage biomasse** par chaudière à bois, utilisant une énergie renouvelable et locale
+
+- **Récupération des eaux de pluie** pour des usages domestiques (arrosage du jardin, sanitaires)
+
+- **Ventilation naturelle traversante** optimisant le confort d'été sans consommation énergétique
+
+Cette approche énergétique globale permet d'obtenir une maison à très faible consommation, confortable toute l'année et respectueuse de l'environnement.
+
+## Lumière naturelle et ouverture sur le paysage
+
+La luminosité intérieure a été optimisée grâce à l'ajout d'ouvertures en toiture (velux) et de grandes baies vitrées au rez-de-chaussée. Ces ouvertures généreuses offrent des vues imprenables sur le jardin arboré et le paysage verdoyant environnant des Hautes-Pyrénées, créant un dialogue permanent entre l'intérieur et l'extérieur.
+
+Le choix stratégique de l'emplacement et des dimensions des ouvertures permet de maximiser les apports solaires passifs en hiver, tout en préservant la fraîcheur en été grâce à l'inertie thermique des murs en pierre et à la ventilation naturelle.
+
+## Mobilier sur-mesure et matériaux naturels
+
+Un soin particulier a été apporté à la conception de mobilier sur-mesure intégré : bibliothèque, banquette, rangements. Ces éléments architecturaux créent du caractère et optimisent l'utilisation de l'espace, tout en s'inscrivant dans la continuité du projet architectural.
+
+Le choix des matériaux (bois brut, enduits naturels, pierre locale) a été guidé par la recherche d'authenticité, de durabilité et d'harmonie avec le bâti existant, en cohérence avec la personnalité des habitants et l'histoire du lieu.`,
     coverImage: bag_img_1,
     images: [
       bag_img_1,
@@ -156,12 +219,43 @@ export const projects: Project[] = [
   },
   {
     id: "123",
-    title: "123",
+    title: "Renovation cuisine",
     category: "Mobilier sur mesure",
-    location: "Lyon 7",
+    location: "Lyon 7 - Jean Macé, Auvergne-Rhône-Alpes",
     year: "2021",
-    description:
-      "1, 2, 3 comme le nombre d’interventions réalisées afin d’aménager cet appartement construit dans les années 60, à partir d’un seul et même matériau. Grâce au valchromat, panneau de fibre bois teinté dans la masse, les différentes pièces de mobilier viennent colorer les espaces de vie.\n L’effort principal est porté sur la cuisine qui se veut épurée et simple d’utilisation. Partant d’un plan très biscornu, à cause de nombreuses gaines, le but était d’en faire un espace de cuisine fonctionnel, adapté à la modernité.\n Pas de porte, pas de meuble haut, les étagères se suivent et offrent de grands plans de travail et des rangements en quantité. Rien n’est caché, la convivialité s’exprime aussi par le fait que tout le monde peut s’approprier la cuisine et son fonctionnement d’un seul regard.",
+    description: `Dans le quartier Jean Macé à Lyon 7ème, cet appartement des années 60 fait l'objet d'un projet d'aménagement intérieur centré sur la rénovation de la cuisine et la création de mobilier sur-mesure. L'intervention vise à transformer des espaces cloisonnés et datés en un lieu de vie contemporain, fonctionnel et chaleureux.
+
+
+## Un matériau unique pour trois interventions
+
+
+1, 2, 3 comme le nombre d'interventions réalisées pour aménager cet appartement, à partir d'un seul et même matériau : le valchromat. Ce panneau de fibres de bois teinté dans la masse offre une alternative durable aux panneaux de particules traditionnels, tout en apportant couleur et caractère aux espaces.
+
+Le valchromat structure les trois interventions principales du projet : la cuisine, un meuble bibliothèque dans le séjour, et des rangements intégrés dans la chambre. Cette continuité matérielle crée une cohérence visuelle entre les différentes pièces de l'appartement.
+
+## Rénovation cuisine : fonctionnalité et épure
+
+L'effort principal porte sur la cuisine de cet appartement lyonnais. Partant d'un plan biscornu contraint par de nombreuses gaines techniques héritées des années 60, l'objectif était de concevoir un espace cuisine fonctionnel, épuré et adapté aux usages contemporains.
+
+Le parti pris architectural repose sur la simplicité et l'ouverture : pas de portes de placards, pas de meubles hauts qui alourdiraient visuellement l'espace. Les étagères se succèdent en continuité, offrant de généreux plans de travail et des rangements abondants tout en préservant la luminosité.
+
+Cette transparence fonctionnelle favorise la convivialité : chacun peut s'approprier la cuisine et comprendre son organisation d'un seul regard. Les ustensiles, la vaisselle et les provisions sont accessibles immédiatement, sans ouvrir de portes. Cette approche correspond à une manière plus libre et décontractée d'habiter.
+
+## Le valchromat : un matériau technique et esthétique
+
+Le choix du valchromat pour ce projet de rénovation d'appartement à Lyon répond à plusieurs critères :
+
+- **Résistance et durabilité** : Ce panneau de fibres de bois haute densité résiste à l'humidité, aux chocs et à l'usage quotidien, particulièrement adapté à une cuisine.
+
+- **Esthétique naturelle** : Teinté dans la masse, le valchromat ne nécessite pas de placage ou de peinture. Les tranches restent colorées, créant une cohérence visuelle sur tous les angles du mobilier.
+
+- **Facilité d'entretien** : La surface lisse et non poreuse se nettoie facilement, un atout pour une cuisine ouverte sur le séjour.
+
+- **Écologie** : Composé à 65% de fibres de bois recyclées, le valchromat s'inscrit dans une démarche de matériaux plus responsables.
+
+## Solutions sur-mesure pour appartements anciens
+
+La rénovation d'appartements des années 60 à Lyon présente des contraintes spécifiques : gaines techniques imposantes, volumes parfois réduits, distribution des pièces datée. L'intervention ciblée sur la cuisine et les rangements permet de transformer radicalement la qualité de vie, sans travaux lourds de rénovation structurelle.`,
     coverImage: project123_img_1,
     images: [project123_img_1, project123_img_2, project123_img_3, project123_img_4],
     plans: [project123_plan_1, project123_plan_2, project123_plan_3, project123_plan_4],
@@ -178,7 +272,43 @@ export const projects: Project[] = [
     location: "Champagne-en-Valromey, Auvergne-Rhône-Alpes",
     year: "2025",
     description:
-      "Située dans une ancienne longère bugiste, l’ex-atelier devient un logement autonome, discret dans prolongement de la ferme. Le projet accompagne la métamorphose de ce bâti rural en une habitation lumineuse, chaleureuse et sobre en énergie, attentive à l’héritage familial qui l’habite.\nLes larges ouvertures au sud sont préservées pour capter pleinement de l’ensoleillement. Une nouvelle baie s’ouvre à l’est sur le pré, tandis qu’une ouverture au nord est agrandie pour diffuser une lumière douce dans la chambre.\nLa qualité environnementale guide l’ensemble des choix afin de créer un espace peu énergivore et confortable : isolation intérieure en laine de bois, menuiseries extérieures en aluminium, chauffage au bois et ventilation naturelle.\nLe projet révèle enfin l’existant : portes en bois sablées et réemployées, pierre apparente mise en valeur dans les murs et les seuils, laissant dialoguer mémoire du lieu et usage contemporain.",
+      `Située à Champagne-en-Valromey dans l'Ain, cette ancienne longère bugiste abrite un atelier agricole transformé en logement autonome. Le projet accompagne la métamorphose de ce bâti rural en une habitation lumineuse, chaleureuse et sobre en énergie, tout en préservant l'héritage familial et le caractère authentique du lieu.
+
+## Transformation d'un atelier de ferme en habitation
+
+L'ex-atelier, anciennement dédié aux activités agricoles de la ferme, devient un logement indépendant qui s'inscrit en discrétion dans le prolongement de la longère principale. Cette transformation respecte l'échelle du bâti existant et son implantation dans le paysage rural de la vallée du Valromey.
+
+Le projet de rénovation vise à créer un espace de vie confortable et contemporain, sans dénaturer le caractère patrimonial de cette architecture vernaculaire bugiste, typique des fermes de l'Ain.
+
+## Optimisation de la lumière naturelle
+
+Les larges ouvertures existantes au sud sont préservées et mises en valeur pour capter pleinement l'ensoleillement généreux tout au long de la journée. Ces ouvertures historiques du bâtiment agricole deviennent les sources principales de lumière et de chaleur passive pour le logement.
+
+Une nouvelle baie vitrée s'ouvre à l'est sur le pré et le paysage agricole environnant, créant un lien visuel fort avec l'extérieur et prolongeant les espaces de vie vers le jardin. À l'opposé, une ouverture existante au nord est agrandie pour diffuser une lumière douce et tamisée dans la chambre, offrant un confort visuel adapté à cet espace de repos.
+
+Cette attention portée aux orientations et aux apports lumineux crée une habitation baignée de lumière naturelle, limitant les besoins en éclairage artificiel.
+
+## Rénovation écologique et performance énergétique
+
+La qualité environnementale guide l'ensemble des choix constructifs afin de créer un espace peu énergivore, confortable toute l'année et respectueux de l'environnement :
+
+- **Isolation thermique** en laine de bois par l'intérieur, préservant l'aspect extérieur de la ferme tout en offrant une excellente performance thermique et acoustique
+
+- **Menuiseries extérieures** en aluminium à rupture de pont thermique, alliant durabilité et performance énergétique
+
+- **Chauffage au bois** utilisant une ressource locale et renouvelable, en cohérence avec le contexte rural
+
+- **Ventilation naturelle traversante** exploitant les orientations du bâtiment pour renouveler l'air sans consommation énergétique
+
+Cette approche de rénovation énergétique permet d'atteindre un excellent niveau de confort thermique avec des consommations minimales, transformant un bâtiment agricole ancien non isolé en une habitation performante.
+
+## Valorisation de l'existant et mémoire du lieu
+
+Le projet révèle et met en valeur les éléments patrimoniaux du bâti existant plutôt que de les dissimuler. Les anciennes portes en bois massif ont été soigneusement sablées, restaurées et réemployées dans le projet, conservant leur patine et leur histoire.
+
+La pierre locale apparente est mise en valeur dans les murs intérieurs et les seuils, créant une texture naturelle et authentique qui rappelle l'origine agricole du lieu. Ces éléments bruts dialoguent avec les aménagements contemporains, créant un équilibre entre mémoire du lieu et usage moderne.
+
+Cette démarche de valorisation de l'existant s'inscrit dans une logique de sobriété constructive : limiter les démolitions, réemployer les matériaux de qualité, révéler plutôt que remplacer.`,
     coverImage: chv_img_3,
     images: [
       chv_img_1,
@@ -227,3 +357,9 @@ export const projects: Project[] = [
   collaborationUrl: "https://valet-maitredoeuvre.fr/",
 },
 ];
+
+// Génère les projets avec leurs slugs automatiquement
+export const projects: Project[] = projectsData.map((project) => ({
+  ...project,
+  slug: generateSlug(project.id, project.location),
+}));

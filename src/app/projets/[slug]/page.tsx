@@ -132,8 +132,8 @@ export default async function ProjectDetailPage({
           <div className="max-w-6xl mx-auto">
             {/* Title */}
             <div className="mb-12">
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
-                {project.id} - {project.title}
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                {project.title}
               </h1>
             </div>
 
@@ -181,13 +181,23 @@ export default async function ProjectDetailPage({
             </div>
 
             {/* Images Grid */}
-            <div className="grid md:grid-cols-2 gap-8 mb-20">
-              {/* Photos Carousel */}
-              <ProjectCarousel images={project.images} title={project.title} type="Photo" />
+            {(project.images.length > 0 || project.plans.length > 0) && (
+              <div className={`grid gap-8 mb-20 ${
+                project.images.length > 0 && project.plans.length > 0
+                  ? 'md:grid-cols-2'
+                  : 'md:grid-cols-1 max-w-3xl mx-auto'
+              }`}>
+                {/* Photos Carousel */}
+                {project.images.length > 0 && (
+                  <ProjectCarousel images={project.images} title={project.title} type="Photo" />
+                )}
 
-              {/* Plans Carousel */}
-              <ProjectCarousel images={project.plans} title={project.title} type="Plan" />
-            </div>
+                {/* Plans Carousel */}
+                {project.plans.length > 0 && (
+                  <ProjectCarousel images={project.plans} title={project.title} type="Plan" />
+                )}
+              </div>
+            )}
 
             {/* Description */}
             <div className="max-w-4xl mb-12 prose prose-lg prose-neutral dark:prose-invert">

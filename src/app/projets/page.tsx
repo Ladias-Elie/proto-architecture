@@ -41,24 +41,39 @@ export default function ProjectsPage() {
             <div className="grid md:grid-cols-3 gap-12">
               {projects.map((project) => (
                 <Link
-                  key={project.id}
+                  key={project.title}
                   href={`/projets/${project.slug}`}
-                  className="group block space-y-4"
+                  className="group block"
                 >
-                  <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  {/* Titre en haut */}
+                  <div className="mb-3 min-h-[2.5rem] flex items-start justify-between gap-4">
+                    <h3 className="text-sm font-medium text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
+                      {project.title}
+                    </h3>
+                    <span className="text-xs text-muted-foreground whitespace-nowrap pt-0.5">
+                      {project.year}
+                    </span>
+                  </div>
+
+                  {/* Image */}
+                  <div className="aspect-[4/3] overflow-hidden bg-muted relative">
                     <img
                       src={typeof project.coverImage === 'string' ? project.coverImage : project.coverImage.src}
-                      alt={`${project.id} - Projet d'architecture ${project.category} à ${project.location}`}
+                      alt={`${project.title} - Projet d'architecture ${project.category} à ${project.location}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-2xl text-foreground group-hover:text-accent transition-colors">
-                      {project.id}
-                    </h3>
-                    <p className="text-muted-foreground">
+
+                  {/* Catégorie et localisation en bas */}
+                  <div className="mt-3 flex items-center text-xs text-muted-foreground">
+                    <span className="uppercase tracking-wider text-left">
+                      {project.category}
+                    </span>
+                    <span className="flex-1" />
+                    <span className="text-right">
                       {project.location}
-                    </p>
+                    </span>
                   </div>
                 </Link>
               ))}

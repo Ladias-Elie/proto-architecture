@@ -136,7 +136,8 @@ const About = () => {
             Un accompagnement<br />sur mesure
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-            De la simple consultation à la mission complète, nous adaptons notre intervention à vos besoins et à votre budget.
+            Que vous rénoviez un appartement à Lyon, une maison ancienne dans l'Ain ou un corps de ferme en Rhône-Alpes, nous adaptons notre intervention à vos besoins, votre budget et votre calendrier.
+            <br />De la simple consultation avant achat à l'accompagnement complet jusqu'à la livraison, notre approche s'adapte à chaque étape de votre projet.
           </p>
         </div>
 

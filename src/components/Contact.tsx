@@ -93,7 +93,9 @@ const Contact = () => {
           {/* Left: Information */}
           <div className="space-y-12">
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Que vous ayez une question, un projet en tête ou simplement envie d'échanger sur vos besoins en rénovation, n'hésitez pas à nous contacter.
+              Vous envisagez la rénovation de votre appartement ou maison à Lyon ou en Rhône-Alpes ?
+              <br />
+              Que vous soyez en phase de réflexion, en recherche d'un bien à rénover, ou prêt à lancer les travaux, échangeons sur votre projet.
             </p>
 
             <div className="space-y-8">

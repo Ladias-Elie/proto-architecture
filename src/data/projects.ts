@@ -96,6 +96,12 @@ import ssa_img_19 from "@/assets/SSA/images/proto architecture_renovation chalet
 import ssa_img_20 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_20-travaux.webp";
 import ssa_img_21 from "@/assets/SSA/images/proto architecture_renovation chalet_maurienne_21-travaux.webp";
 
+// Colombier (Pont) Images
+import pont_img_1 from "@/assets/Colombier/images/meuble-pont-chambre-lyon-7-jean-mace-vue-ensemble.webp";
+import pont_img_2 from "@/assets/Colombier/images/vue-tete-lit-meuble-pont-lyon-jean-mace.webp";
+import pont_img_3 from "@/assets/Colombier/images/meuble-pont-vue-laterale-droite-lyon-rangements.webp";
+import pont_img_4 from "@/assets/Colombier/images/coin-bureau-meuble-pont-lyon-jean-mace.webp";
+
 import type { StaticImageData } from 'next/image'
 
 // Fonction pour créer un slug URL-friendly
@@ -110,10 +116,10 @@ function slugify(text: string): string {
 }
 
 // Génère le slug à partir de l'id et de la location
-export function generateSlug(id: string, location: string): string {
+export function generateSlug(title: string, location: string): string {
   // Prend uniquement la première partie de la location (avant la virgule)
   const shortLocation = location.split(',')[0].trim();
-  return `${id}-${slugify(shortLocation)}`;
+  return `${title}-${slugify(shortLocation)}`;
 }
 
 interface ProjectData {
@@ -143,7 +149,7 @@ export interface Project extends ProjectData {
 const projectsData: ProjectData[] = [
   {
     id: "bag",
-    title: "Rénovation d'une maison Bigourdane",
+    title: "Rénovation d'une maison Bigourdane.",
     category: "Rénovation (y.c énergétique) d'une ancienne conciergerie et de son annexe",
     location: "Bagnère-de-Bigorre, Hautes-Pyrénées, Occitanie",
     year: "2024",
@@ -219,21 +225,21 @@ Le choix des matériaux (bois brut, enduits naturels, pierre locale) a été gui
   },
   {
     id: "123",
-    title: "Renovation cuisine",
+    title: "Rénovation d'une cuisine dans un appartement des années 60.",
     category: "Mobilier sur mesure",
-    location: "Lyon 7 - Jean Macé, Auvergne-Rhône-Alpes",
+    location: "Lyon 7, Jean Macé, Auvergne-Rhône-Alpes",
     year: "2021",
     description: `Dans le quartier Jean Macé à Lyon 7ème, cet appartement des années 60 fait l'objet d'un projet d'aménagement intérieur centré sur la rénovation de la cuisine et la création de mobilier sur-mesure. L'intervention vise à transformer des espaces cloisonnés et datés en un lieu de vie contemporain, fonctionnel et chaleureux.
 
 
-## Un matériau unique pour trois interventions
+### Un matériau unique pour trois interventions
 
 
 1, 2, 3 comme le nombre d'interventions réalisées pour aménager cet appartement, à partir d'un seul et même matériau : le valchromat. Ce panneau de fibres de bois teinté dans la masse offre une alternative durable aux panneaux de particules traditionnels, tout en apportant couleur et caractère aux espaces.
 
 Le valchromat structure les trois interventions principales du projet : la cuisine, un meuble bibliothèque dans le séjour, et des rangements intégrés dans la chambre. Cette continuité matérielle crée une cohérence visuelle entre les différentes pièces de l'appartement.
 
-## Rénovation cuisine : fonctionnalité et épure
+### Rénovation cuisine : fonctionnalité et épure
 
 L'effort principal porte sur la cuisine de cet appartement lyonnais. Partant d'un plan biscornu contraint par de nombreuses gaines techniques héritées des années 60, l'objectif était de concevoir un espace cuisine fonctionnel, épuré et adapté aux usages contemporains.
 
@@ -241,19 +247,19 @@ Le parti pris architectural repose sur la simplicité et l'ouverture : pas de po
 
 Cette transparence fonctionnelle favorise la convivialité : chacun peut s'approprier la cuisine et comprendre son organisation d'un seul regard. Les ustensiles, la vaisselle et les provisions sont accessibles immédiatement, sans ouvrir de portes. Cette approche correspond à une manière plus libre et décontractée d'habiter.
 
-## Le valchromat : un matériau technique et esthétique
+### Le valchromat : un matériau technique et esthétique
 
 Le choix du valchromat pour ce projet de rénovation d'appartement à Lyon répond à plusieurs critères :
 
-- **Résistance et durabilité** : Ce panneau de fibres de bois haute densité résiste à l'humidité, aux chocs et à l'usage quotidien, particulièrement adapté à une cuisine.
+- Résistance et durabilité : Ce panneau de fibres de bois haute densité résiste à l'humidité, aux chocs et à l'usage quotidien, particulièrement adapté à une cuisine.
 
-- **Esthétique naturelle** : Teinté dans la masse, le valchromat ne nécessite pas de placage ou de peinture. Les tranches restent colorées, créant une cohérence visuelle sur tous les angles du mobilier.
+- Esthétique naturelle : Teinté dans la masse, le valchromat ne nécessite pas de placage ou de peinture. Les tranches restent colorées, créant une cohérence visuelle sur tous les angles du mobilier.
 
-- **Facilité d'entretien** : La surface lisse et non poreuse se nettoie facilement, un atout pour une cuisine ouverte sur le séjour.
+- Facilité d'entretien : La surface lisse et non poreuse se nettoie facilement, un atout pour une cuisine ouverte sur le séjour.
 
-- **Écologie** : Composé à 65% de fibres de bois recyclées, le valchromat s'inscrit dans une démarche de matériaux plus responsables.
+- Écologie : Composé à 65% de fibres de bois recyclées, le valchromat s'inscrit dans une démarche de matériaux plus responsables.
 
-## Solutions sur-mesure pour appartements anciens
+### Solutions sur-mesure pour appartements anciens
 
 La rénovation d'appartements des années 60 à Lyon présente des contraintes spécifiques : gaines techniques imposantes, volumes parfois réduits, distribution des pièces datée. L'intervention ciblée sur la cuisine et les rangements permet de transformer radicalement la qualité de vie, sans travaux lourds de rénovation structurelle.`,
     coverImage: project123_img_1,
@@ -267,9 +273,9 @@ La rénovation d'appartements des années 60 à Lyon présente des contraintes s
   },
   {
     id: "chv",
-    title: "Ossy",
-    category: "Transformation d'un ancienn atelier dans une ferme de l'Ain",
-    location: "Champagne-en-Valromey, Auvergne-Rhône-Alpes",
+    title: "Transformation d'un atelier en logement.",
+    category: "Renovation d'une ancienne ferme bugiste",
+    location: "Champagne-en-Valromey, Ain, Auvergne-Rhône-Alpes",
     year: "2025",
     description:
       `Située à Champagne-en-Valromey dans l'Ain, cette ancienne longère bugiste abrite un atelier agricole transformé en logement autonome. Le projet accompagne la métamorphose de ce bâti rural en une habitation lumineuse, chaleureuse et sobre en énergie, tout en préservant l'héritage familial et le caractère authentique du lieu.
@@ -338,12 +344,52 @@ Cette démarche de valorisation de l'existant s'inscrit dans une logique de sobr
   },
   {
   id: "ssa",
-  title: "Roche",
+  title: "Rénovation et extension d’un chalet de montagne",
   category: "Rénovation (y.compris énergétique) et extension d’un chalet",
   location: "Saint-Sorlin-d’Arves, Auvergne-Rhône-Alpes",
   year: "2024",
   description:
-    "Situé à Saint-Sorlin-d’Arves, au cœur du domaine des Sybelles, ce chalet de montagne a fait l’objet d’un projet de rénovation et d’extension visant à accompagner l’évolution des usages familiaux. Longtemps contraint par des surfaces devenues insuffisantes, le bâti existant ne permettait plus d’accueillir sereinement les séjours réunissant enfants et adultes. L’intervention a ainsi permis de repenser en profondeur l’organisation des espaces, afin d’offrir davantage de fluidité, de convivialité et de souplesse d’usage, tout en conservant le nombre de couchages existant.\nLe projet s’est attaché à libérer l’espace de séjour et à clarifier les circulations intérieures. Un espace distinct a été créé, permettant aux différents membres de la famille de se retrouver, jouer ou se détendre sans perturber les temps de repas, mettant fin aux usages contraints et aux aménagements provisoires. La cuisine, auparavant exiguë et peu fonctionnelle, a été agrandie et entièrement repensée : un lieu lumineux, généreux et adapté à une occupation familiale intensive. L’extension accueille également un véritable espace d’entrée, qui redéfinit clairement l’accès au chalet et organise les flux intérieurs, un enjeu essentiel dans le contexte montagnard et les usages hivernaux.\nL’écriture de l’extension s’inscrit dans un dialogue attentif avec le bâti existant et le paysage alpin environnant. Sans pastiche, elle prolonge l’esprit du chalet tout en affirmant une contemporanéité discrète, lisible et respectueuse de l’identité du lieu. Le projet a par ailleurs été l’occasion de rafraîchir la salle de bain à l’étage et d’améliorer sensiblement les performances énergétiques de la maison, dans une démarche de confort durable et de sobriété :\n→ Isolation thermique par l’extérieur en fibre de bois et ravalement complet des façades\n→ Isolation des combles perdus en ouate de cellulose\n→ Remplacement de la chaudière à gaz par une pompe à chaleur air/eau\n→ Installation d’un poêle à bois\nL’ensemble de l’intervention vise ainsi à transformer cette maison familiale en un lieu plus généreux, fonctionnel et confortable, capable d’accueillir durablement les usages contemporains tout en valorisant son implantation et son identité alpine.",
+    `Situé à Saint-Sorlin-d'Arves, au cœur du domaine skiable des Sybelles en Savoie, ce chalet de montagne fait l'objet d'un projet de rénovation et d'extension pensé pour accompagner l'évolution des usages d'une famille. L'intervention vise à transformer un chalet devenu trop contraint en un lieu de vie généreux, fonctionnel et confortable, capable d'accueillir sereinement les séjours réunissant enfants et adultes.
+
+## Des espaces devenus insuffisants
+
+Longtemps contraint par des surfaces inadaptées, le chalet existant ne permettait plus d'accueillir confortablement les séjours familiaux. Les espaces de vie manquaient de fluidité, la cuisine était exiguë, et l'absence d'espace d'entrée digne de ce nom compliquait les usages hivernaux typiques de la montagne.
+
+L'objectif du projet est de repenser en profondeur l'organisation des espaces pour offrir davantage de convivialité et de souplesse d'usage, tout en conservant le même nombre de couchages. Il s'agit d'améliorer la qualité de vie au quotidien sans augmenter la surface habitable de manière excessive.
+
+## Extension et réorganisation des espaces de vie
+
+Le projet s'attache à libérer l'espace de séjour et à clarifier les circulations intérieures. L'extension permet de créer un espace distinct dédié aux activités familiales : les enfants peuvent jouer, les adultes se détendre, sans perturber les temps de repas ou de cuisine. Cette séparation fonctionnelle met fin aux usages contraints et aux aménagements provisoires qui caractérisaient l'ancien chalet.
+
+La cuisine, auparavant exiguë et peu fonctionnelle, a été agrandie et entièrement repensée. Elle devient un lieu lumineux, généreux et adapté à une occupation familiale intensive, avec des plans de travail suffisants, des rangements optimisés et une ouverture sur les espaces de vie.
+
+L'extension accueille également un véritable espace d'entrée qui redéfinit clairement l'accès au chalet et organise les flux intérieurs. Cet espace tampon est essentiel dans le contexte montagnard : il permet de gérer les équipements de ski, les vêtements d'hiver et la transition thermique entre l'extérieur et l'intérieur.
+
+## Une architecture contemporaine respectueuse du contexte alpin
+
+L'écriture architecturale de l'extension s'inscrit dans un dialogue attentif avec le bâti existant et le paysage alpin environnant. Sans pastiche, elle prolonge l'esprit du chalet traditionnel tout en affirmant une contemporanéité discrète, lisible et respectueuse de l'identité du lieu.
+
+Les volumes, les matériaux et les proportions dialoguent avec l'architecture montagnarde locale, créant une continuité harmonieuse entre l'ancien et le nouveau. L'extension ne cherche pas à imiter l'existant, mais à le compléter avec justesse.
+
+## Rénovation énergétique et confort thermique
+
+Le projet a été l'occasion d'améliorer sensiblement les performances énergétiques du chalet, dans une démarche de confort durable et de sobriété énergétique, particulièrement importante en contexte montagnard où les hivers sont rigoureux :
+
+- **Isolation thermique par l'extérieur** en fibre de bois et ravalement complet des façades, préservant la surface habitable intérieure tout en améliorant drastiquement l'isolation
+
+- **Isolation des combles perdus** en ouate de cellulose, matériau biosourcé offrant d'excellentes performances thermiques et acoustiques
+
+- **Remplacement de la chaudière à gaz** par une pompe à chaleur air/eau, réduisant l'empreinte carbone et les coûts de chauffage
+
+- **Installation d'un poêle à bois** pour le chauffage d'appoint et l'ambiance chaleureuse typique des chalets de montagne
+
+Cette approche énergétique globale permet de réduire significativement les consommations tout en améliorant le confort thermique été comme hiver.
+
+## Rafraîchissement des espaces existants
+
+Au-delà de l'extension, le projet inclut la rénovation de la salle de bain à l'étage, offrant un espace modernisé et fonctionnel pour accueillir confortablement toute la famille lors des séjours.
+
+L'ensemble de ces interventions transforme ce chalet familial en un lieu plus généreux, fonctionnel et adapté aux usages contemporains, tout en valorisant son implantation exceptionnelle au cœur du domaine des Sybelles et son identité alpine authentique.`,
   coverImage: ssa_img_3,
   images: [ssa_img_1, ssa_img_2, ssa_img_3, ssa_img_4, ssa_img_5, ssa_img_6, ssa_img_7, ssa_img_8, ssa_img_9, ssa_img_10, ssa_img_11, ssa_img_12, ssa_img_13, ssa_img_14, ssa_img_15, ssa_img_16, ssa_img_17, ssa_img_18, ssa_img_19, ssa_img_20, ssa_img_21],
   plans: [ssa_plan_1, ssa_plan_2, ssa_plan_3, ssa_plan_4, ssa_plan_5, ssa_plan_6, ssa_plan_7, ssa_plan_8],
@@ -355,6 +401,53 @@ Cette démarche de valorisation de l'existant s'inscrit dans une logique de sobr
   imgCreditUrl: "https://www.instagram.com/simongenillieroelsgaard/",
   collaboration: "Valet - Maître-d’oeuvre",
   collaborationUrl: "https://valet-maitredoeuvre.fr/",
+},
+{
+id: "Colombier",
+title: "Construction d'un meuble pont dans un appartement lyonnais",
+category: "Mobilier sur mesure",
+location: "Lyon 7, Jean Macé, Auvergne-Rhône-Alpes",
+year: "2025",
+description: `Dans un appartement des années 70 situé proche de Jean Macé à Lyon 7ème, ce projet d'aménagement intérieur propose une solution sur-mesure pour optimiser l'espace d'une chambre tout en créant un coin bureau fonctionnel. L'intervention consiste en la réalisation d'un meuble pont encadrant le lit et d'un bureau attenant, conçus pour répondre aux besoins d'un mode de vie contemporain alliant repos et télétravail.
+
+## Un meuble pont pour structurer l'espace chambre
+
+Le meuble pont a été dessiné pour encadrer le lit sur trois côtés, créant ainsi un cocon rassurant tout en maximisant les rangements sans encombrer l'espace au sol. Cette configuration permet de libérer la surface habitable de la chambre, particulièrement précieuse dans un appartement des années 70 où les surfaces sont souvent contraintes.
+
+Les volumes du meuble pont ont été soigneusement étudiés pour offrir des rangements adaptés aux usages quotidiens : niches ouvertes pour les livres et objets décoratifs, espaces fermés pour le linge et les vêtements de saison. Les étagères latérales, calibrées en profondeur, font office de tables de chevet intégrées, évitant l'ajout de meubles supplémentaires.
+
+La partie haute du meuble pont offre un espace de rangement longue durée, idéal pour les affaires saisonnières ou les équipements peu utilisés. Cette optimisation verticale de l'espace répond à une problématique fréquente des appartements lyonnais : comment créer du rangement sans perdre en surface habitable.
+
+## Un espace bureau intégré pour le télétravail
+
+Accolé au meuble pont, un simple bureau complète l'aménagement de la chambre. Ce poste de travail à domicile a été pensé pour s'intégrer harmonieusement dans l'ensemble du mobilier, créant une continuité visuelle et fonctionnelle.
+
+Le bureau offre une surface de travail suffisante pour un ordinateur, des documents et quelques fournitures, tout en restant discret lorsqu'il n'est pas utilisé. Cette solution répond aux nouveaux modes de vie où la chambre devient un espace polyvalent, alliant repos et activité professionnelle à domicile.
+
+L'implantation du bureau a été étudiée en fonction de la lumière naturelle de la pièce, permettant de bénéficier d'un éclairage optimal pendant les heures de télétravail.
+
+## Réalisation artisanale par Vinel & Fils
+
+Ce projet de mobilier sur-mesure a été réalisé par l'atelier [Vinel & Fils](https://www.instagram.com/vineletfils/), menuisiers-ébénistes lyonnais spécialisés dans la création de mobilier contemporain et l'aménagement d'intérieurs. Leur savoir-faire artisanal garantit une qualité de fabrication et une durabilité dans le temps.
+
+Le choix de matériaux et de finitions durables permet de créer un mobilier pérenne, qui accompagnera les habitants sur le long terme et pourra s'adapter à l'évolution de leurs besoins.
+
+## Aménagement d'appartement années 70 à Lyon
+
+Cette intervention illustre les possibilités d'optimisation des appartements des années 70, typiques du parc immobilier lyonnais. Sans travaux lourds de rénovation structurelle, l'ajout de mobilier sur-mesure transforme la fonctionnalité et le confort d'un espace, tout en s'adaptant aux contraintes architecturales existantes.
+
+Le projet démontre qu'avec une réflexion sur les usages et un mobilier pensé spécifiquement pour le lieu, il est possible de créer des espaces de vie généreux et polyvalents, même dans des surfaces réduites.`,
+coverImage: pont_img_1,
+images: [pont_img_1, pont_img_2, pont_img_3, pont_img_4],
+plans: [],
+type: "Mission de conception et suivi architectural",
+projectManagement: "Privée",
+cost: "5 k€ HT",
+surfaces: "12 m²",
+imgCredit: "prôto.architecture",
+imgCreditUrl: "https://proto-architecture.fr/",
+collaboration: " Vinel & Fils ",
+collaborationUrl: "https://www.instagram.com/vineletfils/",
 },
 ];
 

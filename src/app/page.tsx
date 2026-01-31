@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Navigation from "@/components/Navigation"
 import Hero from "@/components/Hero"
 import About from "@/components/About"
+import WhyProto from "@/components/WhyProto"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 
@@ -70,6 +71,7 @@ export default function HomePage() {
       />
       <Navigation />
       <Hero />
+      <WhyProto />
       <About />
       <Contact />
       <Footer />

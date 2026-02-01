@@ -115,11 +115,11 @@ function slugify(text: string): string {
     .replace(/-+/g, '-');            // Remplace les tirets multiples par un seul
 }
 
-// Génère le slug à partir de l'id et de la location
+// Génère le slug à partir du titre et de la location
 export function generateSlug(title: string, location: string): string {
   // Prend uniquement la première partie de la location (avant la virgule)
   const shortLocation = location.split(',')[0].trim();
-  return `${title}-${slugify(shortLocation)}`;
+  return `${slugify(title)}-${slugify(shortLocation)}`;
 }
 
 interface ProjectData {
@@ -155,17 +155,17 @@ const projectsData: ProjectData[] = [
     year: "2024",
     description: `Située dans le parc arboré d'une villa bourgeoise à Bagnère-de-Bigorre, cette ancienne conciergerie fait l'objet d'un projet de rénovation écologique intégrale. L'intervention vise à transformer ce petit bâti au charme patrimonial en une habitation contemporaine, fonctionnelle et performante sur le plan énergétique, tout en préservant ses proportions harmonieuses et son identité architecturale.
 
-## Une grange bigourdane authentique à réhabiliter
+### Une habitation bigourdane authentique à réhabiliter
 
-Il s'agit d'une grange bigourdane typique des Hautes-Pyrénées : toiture en ardoises, encadrements en bois massif autour des ouvertures et une galerie filante au premier étage qui servait autrefois à sécher le foin. Le bâtiment de 160 m², abandonné depuis une dizaine d'années, avait subi quelques aménagements sommaires réalisés à la hâte. Un curage complet a donc été nécessaire pour révéler les qualités architecturales du lieu et assainir la structure avant d'entamer les travaux de rénovation.
+Il s'agit d'une construction bigourdane typique des Hautes-Pyrénées : toiture en ardoises, encadrements en bois massif autour des ouvertures et une galerie filante au premier étage qui servait autrefois à sécher le bois. Le bâtiment de 110 m², abandonné depuis une dizaine d'années, avait subi quelques aménagements sommaires réalisés à la hâte. Un curage complet a donc été nécessaire pour révéler les qualités architecturales du lieu et assainir la structure avant d'entamer les travaux de rénovation.
 
-## Réparer plutôt que remplacer : une approche respectueuse du patrimoine
+### Réparer plutôt que remplacer : une approche respectueuse du patrimoine
 
 L'objectif principal de ce projet de rénovation a été de "réparer" le bâtiment pour mettre en valeur les éléments architecturaux qui lui confèrent son caractère unique. Cette démarche s'inscrit dans une logique de sobriété constructive et de valorisation de l'existant, évitant les démolitions inutiles et la surconsommation de matériaux neufs.
 
 Le balcon extérieur en bois a été renforcé et restauré plutôt que remplacé, conservant ainsi son authenticité et son histoire. Les volets ont été soit réparés avec soin lorsque leur état le permettait, soit remplacés à l'identique lorsque nécessaire, respectant ainsi l'esthétique originelle de la grange bigourdane et l'harmonie de la façade.
 
-## Rénovation énergétique performante avec matériaux biosourcés
+### Rénovation énergétique performante avec matériaux biosourcés
 
 Le projet a consisté à rénover de fond en comble le bâtiment pour en faire une maison familiale agréable à vivre, ouverte sur l'extérieur et le parc environnant. La distribution des pièces est totalement repensée pour optimiser les espaces, la circulation de la lumière naturelle et les usages du quotidien.
 
@@ -177,25 +177,23 @@ Un effort important a été porté sur la performance énergétique et environne
 
 - **Eau chaude sanitaire** produite par panneaux solaires thermiques installés en toiture
 
-- **Chauffage biomasse** par chaudière à bois, utilisant une énergie renouvelable et locale
+- **Chaudière au bois**, utilisant une énergie renouvelable et locale
 
 - **Récupération des eaux de pluie** pour des usages domestiques (arrosage du jardin, sanitaires)
 
-- **Ventilation naturelle traversante** optimisant le confort d'été sans consommation énergétique
-
 Cette approche énergétique globale permet d'obtenir une maison à très faible consommation, confortable toute l'année et respectueuse de l'environnement.
 
-## Lumière naturelle et ouverture sur le paysage
+### Lumière naturelle et ouverture sur le paysage
 
 La luminosité intérieure a été optimisée grâce à l'ajout d'ouvertures en toiture (velux) et de grandes baies vitrées au rez-de-chaussée. Ces ouvertures généreuses offrent des vues imprenables sur le jardin arboré et le paysage verdoyant environnant des Hautes-Pyrénées, créant un dialogue permanent entre l'intérieur et l'extérieur.
 
 Le choix stratégique de l'emplacement et des dimensions des ouvertures permet de maximiser les apports solaires passifs en hiver, tout en préservant la fraîcheur en été grâce à l'inertie thermique des murs en pierre et à la ventilation naturelle.
 
-## Mobilier sur-mesure et matériaux naturels
+### Mobilier sur-mesure et matériaux naturels
 
 Un soin particulier a été apporté à la conception de mobilier sur-mesure intégré : bibliothèque, banquette, rangements. Ces éléments architecturaux créent du caractère et optimisent l'utilisation de l'espace, tout en s'inscrivant dans la continuité du projet architectural.
 
-Le choix des matériaux (bois brut, enduits naturels, pierre locale) a été guidé par la recherche d'authenticité, de durabilité et d'harmonie avec le bâti existant, en cohérence avec la personnalité des habitants et l'histoire du lieu.`,
+Le choix des matériaux (bois massif, pierre naturelle) a été guidé par la recherche d'authenticité, de durabilité et d'harmonie avec le bâti existant, en cohérence avec la personnalité des habitants et l'histoire du lieu.`,
     coverImage: bag_img_1,
     images: [
       bag_img_1,
@@ -237,11 +235,9 @@ Le choix des matériaux (bois brut, enduits naturels, pierre locale) a été gui
 
 1, 2, 3 comme le nombre d'interventions réalisées pour aménager cet appartement, à partir d'un seul et même matériau : le valchromat. Ce panneau de fibres de bois teinté dans la masse offre une alternative durable aux panneaux de particules traditionnels, tout en apportant couleur et caractère aux espaces.
 
-Le valchromat structure les trois interventions principales du projet : la cuisine, un meuble bibliothèque dans le séjour, et des rangements intégrés dans la chambre. Cette continuité matérielle crée une cohérence visuelle entre les différentes pièces de l'appartement.
-
 ### Rénovation cuisine : fonctionnalité et épure
 
-L'effort principal porte sur la cuisine de cet appartement lyonnais. Partant d'un plan biscornu contraint par de nombreuses gaines techniques héritées des années 60, l'objectif était de concevoir un espace cuisine fonctionnel, épuré et adapté aux usages contemporains.
+L'effort principal porte sur la cuisine de cet appartement lyonnais. Partant d'un plan biscornu contraint par de nombreuses gaines techniques, l'objectif était de concevoir un espace cuisine fonctionnel, épuré et adapté aux usages contemporains.
 
 Le parti pris architectural repose sur la simplicité et l'ouverture : pas de portes de placards, pas de meubles hauts qui alourdiraient visuellement l'espace. Les étagères se succèdent en continuité, offrant de généreux plans de travail et des rangements abondants tout en préservant la luminosité.
 
@@ -274,19 +270,19 @@ La rénovation d'appartements des années 60 à Lyon présente des contraintes s
   {
     id: "chv",
     title: "Transformation d'un atelier en logement.",
-    category: "Renovation d'une ancienne ferme bugiste",
+    category: "Rénovation d'une ancienne ferme bugiste",
     location: "Champagne-en-Valromey, Ain, Auvergne-Rhône-Alpes",
     year: "2025",
     description:
-      `Située à Champagne-en-Valromey dans l'Ain, cette ancienne longère bugiste abrite un atelier agricole transformé en logement autonome. Le projet accompagne la métamorphose de ce bâti rural en une habitation lumineuse, chaleureuse et sobre en énergie, tout en préservant l'héritage familial et le caractère authentique du lieu.
+      `Située à Champagne-en-Valromey dans l'Ain, cette ancienne longère bugiste abrite un atelier agricole transformé en logement indépendant. Le projet accompagne la métamorphose de ce bâti rural en une habitation lumineuse, chaleureuse et sobre en énergie, tout en préservant l'héritage familial et le caractère authentique du lieu.
 
-## Transformation d'un atelier de ferme en habitation
+### Transformation d'un atelier de ferme en habitation
 
 L'ex-atelier, anciennement dédié aux activités agricoles de la ferme, devient un logement indépendant qui s'inscrit en discrétion dans le prolongement de la longère principale. Cette transformation respecte l'échelle du bâti existant et son implantation dans le paysage rural de la vallée du Valromey.
 
 Le projet de rénovation vise à créer un espace de vie confortable et contemporain, sans dénaturer le caractère patrimonial de cette architecture vernaculaire bugiste, typique des fermes de l'Ain.
 
-## Optimisation de la lumière naturelle
+### Optimisation de la lumière naturelle
 
 Les larges ouvertures existantes au sud sont préservées et mises en valeur pour capter pleinement l'ensoleillement généreux tout au long de la journée. Ces ouvertures historiques du bâtiment agricole deviennent les sources principales de lumière et de chaleur passive pour le logement.
 
@@ -294,7 +290,7 @@ Une nouvelle baie vitrée s'ouvre à l'est sur le pré et le paysage agricole en
 
 Cette attention portée aux orientations et aux apports lumineux crée une habitation baignée de lumière naturelle, limitant les besoins en éclairage artificiel.
 
-## Rénovation écologique et performance énergétique
+### Rénovation écologique et performance énergétique
 
 La qualité environnementale guide l'ensemble des choix constructifs afin de créer un espace peu énergivore, confortable toute l'année et respectueux de l'environnement :
 
@@ -304,11 +300,9 @@ La qualité environnementale guide l'ensemble des choix constructifs afin de cr�
 
 - **Chauffage au bois** utilisant une ressource locale et renouvelable, en cohérence avec le contexte rural
 
-- **Ventilation naturelle traversante** exploitant les orientations du bâtiment pour renouveler l'air sans consommation énergétique
-
 Cette approche de rénovation énergétique permet d'atteindre un excellent niveau de confort thermique avec des consommations minimales, transformant un bâtiment agricole ancien non isolé en une habitation performante.
 
-## Valorisation de l'existant et mémoire du lieu
+### Valorisation de l'existant et mémoire du lieu
 
 Le projet révèle et met en valeur les éléments patrimoniaux du bâti existant plutôt que de les dissimuler. Les anciennes portes en bois massif ont été soigneusement sablées, restaurées et réemployées dans le projet, conservant leur patine et leur histoire.
 
@@ -351,33 +345,37 @@ Cette démarche de valorisation de l'existant s'inscrit dans une logique de sobr
   description:
     `Situé à Saint-Sorlin-d'Arves, au cœur du domaine skiable des Sybelles en Savoie, ce chalet de montagne fait l'objet d'un projet de rénovation et d'extension pensé pour accompagner l'évolution des usages d'une famille. L'intervention vise à transformer un chalet devenu trop contraint en un lieu de vie généreux, fonctionnel et confortable, capable d'accueillir sereinement les séjours réunissant enfants et adultes.
 
-## Des espaces devenus insuffisants
+### Des espaces devenus insuffisants
 
 Longtemps contraint par des surfaces inadaptées, le chalet existant ne permettait plus d'accueillir confortablement les séjours familiaux. Les espaces de vie manquaient de fluidité, la cuisine était exiguë, et l'absence d'espace d'entrée digne de ce nom compliquait les usages hivernaux typiques de la montagne.
 
 L'objectif du projet est de repenser en profondeur l'organisation des espaces pour offrir davantage de convivialité et de souplesse d'usage, tout en conservant le même nombre de couchages. Il s'agit d'améliorer la qualité de vie au quotidien sans augmenter la surface habitable de manière excessive.
 
-## Extension et réorganisation des espaces de vie
+### Extension et réorganisation des espaces de vie
 
-Le projet s'attache à libérer l'espace de séjour et à clarifier les circulations intérieures. L'extension permet de créer un espace distinct dédié aux activités familiales : les enfants peuvent jouer, les adultes se détendre, sans perturber les temps de repas ou de cuisine. Cette séparation fonctionnelle met fin aux usages contraints et aux aménagements provisoires qui caractérisaient l'ancien chalet.
+Le projet s'attache à libérer l'espace de séjour et à clarifier les circulations intérieures dans le chalet existant. La réorganisation des espaces permet de créer un lieu distinct dédié aux activités familiales : les enfants peuvent jouer, les adultes se détendre, sans perturber les temps de repas ou de cuisine. Cette séparation fonctionnelle met fin aux usages contraints et aux aménagements provisoires qui caractérisaient l'ancien chalet.
 
 La cuisine, auparavant exiguë et peu fonctionnelle, a été agrandie et entièrement repensée. Elle devient un lieu lumineux, généreux et adapté à une occupation familiale intensive, avec des plans de travail suffisants, des rangements optimisés et une ouverture sur les espaces de vie.
 
-L'extension accueille également un véritable espace d'entrée qui redéfinit clairement l'accès au chalet et organise les flux intérieurs. Cet espace tampon est essentiel dans le contexte montagnard : il permet de gérer les équipements de ski, les vêtements d'hiver et la transition thermique entre l'extérieur et l'intérieur.
+L'extension accueille un véritable espace d'entrée qui redéfinit clairement l'accès au chalet et organise les flux intérieurs. Cet espace tampon est essentiel dans le contexte montagnard : il permet de gérer les équipements de ski, les vêtements d'hiver et la transition thermique entre l'extérieur et l'intérieur.
 
-## Une architecture contemporaine respectueuse du contexte alpin
+L'extension intègre également une nouvelle chambre et des sanitaires, conservant ainsi la capacité d'accueil du chalet tout en améliorant le confort pour les séjours familiaux. Ces espaces supplémentaires répondent aux besoins d'une famille qui s'agrandit, tout en maintenant une organisation fonctionnelle et des circulations fluides.
 
-L'écriture architecturale de l'extension s'inscrit dans un dialogue attentif avec le bâti existant et le paysage alpin environnant. Sans pastiche, elle prolonge l'esprit du chalet traditionnel tout en affirmant une contemporanéité discrète, lisible et respectueuse de l'identité du lieu.
+### Une architecture contemporaine respectueuse du contexte alpin
 
-Les volumes, les matériaux et les proportions dialoguent avec l'architecture montagnarde locale, créant une continuité harmonieuse entre l'ancien et le nouveau. L'extension ne cherche pas à imiter l'existant, mais à le compléter avec justesse.
+L'isolation thermique par l'extérieur a été l'occasion de repenser l'ensemble des façades du chalet : un bardage bois unifie désormais l'extension et le volume existant, créant une continuité harmonieuse qui s'intègre naturellement dans le paysage montagnard de Saint-Sorlin-d'Arves.
 
-## Rénovation énergétique et confort thermique
+Sans pastiche, ce nouvel habillage prolonge l'esprit du chalet traditionnel tout en affirmant une contemporanéité discrète, lisible et respectueuse de l'identité alpine du lieu. Les volumes, les matériaux et les proportions dialoguent avec l'architecture locale, effaçant la frontière entre ancien et nouveau.
+
+L'extension ne cherche pas à imiter l'existant, mais à le compléter avec justesse. Le bardage bois, en enveloppant l'ensemble du chalet, crée une lecture architecturale cohérente qui valorise le bâtiment dans son environnement montagnard.
+
+### Rénovation énergétique et confort thermique
 
 Le projet a été l'occasion d'améliorer sensiblement les performances énergétiques du chalet, dans une démarche de confort durable et de sobriété énergétique, particulièrement importante en contexte montagnard où les hivers sont rigoureux :
 
 - **Isolation thermique par l'extérieur** en fibre de bois et ravalement complet des façades, préservant la surface habitable intérieure tout en améliorant drastiquement l'isolation
 
-- **Isolation des combles perdus** en ouate de cellulose, matériau biosourcé offrant d'excellentes performances thermiques et acoustiques
+- **Isolation des combles perdus** en ouate de cellulose, matériau biosourcé offrant d'excellentes performances thermiques
 
 - **Remplacement de la chaudière à gaz** par une pompe à chaleur air/eau, réduisant l'empreinte carbone et les coûts de chauffage
 
@@ -385,7 +383,7 @@ Le projet a été l'occasion d'améliorer sensiblement les performances énergé
 
 Cette approche énergétique globale permet de réduire significativement les consommations tout en améliorant le confort thermique été comme hiver.
 
-## Rafraîchissement des espaces existants
+### Rafraîchissement des espaces existants
 
 Au-delà de l'extension, le projet inclut la rénovation de la salle de bain à l'étage, offrant un espace modernisé et fonctionnel pour accueillir confortablement toute la famille lors des séjours.
 
@@ -404,39 +402,46 @@ L'ensemble de ces interventions transforme ce chalet familial en un lieu plus g�
 },
 {
 id: "Colombier",
-title: "Construction d'un meuble pont dans un appartement lyonnais",
+title: "Construction d'un meuble-pont dans un appartement lyonnais",
 category: "Mobilier sur mesure",
 location: "Lyon 7, Jean Macé, Auvergne-Rhône-Alpes",
 year: "2025",
-description: `Dans un appartement des années 70 situé proche de Jean Macé à Lyon 7ème, ce projet d'aménagement intérieur propose une solution sur-mesure pour optimiser l'espace d'une chambre tout en créant un coin bureau fonctionnel. L'intervention consiste en la réalisation d'un meuble pont encadrant le lit et d'un bureau attenant, conçus pour répondre aux besoins d'un mode de vie contemporain alliant repos et télétravail.
+description: `Dans un appartement des années 70 situé proche de Jean Macé à Lyon 7ème, ce projet d'aménagement sur-mesure répond à une problématique typique des petites surfaces urbaines : comment maximiser les rangements dans une chambre réduite tout en multipliant les usages d'un même espace. L'intervention consiste en la réalisation d'un meuble-pont qui intègre trois fonctions essentielles — dormir, ranger et travailler — transformant une chambre contrainte en un lieu de vie polyvalent et chaleureux.
 
-## Un meuble pont pour structurer l'espace chambre
+### Multiplier les usages dans une petite chambre
 
-Le meuble pont a été dessiné pour encadrer le lit sur trois côtés, créant ainsi un cocon rassurant tout en maximisant les rangements sans encombrer l'espace au sol. Cette configuration permet de libérer la surface habitable de la chambre, particulièrement précieuse dans un appartement des années 70 où les surfaces sont souvent contraintes.
+Face à l'évolution des modes de vie et l'essor du télétravail, la chambre n'est plus seulement un espace de repos. Elle doit accueillir un coin bureau fonctionnel, des rangements généreux pour vêtements et effets personnels, tout en conservant son atmosphère apaisante.
 
-Les volumes du meuble pont ont été soigneusement étudiés pour offrir des rangements adaptés aux usages quotidiens : niches ouvertes pour les livres et objets décoratifs, espaces fermés pour le linge et les vêtements de saison. Les étagères latérales, calibrées en profondeur, font office de tables de chevet intégrées, évitant l'ajout de meubles supplémentaires.
+Le meuble-pont a été conçu pour répondre simultanément à ces trois usages sans compromettre l'espace au sol, précieux dans cet appartement lyonnais. Cette solution d'aménagement permet de créer un véritable cocon chaleureux où chaque fonction trouve sa place de manière fluide et harmonieuse.
 
-La partie haute du meuble pont offre un espace de rangement longue durée, idéal pour les affaires saisonnières ou les équipements peu utilisés. Cette optimisation verticale de l'espace répond à une problématique fréquente des appartements lyonnais : comment créer du rangement sans perdre en surface habitable.
+### Un meuble-pont pensé pour optimiser chaque centimètre
 
-## Un espace bureau intégré pour le télétravail
+Le meuble encadre le lit sur trois côtés, créant une alcôve rassurante qui structure l'espace de la chambre. Les rangements exploitent toute la hauteur disponible, du sol au plafond, offrant une capacité de stockage considérable sans empiéter sur la surface habitable.
 
-Accolé au meuble pont, un simple bureau complète l'aménagement de la chambre. Ce poste de travail à domicile a été pensé pour s'intégrer harmonieusement dans l'ensemble du mobilier, créant une continuité visuelle et fonctionnelle.
+La tête de lit, légèrement épaissie, offre une surface suffisante pour déposer ses effets personnels à portée de main, renforçant l'aspect pratique et intime de cet espace nuit.
 
-Le bureau offre une surface de travail suffisante pour un ordinateur, des documents et quelques fournitures, tout en restant discret lorsqu'il n'est pas utilisé. Cette solution répond aux nouveaux modes de vie où la chambre devient un espace polyvalent, alliant repos et activité professionnelle à domicile.
+Accolé au meuble-pont, un bureau discret complète l'aménagement. Ce poste de travail à domicile s'intègre harmonieusement dans l'ensemble, permettant de télétravailler confortablement sans sacrifier la fonction première de la chambre.
 
-L'implantation du bureau a été étudiée en fonction de la lumière naturelle de la pièce, permettant de bénéficier d'un éclairage optimal pendant les heures de télétravail.
+### Des matériaux nobles et une esthétique épurée
 
-## Réalisation artisanale par Vinel & Fils
+Le meuble a été réalisé en panneaux de fibres de bois Unilin, un matériau technique offrant résistance et durabilité. La finition jaune clair lumineux, mate, apporte douceur et chaleur à l'espace. Cette teinte claire agrandit visuellement la chambre et diffuse une lumière douce qui contribue à l'atmosphère cocooning recherchée.
 
-Ce projet de mobilier sur-mesure a été réalisé par l'atelier [Vinel & Fils](https://www.instagram.com/vineletfils/), menuisiers-ébénistes lyonnais spécialisés dans la création de mobilier contemporain et l'aménagement d'intérieurs. Leur savoir-faire artisanal garantit une qualité de fabrication et une durabilité dans le temps.
+L'ensemble se veut résolument épuré : pas de poignées apparentes, des lignes simples et élégantes qui allègent visuellement le meuble malgré son volume. Cette sobriété formelle évite tout effet massif et préserve une sensation d'espace et de légèreté dans la chambre.
 
-Le choix de matériaux et de finitions durables permet de créer un mobilier pérenne, qui accompagnera les habitants sur le long terme et pourra s'adapter à l'évolution de leurs besoins.
+### Des détails pensés pour le confort quotidien
 
-## Aménagement d'appartement années 70 à Lyon
+Un soin particulier a été porté à l'éclairage intégré : des lumières tamisées sont installées à l'intérieur des placards, permettant de se servir dans les rangements sans avoir à allumer la lumière principale de la chambre.
 
-Cette intervention illustre les possibilités d'optimisation des appartements des années 70, typiques du parc immobilier lyonnais. Sans travaux lourds de rénovation structurelle, l'ajout de mobilier sur-mesure transforme la fonctionnalité et le confort d'un espace, tout en s'adaptant aux contraintes architecturales existantes.
+Cette attention aux usages réels du quotidien illustre l'approche du mobilier sur-mesure : anticiper les gestes, faciliter la vie de tous les jours, créer des espaces qui répondent précisément aux besoins des habitants.
 
-Le projet démontre qu'avec une réflexion sur les usages et un mobilier pensé spécifiquement pour le lieu, il est possible de créer des espaces de vie généreux et polyvalents, même dans des surfaces réduites.`,
+### Réalisation artisanale par Vinel & Fils
+
+Ce projet a été réalisé en collaboration avec [Vinel & Fils](https://www.instagram.com/vineletfils/), atelier de menuiserie lyonnais. Le travail main dans la main avec un menuisier permet d'ajuster chaque détail, d'affiner les proportions, de choisir les matériaux avec exigence. Cette collaboration entre architecte et artisan local donne naissance à un mobilier unique, parfaitement adapté au lieu et aux usages.
+
+### Un petit projet qui transforme un logement
+
+Cette intervention illustre qu'un projet d'aménagement ciblé, même de taille modeste, peut transformer radicalement la qualité de vie dans un appartement. Sans travaux lourds de rénovation structurelle, l'ajout de mobilier sur-mesure optimise les mètres carrés disponibles et permet à une petite chambre de devenir un espace polyvalent, fonctionnel et chaleureux.
+`,
 coverImage: pont_img_1,
 images: [pont_img_1, pont_img_2, pont_img_3, pont_img_4],
 plans: [],
@@ -454,5 +459,5 @@ collaborationUrl: "https://www.instagram.com/vineletfils/",
 // Génère les projets avec leurs slugs automatiquement
 export const projects: Project[] = projectsData.map((project) => ({
   ...project,
-  slug: generateSlug(project.id, project.location),
+  slug: generateSlug(project.title, project.location),
 }));

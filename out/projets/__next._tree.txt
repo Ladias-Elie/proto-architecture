@@ -6,4 +6,4 @@
 :HL["/_next/static/media/meuble-pont-chambre-lyon-7-jean-mace-vue-ensemble.1aa7484b.webp","image"]
 :HL["https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg","image"]
 :HL["/logo-ordre-architectes.png","image"]
-0:{"buildId":"ahju7JYvEYW13kqklvs73","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"projets","paramType":null,"paramKey":"projets","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"Pq-Hzu-58Ws8egXK_dz9s","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"projets","paramType":null,"paramKey":"projets","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

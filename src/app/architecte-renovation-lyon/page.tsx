@@ -337,12 +337,11 @@ export default function ArchitecteRenovationLyon() {
 
               {/* Image rénovation */}
               <div className="relative">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+                <div className="rounded-2xl overflow-hidden bg-muted">
                   <Image
                     src={imgLumiere}
                     alt="Rénovation intérieure lumineuse Lyon"
-                    fill
-                    className="object-cover"
+                    className="w-full h-auto"
                   />
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground p-4 rounded-xl shadow-lg">

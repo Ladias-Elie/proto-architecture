@@ -76,14 +76,6 @@ export default function RenovationMaisonLyon() {
           "text": "Études et autorisations : 4 à 8 mois. Travaux de rénovation lourde : 8 à 14 mois. Rénovation globale avec extension : 12 à 18 mois. La durée dépend de l'ampleur des travaux, de l'état initial et des contraintes administratives."
         }
       },
-      {
-        "@type": "Question",
-        "name": "Quelles aides pour la rénovation énergétique d'une maison ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "MaPrimeRénov' (jusqu'à 70 000€ pour une rénovation d'ampleur), les CEE, l'éco-PTZ (jusqu'à 50 000€), les aides de l'Anah, et les aides locales de la Région Auvergne-Rhône-Alpes. Les maisons anciennes mal isolées sont éligibles aux montants les plus élevés."
-        }
-      }
     ]
   };
 
@@ -156,19 +148,7 @@ export default function RenovationMaisonLyon() {
           <p>La durée dépend de l'état initial, de l'ampleur des travaux et des contraintes administratives (ABF, PLU).</p>
         </div>
       )
-    },
-    {
-      question: "Quelles aides pour la rénovation énergétique d'une maison ?",
-      answer: (
-        <div className="space-y-3 text-muted-foreground">
-          <p><span className="font-semibold text-foreground">MaPrimeRénov' :</span> jusqu'à 70 000€ pour une rénovation d'ampleur (maisons anciennes mal isolées)</p>
-          <p><span className="font-semibold text-foreground">Éco-PTZ :</span> prêt à taux zéro jusqu'à 50 000€</p>
-          <p><span className="font-semibold text-foreground">CEE :</span> certificats d'économie d'énergie (primes des fournisseurs)</p>
-          <p><span className="font-semibold text-foreground">Aides locales :</span> Région Auvergne-Rhône-Alpes, aides départementales Ain, Isère, Rhône</p>
-          <p>Nous vous accompagnons dans le montage des dossiers de subventions.</p>
-        </div>
-      )
-    },
+    }
   ];
 
   return (

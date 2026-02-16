@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Rénovation Maison Ancienne Lyon | Pisé, Pierre, Corps de Ferme | prôto.architecture',
+  title: 'Rénovation Maison Ancienne Lyon | Pisé, Pierre, Corps de Ferme',
   description: 'Architecte rénovation maison ancienne Lyon et région. Maisons en pisé, pierre, corps de ferme. Rénovation lourde, extension, rénovation énergétique. Matériaux biosourcés. Devis gratuit.',
   alternates: {
     canonical: '/renovation-maison-lyon',

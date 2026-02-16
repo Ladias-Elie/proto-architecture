@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Rénovation Appartement Lyon | Architecte DPLG | prôto.architecture',
+  title: 'Rénovation Appartement Lyon | Architecte DPLG',
   description: 'Architecte rénovation appartement Lyon. Canuts Croix-Rousse, haussmannien, années 60. Rénovation complète, cuisine, salle de bain. Matériaux écologiques. Devis gratuit.',
   alternates: {
     canonical: '/renovation-appartement-lyon',

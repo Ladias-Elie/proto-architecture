@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Architecte Rénovation Lyon | Appartements & Maisons anciennes | prôto.architecture',
+  title: 'Architecte Rénovation Lyon | Appartements & Maisons anciennes',
   description: 'Architecte rénovation Lyon et alentours. Appartements anciens, maisons en pisé, en pierre, corps de ferme. Matériaux biosourcés. Premier échange gratuit.',
   alternates: {
     canonical: '/architecte-renovation-lyon',

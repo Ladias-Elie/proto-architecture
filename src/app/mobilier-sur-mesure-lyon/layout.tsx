@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mobilier Sur-Mesure Lyon | Cuisine, Rangement, Bureau | prôto.architecture',
+  title: 'Mobilier Sur-Mesure Lyon | Cuisine, Rangement, Bureau',
   description: 'Architecte mobilier sur-mesure Lyon. Cuisines, bibliothèques, meubles-ponts, bureaux, dressings. Design sur-mesure, matériaux écologiques. Collaboration artisans locaux.',
   alternates: {
     canonical: '/mobilier-sur-mesure-lyon',

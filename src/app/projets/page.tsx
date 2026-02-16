@@ -38,6 +38,7 @@ export default function ProjectsPage() {
       <main className="pt-32 pb-24 bg-background">
         <div className="container mx-auto px-8">
           <div className="max-w-6xl mx-auto">
+            <h1 className="text-2xl font-light text-foreground mb-12">Nos projets</h1>
             <div className="grid md:grid-cols-3 gap-12">
               {projects.map((project) => (
                 <Link
@@ -47,9 +48,9 @@ export default function ProjectsPage() {
                 >
                   {/* Titre en haut */}
                   <div className="mb-3 min-h-[2.5rem] flex items-start justify-between gap-4">
-                    <h3 className="text-sm font-medium text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
+                    <h2 className="text-sm font-medium text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
                       {project.title}
-                    </h3>
+                    </h2>
                     <span className="text-xs text-muted-foreground whitespace-nowrap pt-0.5">
                       {project.year}
                     </span>

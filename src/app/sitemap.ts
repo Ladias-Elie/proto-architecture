@@ -6,53 +6,53 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://proto-architecture.fr'
 
-  // Static pages
+  // Static pages with real last-modified dates
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: '2026-02-16',
       changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/architecte-renovation-lyon`,
-      lastModified: new Date(),
+      lastModified: '2026-02-16',
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/renovation-appartement-lyon`,
-      lastModified: new Date(),
+      lastModified: '2026-02-16',
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/renovation-maison-lyon`,
-      lastModified: new Date(),
+      lastModified: '2026-02-16',
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/extension-maison-lyon`,
-      lastModified: new Date(),
+      lastModified: '2026-02-16',
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/mobilier-sur-mesure-lyon`,
-      lastModified: new Date(),
+      lastModified: '2026-02-16',
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/projets`,
-      lastModified: new Date(),
+      lastModified: '2026-02-06',
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/a-propos`,
-      lastModified: new Date(),
+      lastModified: '2026-02-06',
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -61,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic project pages
   const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${baseUrl}/projets/${project.slug}`,
-    lastModified: new Date(),
+    lastModified: '2026-02-06',
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))

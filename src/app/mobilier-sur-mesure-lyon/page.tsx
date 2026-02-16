@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 // Images Colombier (meuble-pont)
 import heroImage from '@/assets/Colombier/images/meuble-pont-chambre-lyon-7-jean-mace-vue-ensemble.webp';
@@ -177,6 +178,10 @@ export default function MobilierSurMesureLyon() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Accueil', url: 'https://proto-architecture.fr' },
+        { name: 'Mobilier Sur-Mesure Lyon', url: 'https://proto-architecture.fr/mobilier-sur-mesure-lyon' },
+      ]} />
       <Navigation />
 
       <main>

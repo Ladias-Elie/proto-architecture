@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 // Images
 import heroImage from '@/assets/123/images/proto architecture_amenagement interieur_Lyon_02.webp';
@@ -158,6 +159,10 @@ export default function RenovationAppartementLyon() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Accueil', url: 'https://proto-architecture.fr' },
+        { name: 'Rénovation Appartement Lyon', url: 'https://proto-architecture.fr/renovation-appartement-lyon' },
+      ]} />
       <Navigation />
 
       <main>

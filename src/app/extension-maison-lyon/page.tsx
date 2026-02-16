@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 // Images SSA (chalet avec extension)
 import heroImage from '@/assets/SSA/images/proto architecture_renovation chalet_maurienne_01-facade.webp';
@@ -157,6 +158,10 @@ export default function ExtensionMaisonLyon() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Accueil', url: 'https://proto-architecture.fr' },
+        { name: 'Extension Maison Lyon', url: 'https://proto-architecture.fr/extension-maison-lyon' },
+      ]} />
       <Navigation />
 
       <main>

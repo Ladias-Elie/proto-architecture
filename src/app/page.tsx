@@ -7,16 +7,24 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
-  title: "Architecte Rénovation Lyon | Rénovation Écologique & Énergétique",
-  description: "Architecte rénovation Lyon spécialisé en rénovation lourde d'appartements et maisons anciennes. Rénovation énergétique, écologique et durable avec matériaux biosourcés. Expert rénovation patrimoine lyonnais.",
+  title: {
+    absolute: 'Architecte Rénovation Écologique Lyon | prôto.architecture',
+  },
+  description: "Architecte rénovation écologique à Lyon. Rénovation lourde d'appartements et maisons anciennes, matériaux biosourcés. Premier échange gratuit.",
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Architecte Rénovation Lyon | Rénovation Écologique & Énergétique",
-    description: "Architecte rénovation Lyon spécialisé en rénovation lourde d'appartements et maisons anciennes.",
+    title: 'Architecte Rénovation Écologique Lyon | prôto.architecture',
+    description: "Architecte rénovation écologique à Lyon. Rénovation lourde d'appartements et maisons anciennes, matériaux biosourcés.",
     url: 'https://proto-architecture.fr',
+    locale: 'fr_FR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Architecte Rénovation Écologique Lyon | prôto.architecture',
+    description: "Architecte rénovation écologique à Lyon. Rénovation lourde d'appartements et maisons anciennes, matériaux biosourcés.",
   },
 }
 
@@ -25,25 +33,54 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "prôto.architecture",
-    "image": "https://lovable.dev/opengraph-image-p98pqg.png",
+    "image": "https://proto-architecture.fr/og-default.jpg",
+    "logo": "https://proto-architecture.fr/og-default.jpg",
     "description": "Architecte rénovation Lyon spécialisé en rénovation lourde, énergétique et écologique d'appartements et maisons anciennes. Matériaux biosourcés et approche durable.",
+    "url": "https://proto-architecture.fr",
+    "telephone": "+33782156364",
+    "email": "mail@proto-architecture.fr",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lyon",
-      "addressRegion": "Rhône",
+      "addressRegion": "Auvergne-Rhône-Alpes",
+      "postalCode": "69000",
       "addressCountry": "FR"
     },
-    "url": "https://proto-architecture.fr",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 45.7640,
+      "longitude": 4.8357
+    },
     "priceRange": "€€€",
+    "founder": {
+      "@type": "Person",
+      "name": "Camille Brachet",
+      "jobTitle": "Architecte",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "École Polytechnique Fédérale de Lausanne (EPFL)"
+      }
+    },
     "areaServed": [
       {
         "@type": "City",
         "name": "Lyon"
       },
       {
-        "@type": "State",
+        "@type": "AdministrativeArea",
         "name": "Rhône"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Ain"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Isère"
       }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/proto.architecture/"
     ],
     "knowsAbout": [
       "Rénovation lourde appartement ancien Lyon",
@@ -59,7 +96,8 @@ export default function HomePage() {
       "Rénovation énergétique",
       "Rénovation écologique",
       "Extension de maison",
-      "Surélévation"
+      "Surélévation",
+      "Mobilier sur-mesure"
     ]
   }
 

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer"
 import { projects } from "@/data/projects"
 import { ProjectCarousel } from "@/components/ProjectCarousel"
 import { legacyRedirects, legacyIds } from "@/data/redirects"
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"
 
 // Generate static paths for all projects at build time
 // Inclut les nouveaux slugs ET les anciens IDs pour les redirections
@@ -124,6 +125,11 @@ export default async function ProjectDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Accueil', url: 'https://proto-architecture.fr' },
+        { name: 'Projets', url: 'https://proto-architecture.fr/projets' },
+        { name: project.title, url: `https://proto-architecture.fr/projets/${project.slug}` },
+      ]} />
 
       <Navigation />
 

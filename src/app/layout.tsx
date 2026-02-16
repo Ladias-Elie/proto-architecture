@@ -33,11 +33,20 @@ export const metadata: Metadata = {
     siteName: 'prôto.architecture',
     title: 'prôto.architecture | Architecte Rénovation Lyon',
     description: 'Architecte rénovation Lyon spécialisé en rénovation lourde, énergétique et écologique.',
+    images: [
+      {
+        url: '/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'prôto.architecture — Architecte Rénovation Lyon',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'prôto.architecture | Architecte Rénovation Lyon',
     description: 'Architecte rénovation Lyon spécialisé en rénovation lourde, énergétique et écologique.',
+    images: ['/og-default.jpg'],
   },
   robots: {
     index: true,

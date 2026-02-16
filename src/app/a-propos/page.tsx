@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { trackEvent } from "@/lib/analytics"
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"
 
 export default function AboutPage() {
   const router = useRouter()
@@ -32,16 +33,32 @@ export default function AboutPage() {
       "@type": "ProfessionalService",
       "name": "prôto.architecture",
       "description": "Atelier d'architecture dédié à la rénovation écologique et la transformation du bâti existant",
+      "url": "https://proto-architecture.fr",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Lyon",
+        "addressRegion": "Auvergne-Rhône-Alpes",
         "addressCountry": "FR"
       },
       "founder": {
         "@type": "Person",
         "name": "Camille Brachet",
         "jobTitle": "Architecte",
-        "alumniOf": "École Polytechnique Fédérale de Lausanne"
+        "description": "Architecte-ingénieure diplômée de l'EPFL, spécialisée en rénovation écologique et habitat sur mesure à Lyon.",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "École Polytechnique Fédérale de Lausanne (EPFL)",
+          "url": "https://www.epfl.ch/"
+        },
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Ordre des Architectes Auvergne-Rhône-Alpes",
+          "url": "https://www.architectes.org/"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "prôto.architecture"
+        }
       }
     }
   }
@@ -52,6 +69,10 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Accueil', url: 'https://proto-architecture.fr' },
+        { name: 'À propos', url: 'https://proto-architecture.fr/a-propos' },
+      ]} />
 
       <div className="min-h-screen bg-background">
         <Navigation />

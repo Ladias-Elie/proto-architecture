@@ -2,19 +2,26 @@ import { Metadata } from 'next'
 import Link from "next/link"
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
+import BreadcrumbSchema from "@/components/BreadcrumbSchema"
 import { projects } from "@/data/projects"
 
 export const metadata: Metadata = {
-  title: "Projets - Portfolio Architecture Lyon",
-  description: "Découvrez nos projets de rénovation et construction à Lyon. Appartements, maisons et rénovations d'intérieur réalisés par prôto.architecture.",
+  title: "Projets de Rénovation à Lyon | Portfolio",
+  description: "Découvrez nos projets de rénovation à Lyon et en région. Appartements anciens, maisons en pisé, corps de ferme, extensions. Avant/après et détails techniques.",
   alternates: {
     canonical: '/projets',
   },
   openGraph: {
-    title: "Projets - Portfolio Architecture Lyon",
-    description: "Découvrez nos projets de rénovation et construction à Lyon.",
+    title: 'Projets de Rénovation Lyon | prôto.architecture',
+    description: "Découvrez nos projets de rénovation à Lyon. Appartements anciens, maisons en pisé, corps de ferme, extensions.",
     url: 'https://proto-architecture.fr/projets',
+    locale: 'fr_FR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projets de Rénovation Lyon | prôto.architecture',
+    description: "Découvrez nos projets de rénovation à Lyon. Appartements anciens, maisons en pisé, corps de ferme, extensions.",
   },
 }
 
@@ -33,6 +40,10 @@ export default function ProjectsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Accueil', url: 'https://proto-architecture.fr' },
+        { name: 'Projets', url: 'https://proto-architecture.fr/projets' },
+      ]} />
       <Navigation />
 
       <main className="pt-32 pb-24 bg-background">

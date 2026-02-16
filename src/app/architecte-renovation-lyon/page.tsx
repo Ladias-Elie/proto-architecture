@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 // Images
 import heroImage from '@/assets/CHV/images/proto architecture_renovation maison_bugey_03-interieur.webp';
@@ -161,6 +162,10 @@ export default function ArchitecteRenovationLyon() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Accueil', url: 'https://proto-architecture.fr' },
+        { name: 'Architecte Rénovation Lyon', url: 'https://proto-architecture.fr/architecte-renovation-lyon' },
+      ]} />
       <Navigation />
 
       <main>

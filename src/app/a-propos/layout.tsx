@@ -1,16 +1,22 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "À propos | Architecte Lyon - Rénovation & Transformation",
-  description: "prôto.architecture, atelier d'architecture lyonnais dédié à la rénovation écologique et la transformation du bâti existant. Approche durable et responsable par Camille Brachet, architecte EPFL.",
+  title: 'À propos | Camille Brachet, Architecte Lyon',
+  description: "prôto.architecture, atelier d'architecture à Lyon fondé par Camille Brachet (EPFL). Rénovation écologique et transformation durable du bâti existant.",
   alternates: {
     canonical: '/a-propos',
   },
   openGraph: {
-    title: "À propos | Architecte Lyon - Rénovation & Transformation",
-    description: "prôto.architecture, atelier d'architecture lyonnais dédié à la rénovation écologique et la transformation du bâti existant.",
+    title: 'À propos | prôto.architecture',
+    description: "Atelier d'architecture à Lyon fondé par Camille Brachet (EPFL). Rénovation écologique et transformation durable.",
     url: 'https://proto-architecture.fr/a-propos',
+    locale: 'fr_FR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'À propos | prôto.architecture',
+    description: "Atelier d'architecture à Lyon fondé par Camille Brachet (EPFL). Rénovation écologique et transformation durable.",
   },
 }
 

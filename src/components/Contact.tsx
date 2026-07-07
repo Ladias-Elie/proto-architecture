@@ -21,6 +21,7 @@ import { trackEvent } from "@/lib/analytics";
 const formSchema = z.object({
   name: z.string().trim().min(2, { message: "Le nom doit contenir au moins 2 caractères" }).max(100),
   email: z.string().trim().email({ message: "Adresse email invalide" }).max(255),
+  phone: z.string().trim().max(20).optional().or(z.literal("")),
   message: z.string().trim().min(10, { message: "Le message doit contenir au moins 10 caractères" }).max(1000),
 });
 
@@ -32,6 +33,7 @@ const Contact = () => {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       message: "",
     },
   });
@@ -42,13 +44,17 @@ const Contact = () => {
       const TEMPLATE_ID = "template_etivnz8";
       const PUBLIC_KEY = "fiW-E1g_xGIAu6iAv";
 
+      const formattedMessage = values.phone
+        ? `Téléphone : ${values.phone}\n\n${values.message}`
+        : values.message;
+
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         {
           from_name: values.name,
           from_email: values.email,
-          message: values.message,
+          message: formattedMessage,
           to_name: "Proto Architecture",
         },
         PUBLIC_KEY
@@ -163,6 +169,28 @@ const Contact = () => {
                         <Input
                           type="email"
                           placeholder="votre@email.com"
+                          {...field}
+                          className="border-2 border-border focus:border-foreground transition-colors bg-background"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-xs uppercase tracking-widest font-semibold">
+                        Téléphone
+                        <span className="text-muted-foreground font-normal normal-case tracking-normal ml-2">(optionnel)</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          type="tel"
+                          placeholder="06 00 00 00 00"
                           {...field}
                           className="border-2 border-border focus:border-foreground transition-colors bg-background"
                         />

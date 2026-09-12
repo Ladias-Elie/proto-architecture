@@ -80,7 +80,8 @@ export default function HomePage() {
       }
     ],
     "sameAs": [
-      "https://www.instagram.com/proto.architecture/"
+      "https://www.instagram.com/proto.architecture/",
+      "https://maps.google.com/?cid=6522312676909855040"
     ],
     "knowsAbout": [
       "Rénovation lourde appartement ancien Lyon",

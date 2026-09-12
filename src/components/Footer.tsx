@@ -1,4 +1,4 @@
-import { Instagram } from "lucide-react";
+import { Instagram, Star } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,14 +11,23 @@ const Footer = () => {
             <p className="text-xs text-muted-foreground leading-tight max-w-[320px]">
               Atelier d'architecture lyonnais dédié à la rénovation écologique et durable.
             </p>
-            <a 
-              href="https://www.instagram.com/proto.architecture/" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/proto.architecture/"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-accent transition-colors"
             >
               <Instagram className="w-3.5 h-3.5" strokeWidth={2} />
               @proto.architecture
+            </a>
+            <a
+              href="https://maps.google.com/?cid=6522312676909855040"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-accent transition-colors"
+            >
+              <Star className="w-3.5 h-3.5" strokeWidth={2} />
+              Avis Google
             </a>
           </div>
 
